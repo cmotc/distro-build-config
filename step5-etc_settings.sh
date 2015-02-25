@@ -15,50 +15,80 @@ domain (ip ip6){
 	mod state state (ESTABLISHED RELATED) ACCEPT;
 	# allow local connections
 	interface lo ACCEPT;
-	# uncomment the following line to run an HTTPS service
-	# proto tcp dport (https) ACCEPT;
-	# Allow peer connections to the cjdns UDP tunnel
-	proto udp dport 40100 ACCEPT;
-	# Allow peer connections to the i2p network via UDP
-	proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
 	# Allow Bittorrent
-	proto (tcp udp) dport 51413 ACCEPT;
-	proto tcp dport (4433 28333) ACCEPT;
-        proto (tcp udp) dport (4444 4445 29333) ACCEPT;
-	# Make some services available to cjdns
-	interface cjdroute0{
-	  proto tcp dport (https) ACCEPT;
-	  # Allow Peer-To-Peer SIP connections
-	  proto udp dport (5060 7078 9078) ACCEPT;
-	}
-      # the rest is dropped by tfhe above policy
+	# proto (tcp udp) dport 51413 ACCEPT;
+	# proto tcp dport (4433 28333) ACCEPT;
+	# (legacy) Allow peer connections to the i2p network via UDP
+	# (legacy) proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
+	#  (legacy) proto (tcp udp) dport (4444 4445 29333) ACCEPT;
+      # the rest is dropped by the above policy
     }
     # outgoing connections are not limited
     chain OUTPUT{
       policy DROP;
-      proto tcp dport (ftp) ACCEPT;
-      proto (tcp udp) dport (7) ACCEPT;
-      proto (tcp udp) dport (ssh 2401) ACCEPT;
-      proto tcp dport (smtp) ACCEPT;
-      proto tcp dport (whois) ACCEPT;
-      proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
-      proto (tcp udp) dport (33434) ACCEPT;
-      proto tcp dport (http https) ACCEPT;
-      proto tcp dport (995 465) ACCEPT;
-      proto (tcp udp) dport (53) ACCEPT;
-      proto udp dport 1900 ACCEPT;
-      proto (tcp udp) dport (4444 4445) ACCEPT;
-      proto tcp dport (8118 9050) ACCEPT;
-      proto tcp dport (8123 9150) ACCEPT;
-      proto tcp dport (5222 5223 8010) ACCEPT;
-      proto udp dport (40100) ACCEPT;
-      proto udp dport (5060 7078 9078) ACCEPT;
+      # Tor is allowed to do anything it wants to.
+      mod owner uid-owner debian-tor ACCEPT;
+      # i2p is allowed to do anything it wants to.
+      mod owner uid-owner i2psvc ACCEPT;
+      # White-list access to Tor
+      daddr 127.0.0.1 proto tcp syn dport 9050 ACCEPT;
+      daddr 127.0.0.1 proto tcp syn mod multiport destination-ports (5353 9040 9050 9051 8118 9061 9062 9150 8123) ACCEPT;
+      #White-list access to i2p
+      daddr 127.0.0.1 proto tcp syn mod multiport destination-ports (2827 4444 4445 6668 7656 7657 7658 7659 7660 8998) ACCEPT;
+      #White-list access to system DNS and Tor DNS, block all else
+      daddr 127.0.0.1 proto udp dport (53 5353) ACCEPT;
+      #White-list access to HTTP Proxies
+      daddr 127.0.0.1 proto tcp syn dport (8118 8123) ACCEPT;
+      #White-list access to BitTorrent
       proto (tcp udp) dport (6881 6882 6883 6885 6886 6887 6888 6889 28333 29333 51413) ACCEPT;
-      outerface lo{
+      #White-list access to CUPS
+      daddr 127.0.0.1 proto tcp syn dport 631 ACCEPT;
+      # White-list access to Monkeysphere
+      daddr 127.0.0.1 proto tcp syn dport 6136 ACCEPT;
+      # Local network connections should not go through Tor but DNS shall be
+      # rejected.
+      # (Note that we exclude the VirtualAddrNetwork used for .onion:s here.)
+      daddr (10.0.0.0/8 172.16.0.0/12 192.168.0.0/16) @subchain "lan" {
+        proto tcp dport domain REJECT;
+        proto udp dport domain REJECT;
         ACCEPT;
+      }
+      #White-list access to for Twister
+      #White-list access for Tox
+# (legacy)proto tcp dport (ftp) ACCEPT;
+# (legacy)proto (tcp udp) dport (7) ACCEPT;
+# (legacy)proto (tcp udp) dport (ssh 2401) ACCEPT;
+# (legacy)proto tcp dport (smtp) ACCEPT;
+# (legacy)proto tcp dport (whois) ACCEPT;
+# (legacy)proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
+# (legacy)proto (tcp udp) dport (33434) ACCEPT;
+# (legacy)proto tcp dport (http https) ACCEPT;
+# (legacy)proto tcp dport (995 465) ACCEPT;
+# (legacy)proto (tcp udp) dport (53) ACCEPT;
+# (legacy)proto udp dport 1900 ACCEPT;
+# (legacy)proto (tcp udp) dport (4444 4445) ACCEPT;
+# (legacy)proto tcp dport (5222 5223 8010) ACCEPT;
+# (legacy)proto udp dport (40100) ACCEPT;
+# (legacy)proto udp dport (5060 7078 9078) ACCEPT;
+      outerface lo{
+	ACCEPT;
       }
     }
   }
+}
+table nat {
+  chain PREROUTING {
+    policy ACCEPT;
+  }
+  chain POSTROUTING {
+    policy ACCEPT;
+  }
+  chain OUTPUT {
+    policy ACCEPT;
+    # .onion mapped addresses redirection to Tor.
+    daddr 127.192.0.0/10 proto tcp REDIRECT to-ports 9040;
+    # Redirect system DNS to Tor DNSport
+    daddr 127.0.0.1 proto udp dport 53 REDIRECT to-ports 5353;
 }
 # established/related connections
 # domain (ip ip6) table filter chain (INPUT OUTPUT) mod state state (ESTABLISHED RELATED) ACCEPT;
