@@ -294,32 +294,6 @@ net.ipv4.conf.all.rp_filter=1
 # Do not accept source routing
 net.ipv4.conf.default.accept_source_route = 0' > config/includes.chroot/etc/sysctl.conf
 
-echo "#!/bin/sh
-
-# From Tails repo:
-# https://git-tails.immerda.ch/tails/plain/config/chroot_local-hooks/05-disable_swapon
-#
-# This hook avoid use any swap filesystem that might exist on the host machine hard drive
-
-set -e
-
-echo \"Disabling swapon\"
-
-# Disable swapon to avoid initscripts to setup swap space.
-
-SWAPON=/sbin/swapon
-
-# Move any /sbin/swapon installed by any package out of the way,
-# now (--rename) as well for any future one (hint: apt-get upgrade...).
-dpkg-divert --rename --add /sbin/swapon
-
-# Install a custom noop swapon executable instead.
-cat > \$SWAPON << 'EOF'
-#!/bin/sh
-/bin/true
-EOF
-chmod 755 \$SWAPON" > config/hooks/disable-swapon.chroot
-
 mkdir -p config/includes.chroot/etc/cron.daily
 echo '#! /bin/sh
 /usr/local/bin/rkhunter --propupd' > config/includes.chroot/etc/cron.daily/update-rkhunter
