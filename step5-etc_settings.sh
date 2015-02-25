@@ -15,12 +15,10 @@ domain (ip ip6){
 	mod state state (ESTABLISHED RELATED) ACCEPT;
 	# allow local connections
 	interface lo ACCEPT;
-	# Allow Bittorrent
-	# proto (tcp udp) dport 51413 ACCEPT;
-	# proto tcp dport (4433 28333) ACCEPT;
+	# Allow Bittorrent and Bitcoind
+	proto tcp dport (4433 4434 28333 29333) ACCEPT;
+	proto udp dport 29333 ACCEPT;
 	# (legacy) Allow peer connections to the i2p network via UDP
-	# (legacy) proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
-	#  (legacy) proto (tcp udp) dport (4444 4445 29333) ACCEPT;
       # the rest is dropped by the above policy
     }
     # outgoing connections are not limited
@@ -54,22 +52,13 @@ domain (ip ip6){
         ACCEPT;
       }
       #White-list access to for Twister
+      daddr 127.0.0.1 proto (tcp udp) dport (28332) ACCEPT;
+      daddr 127.0.0.1 proto (udp) dport (1900 29333 60177) ACCEPT;
       #White-list access for Tox
-# (legacy)proto tcp dport (ftp) ACCEPT;
-# (legacy)proto (tcp udp) dport (7) ACCEPT;
-# (legacy)proto (tcp udp) dport (ssh 2401) ACCEPT;
-# (legacy)proto tcp dport (smtp) ACCEPT;
-# (legacy)proto tcp dport (whois) ACCEPT;
-# (legacy)proto (tcp udp) dport (8887 28861 18039 18040) ACCEPT;
-# (legacy)proto (tcp udp) dport (33434) ACCEPT;
-# (legacy)proto tcp dport (http https) ACCEPT;
-# (legacy)proto tcp dport (995 465) ACCEPT;
-# (legacy)proto (tcp udp) dport (53) ACCEPT;
-# (legacy)proto udp dport 1900 ACCEPT;
-# (legacy)proto (tcp udp) dport (4444 4445) ACCEPT;
-# (legacy)proto tcp dport (5222 5223 8010) ACCEPT;
-# (legacy)proto udp dport (40100) ACCEPT;
-# (legacy)proto udp dport (5060 7078 9078) ACCEPT;
+      daddr 127.0.0.1 proto (tcp udp) dport (55166 55167 55526 55177 55184) ACCEPT;
+      #White-list access for common clearnet services
+      proto tcp dport (7 ftp http https ssh smtp whois 995 465 5222 5223 8010 5060 7078 9078) ACCEPT;
+      proto (tcp udp) dport (33434) ACCEPT;
       outerface lo{
 	ACCEPT;
       }
@@ -102,7 +91,6 @@ domain (ip ip6) table filter chain INPUT {
 
 mkdir -p config/includes.chroot/etc/tor
 echo "
-
 ## Configuration file for a typical Tor user
 ## Last updated 22 April 2012 for Tor 0.2.3.14-alpha.
 ## (may or may not work for much older or much newer versions of Tor.)
