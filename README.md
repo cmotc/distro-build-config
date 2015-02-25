@@ -57,4 +57,4 @@ or something like that, then
 
 I'd have an HTML section that would basically explained the procedure used to
 generate it. Which I thought was neat. Figured this would be a good way to try
-it out.
+it out. Plus, doing these things in painstaking detail helps me figure them out.
