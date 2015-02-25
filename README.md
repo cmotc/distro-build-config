@@ -58,3 +58,13 @@ or something like that, then
 I'd have an HTML section that would basically explained the procedure used to
 generate it. Which I thought was neat. Figured this would be a good way to try
 it out. Plus, doing these things in painstaking detail helps me figure them out.
+So, you know, hence the lack of auto scripts for now.
+
+To anyone who stumbles across this and hopes to use it or some of the
+interesting software therein, and I do encourage you to do so, please understand
+that I'm only human and I'm sorry if I've introduced some sort of error. If I
+did I did so unknowingly and without malice. On a similar note, please
+also understand that much of this software is still in very active development
+and is subject to fairly rapid change. Usually, everything works and you will
+hardly notice the updates, so much so that they're barely worth mentioning and
+these are smart folks, but hey you should know.
