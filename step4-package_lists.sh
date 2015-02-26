@@ -25,10 +25,8 @@ blueproximity
 bluetooth				
 bluewho					
 bluez					
-#bluez-alsa				
 bluez-cups				
 bluez-dbg				
-#bluez-gstreamer				
 bluez-hcidump				
 bluez-obexd				
 bluez-tools				
@@ -129,7 +127,6 @@ gnome-settings-daemon
 gnome-shell				
 gnome-shell-common			
 gnome-shell-extension-autohidetopbar	
-gnome-shell-extension-brightness-control
 gnome-shell-extension-weather		
 gnome-shell-extensions			
 gnome-sushi				
