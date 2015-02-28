@@ -57,8 +57,9 @@ domain (ip ip6){
       #White-list access for Tox
       daddr 127.0.0.1 proto (tcp udp) dport (55166 55167 55526 55177 55184) ACCEPT;
       #White-list access for common clearnet services
+      proto (tcp udp) dport 53 ACCEPT;
       proto tcp dport (7 ftp http https ssh smtp whois 995 465 5222 5223 8010 5060 7078 9078) ACCEPT;
-      proto (tcp udp) dport (33434) ACCEPT;
+      proto (tcp udp) dport 33434 ACCEPT;
       outerface lo{
 	ACCEPT;
       }
