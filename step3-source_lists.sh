@@ -28,6 +28,16 @@ deb http://deb.torproject.org/torproject.org jessie main
 deb-src http://deb.torproject.org/torproject.org jessie main
 " > config/archives/tor.list.binary
 
+echo '
+deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
+deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
+' > /etc/apt/sources.list.d/namecoin.list.chroot
+
+echo '
+deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
+deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
+' > /etc/apt/sources.list.d/namecoin.list.binary
+
 #echo "
 #deb http://deb.i2p2.no/ unstable main
 #deb-src http://deb.i2p2.no/ unstable main

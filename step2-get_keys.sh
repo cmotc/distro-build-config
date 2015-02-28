@@ -20,6 +20,13 @@ echo ":'
 #cp config/archives/i2p2.list.key.chroot config/archives/i2p2.list.key.binary
 
 echo ":'
+###Downloading the namecoin repository keys
+'"
+
+#wget http://download.opensuse.org/repositories/home:p_conrad:coins/Debian_7.0/Release.key -O config/archives/namecoin.list.key.chroot
+#cp config/archives/namecoin.list.key.chroot config/archives/namecoin.list.key.binary
+
+echo ":'
 ###Downloading the Tox.im repository keys
 '"
 

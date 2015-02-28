@@ -173,6 +173,7 @@ live-manual-html
 lynx					
 lynx-cur				
 macchanger				
+
 nufw
 pidcat					
 pidgin					
