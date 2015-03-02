@@ -324,3 +324,6 @@ chmod a+x config/includes.chroot/etc/cron.daily/run-rkhunter
 echo '#! /bin/sh
 /usr/local/bin/rkhunter --pkgmgr dpkg -c --sk' > config/includes.chroot/etc/cron.daily/deb-rkhunter
 chmod a+x config/includes.chroot/etc/cron.daily/deb-rkhunter
+
+mkdir -p config/includes.chroot/etc/skel/.mozilla/firefox
+cp -r live.profile config/includes.chroot/etc/skel/.mozilla/firefox/live.profile

@@ -31,12 +31,12 @@ deb-src http://deb.torproject.org/torproject.org jessie main
 echo '
 deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
 deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
-' > /etc/apt/sources.list.d/namecoin.list.chroot
+' > config/archives/namecoin.list.chroot
 
 echo '
 deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
 deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
-' > /etc/apt/sources.list.d/namecoin.list.binary
+' > config/archives/namecoin.list.binary
 
 #echo "
 #deb http://deb.i2p2.no/ unstable main
