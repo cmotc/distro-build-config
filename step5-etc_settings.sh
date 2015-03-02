@@ -79,6 +79,7 @@ table nat {
     daddr 127.192.0.0/10 proto tcp REDIRECT to-ports 9040;
     # Redirect system DNS to Tor DNSport
     daddr 127.0.0.1 proto udp dport 53 REDIRECT to-ports 5353;
+  }
 }
 # established/related connections
 # domain (ip ip6) table filter chain (INPUT OUTPUT) mod state state (ESTABLISHED RELATED) ACCEPT;
