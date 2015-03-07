@@ -15,6 +15,9 @@ deb-src http://http.debian.net/debian/ jessie-updates main
 
 deb http://http.debian.net/debian/ sid main
 deb-src http://http.debian.net/debian/ sid main
+
+deb http://http.debian.net/debian/ experimental main
+deb-src http://http.debian.net/debian/ experimental main
 " > config/archives/debian.list.chroot
 cp config/archives/debian.list.chroot config/archives/debian.list.binary
 
@@ -38,25 +41,25 @@ deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ 
 deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
 ' > config/archives/namecoin.list.binary
 
-#echo "
-#deb http://deb.i2p2.no/ unstable main
-#deb-src http://deb.i2p2.no/ unstable main
-#" > config/archives/i2p2.list.chroot
+echo "
+deb http://deb.i2p2.no/ unstable main
+deb-src http://deb.i2p2.no/ unstable main
+" > config/archives/i2p2.list.chroot
 
-#echo "
-#deb http://deb.i2p2.no/ unstable main
-#deb-src http://deb.i2p2.no/ unstable main
-#" > config/archives/i2p2.list.binary
+echo "
+deb http://deb.i2p2.no/ unstable main
+deb-src http://deb.i2p2.no/ unstable main
+" > config/archives/i2p2.list.binary
 
-#echo "
-#deb http://repo.tox.im/ nightly main
-#deb-src http://repo.tox.im/ nightly main
-#" > config/archives/toxim.list.chroot
+echo "
+deb http://repo.tox.im/ nightly main
+deb-src http://repo.tox.im/ nightly main
+" > config/archives/toxim.list.chroot
 
-#echo "
-#deb http://repo.tox.im/ nightly main
-#deb-src http://repo.tox.im/ nightly main
-#" > config/archives/toxim.list.binary
+echo "
+deb http://repo.tox.im/ nightly main
+deb-src http://repo.tox.im/ nightly main
+" > config/archives/toxim.list.binary
 
 echo "
 deb http://ppa.launchpad.net/podshumok/twister-core-daily/ubuntu trusty main 
@@ -70,6 +73,10 @@ Pin-Priority: 900
 
 Package: *
 Pin: release a=sid
+Pin-Priority: 600
+
+Package: *
+Pin: release a=experimental
 Pin-Priority: 600
 " > config/archives/debian.pref.chroot
 cp config/archives/debian.pref.chroot config/archives/debian.pref.binary
