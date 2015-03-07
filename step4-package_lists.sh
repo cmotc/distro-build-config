@@ -229,5 +229,7 @@ xul-ext-useragentswitcher
 youtube-dl				
 " > config/package-lists/Packages.list.chroot
 cp config/package-lists/Packages.list.chroot config/package-lists/Packages.list.binary
-
+echo "apt-transport-https
+apt-transport-tor
+" > config/package-lists/Packages.list.bootstrap
 #echo -n 'APT::Default-Release "jessie";'> config/apt/apt.conf
