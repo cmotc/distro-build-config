@@ -146,9 +146,9 @@ harden-development
 harden-tools		
 hardening-includes			
 hexchat					
-#i2p					
-#i2p-keyring				
-#i2p-router				
+i2p					
+i2p-keyring				
+i2p-router				
 icedove					
 icedove-dispmua				
 icedtea-6-jre-cacao:amd64		
@@ -173,7 +173,6 @@ live-manual-html
 lynx					
 lynx-cur				
 macchanger				
-
 nufw
 pidcat					
 pidgin					
