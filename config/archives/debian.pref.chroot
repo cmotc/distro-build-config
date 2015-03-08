@@ -8,5 +8,5 @@ Pin-Priority: 600
 
 Package: *
 Pin: release a=experimental
-Pin-Priority: 600
+Pin-Priority: 500
 

@@ -77,7 +77,7 @@ Pin-Priority: 600
 
 Package: *
 Pin: release a=experimental
-Pin-Priority: 600
+Pin-Priority: 500
 " > config/archives/debian.pref.chroot
 cp config/archives/debian.pref.chroot config/archives/debian.pref.binary
 
