@@ -10,16 +10,16 @@ cp -p /usr/share/doc/apt-transport-https/copyright config/includes.bootstrap/usr
 ls -la config/includes.bootstrap/usr/share/doc/apt-transport-https/
 
 mkdir -p config/includes.bootstrap/usr/lib/x86_64-linux-gnu
-#cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.3 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.3
-#cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4
-#cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.3.0 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.3.0
+cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.3 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.3
+cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4
+cp -p /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.3.0 /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4.3.0
 ls -la config/includes.bootstrap/usr/lib/x86_64-linux-gnu
 mkdir -p config/includes.bootstrap/usr/share/doc/libcurl3-gnutls 
-#cp -p /usr/share/doc/libcurl3-gnutls/NEWS.Debian.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/NEWS.Debian.gz
-#cp -p /usr/share/doc/libcurl3-gnutls/changelog.Debian.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/changelog.Debian.gz
-#cp -p /usr/share/doc/libcurl3-gnutls/changelog.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/changelog.gz
-#cp -p /usr/share/doc/libcurl3-gnutls/copyright config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/copyright
+cp -p /usr/share/doc/libcurl3-gnutls/NEWS.Debian.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/NEWS.Debian.gz
+cp -p /usr/share/doc/libcurl3-gnutls/changelog.Debian.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/changelog.Debian.gz
+cp -p /usr/share/doc/libcurl3-gnutls/changelog.gz config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/changelog.gz
+cp -p /usr/share/doc/libcurl3-gnutls/copyright config/includes.bootstrap/usr/share/doc/libcurl3-gnutls/copyright
 ls -la config/includes.bootstrap/usr/share/doc/libcurl3-gnutls 
 mkdir -p config/includes.bootstrap/usr/share/lintian/overrides 
-#cp -p /usr/share/lintian/overrides/libcurl3-gnutls config/includes.bootstrap/usr/share/lintian/overrides/libcurl3-gnutls
+cp -p /usr/share/lintian/overrides/libcurl3-gnutls config/includes.bootstrap/usr/share/lintian/overrides/libcurl3-gnutls
 ls -la config/includes.bootstrap/usr/share/lintian/overrides
