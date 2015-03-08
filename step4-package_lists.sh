@@ -41,6 +41,7 @@ debhelper
 debian-archive-keyring			
 debian-faq				
 debian-keyring				
+deb.torproject.org-keyring
 debianutils				
 debootstrap				
 default-jre				
@@ -160,6 +161,7 @@ iceweasel
 imagemagick				
 imagemagick-6.q16			
 imagemagick-common	
+killyourtv-keyring	
 liferea					
 liferea-data				
 lightsoff				
