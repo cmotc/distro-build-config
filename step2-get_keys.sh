@@ -15,9 +15,9 @@ echo ":'
 ###Downloading the i2p repository keys
 '"
 
-#torsocks wget https://geti2p.net/_static/i2p-debian-repo.key.asc -O config/archives/i2p2.asc
-#mv config/archives/i2p2.asc config/archives/i2p2.list.key.chroot
-#cp config/archives/i2p2.list.key.chroot config/archives/i2p2.list.key.binary
+torsocks wget https://geti2p.net/_static/i2p-debian-repo.key.asc -O config/archives/i2p2.asc
+mv config/archives/i2p2.asc config/archives/i2p2.list.key.chroot
+cp config/archives/i2p2.list.key.chroot config/archives/i2p2.list.key.binary
 
 echo ":'
 ###Downloading the namecoin repository keys
@@ -30,8 +30,8 @@ echo ":'
 ###Downloading the Tox.im repository keys
 '"
 
-#torsocks wget https://repo.tox.im/pubkey.gpg -O config/archives/toxim.list.key.chroot
-#cp config/archives/toxim.list.key.chroot config/archives/toxim.list.key.binary
+torsocks wget https://repo.tox.im/pubkey.gpg -O config/archives/toxim.list.key.chroot
+cp config/archives/toxim.list.key.chroot config/archives/toxim.list.key.binary
 
 echo ":'
 ###Downloading the Twister repository keys
