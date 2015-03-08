@@ -209,7 +209,7 @@ turpial
 twister-core				
 unetbootin				
 unetbootin-translations			
-#utox
+utox
 w3af					
 w3af-console				
 wifite					
