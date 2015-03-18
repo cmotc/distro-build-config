@@ -7,8 +7,8 @@ echo "
 deb https://mirror.cse.unsw.edu.au/debian/ jessie main
 deb-src https://mirror.cse.unsw.edu.au/debian/ jessie main
 
-deb http://security.debian.org/ jessie/updates main
-deb-src http://security.debian.org/ jessie/updates main
+deb https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
+deb-src https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
 
 deb https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
 deb-src https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
