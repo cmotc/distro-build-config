@@ -56,10 +56,13 @@ domain (ip ip6){
       daddr 127.0.0.1 proto (udp) dport (1900 29333 60177) ACCEPT;
       #White-list access for Tox
       daddr 127.0.0.1 proto (tcp udp) dport (55166 55167 55526 55177 55184) ACCEPT;
+      #OK so I am going to make it difficult for you here. If you ABSOLUTELY
+      #need to access the clearnet, uncomment the following 3 lines or compose
+      #your own rules.
       #White-list access for common clearnet services
-      proto (tcp udp) dport 53 ACCEPT;
-      proto tcp dport (7 ftp http https ssh smtp whois 995 465 5222 5223 8010 5060 7078 9078) ACCEPT;
-      proto (tcp udp) dport 33434 ACCEPT;
+      #proto (tcp udp) dport 53 ACCEPT;
+      #proto tcp dport (7 ftp http https ssh smtp whois 995 465 5222 5223 8010 5060 7078 9078) ACCEPT;
+      #proto (tcp udp) dport 33434 ACCEPT;
       outerface lo{
 	ACCEPT;
       }
