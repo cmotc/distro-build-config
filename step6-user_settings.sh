@@ -1106,6 +1106,17 @@ echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 </FileZilla3>
 ' > config/includes.chroot/etc/skel/.filezilla/filezilla.xml
 
+echo '[http]
+	proxy = http://127.0.0.1:8118
+[https]
+	proxy = https://127.0.0.1:8118
+[merge]
+	renamelimit = 15891
+[user]
+	name = cmotc
+	email = cmotc@openmailbox.org
+' > config/includes.chroot/etc/skel/.gitconfig
+
 mkdir -p config/includes.chroot/usr/share/applications
 echo '[Desktop Entry]
 Name=Conky
