@@ -1105,3 +1105,13 @@ echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
     </Settings>
 </FileZilla3>
 ' > config/includes.chroot/etc/skel/.filezilla/filezilla.xml
+
+mkdir -p config/includes.chroot/usr/share/applications
+echo '[Desktop Entry]
+Name=Conky
+Comment=desktop monitoring software
+Exec=conkydesktop
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;
+' > config/includes.chroot/usr/share/applications/conky.desktop
