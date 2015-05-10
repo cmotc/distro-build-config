@@ -420,4 +420,4 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
-' 
+' > config/includes.chroot/etc/ssh/ssh_config
