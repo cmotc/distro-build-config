@@ -1,4 +1,4 @@
 
-deb http://repo.tox.im/ nightly main
-deb-src http://repo.tox.im/ nightly main
+deb https://repo.tox.im/ nightly main
+deb-src https://repo.tox.im/ nightly main
 
