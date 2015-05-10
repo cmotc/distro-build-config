@@ -365,6 +365,7 @@ pastebin.com 190.93.243.15
 wikipedia.org 208.80.152.201
 ' > config/includes.chroot/etc/hosts
 
+mkdir -p config/includes.chroot/etc/ssh/
 echo '
 # This is the ssh client system-wide configuration file.  See
 # ssh_config(5) for more information.  This file provides defaults for
