@@ -1,0 +1,117 @@
+#!/bin/bash
+
+# LOAD CONFIGURATION:
+if [ -r config/freepto ]; then
+  echo "Reading freepto configuration file...." >&2
+  . config/freepto
+fi
+if [ -r config/freepto.local ]; then
+  echo "Reading freepto local configuration file...." >&2
+  . config/freepto.local
+fi
+
+# DEFINE FUNCTION:
+_check_dependencies(){
+    fdisk -v | grep util-linux >/dev/null 2>&1
+    if [ $? -eq 1 ]; then
+        echo "Please install util-linux and/or remove gnu-fdisk"
+        exit 1
+    fi
+}
+
+_persistence() {
+    if [ ! -e $IMG ]; then exit 1; fi
+
+    fdisk -l $IMG
+    dd if=/dev/zero bs=$((1024*1024)) count=$SIZE >> $IMG
+    fdisk $IMG <<EOF
+n
+p
+
+
+
+w
+EOF
+    fdisk -l $IMG
+
+    if [ ! -d /mnt/loop ];
+    then
+        mkdir /mnt/loop
+        mountpoint="/mnt/loop"
+    else
+        mountpoint="/mnt/loop"
+    fi
+
+    kpartx -a -f -s -v $IMG
+
+    persistence_loop=`kpartx -l $IMG | grep p2 | awk '{print $1}'`
+
+    cryptsetup --verbose --batch-mode --key-size 512 --hash sha512 --cipher aes-xts-plain --use-random luksFormat /dev/mapper/${persistence_loop} <<<${PASSPHRASE} || exit 1
+    cryptsetup luksOpen /dev/mapper/${persistence_loop} persistence <<<${PASSPHRASE}
+    mkfs.ext4 -q -L persistence /dev/mapper/persistence
+    mount /dev/mapper/persistence ${mountpoint} -o noatime,nodiratime
+    echo "/ union" > "${mountpoint}/persistence.conf"
+    sync
+    umount ${mountpoint}
+    cryptsetup luksClose /dev/mapper/persistence
+
+    kpartx -d $IMG
+}
+
+_build_packages() {
+	mkdir -p config/packages.chroot/
+	find -L pkgs -maxdepth 2 -type f -name '*.deb' -delete
+	find -L pkgs -maxdepth 1 -mindepth 1 -type d | \
+		while read pkg; do
+			_build_package "$pkg" || return 1
+			if [[ "$?" -ne 0 ]]; then
+				echo "ERROR: build for package $pkg failed" >&2
+			fi
+			echo "### Installing deb for $pkg"
+			debs=$(find -L pkgs -maxdepth 2 -type f -name '*.deb' -print)
+			if [[ -z "$debs" ]]; then
+				echo "Error: after building $pkg there is no deb" >&2
+				return 2
+			fi
+            		for deb in $debs; do
+    				mv -f "$deb" "config/packages.chroot/"
+		        done
+		done
+}
+
+_build_package() {
+	olddir=$(pwd)
+	dir=$1
+	echo "### Build pkg in $dir"
+	cd "$dir"
+	set -e
+	old_proxy=$http_proxy
+	export http_proxy=
+	if [ -x make_deb ]; then
+		./make_deb
+	elif [ -f deb ]; then
+		equivs-build deb
+	elif [ -d debian ]; then                                                
+		debuild -i -F                   
+	fi
+	http_proxy=$old_proxy
+	cd "$olddir"
+}
+
+if [[ -d pkgs/ ]]; then
+	set -o pipefail
+	echo "### Build sub-packages"
+	_build_packages 2>&1 | tee pkgs.log
+	if [ $? -ne 0 ]; then
+		echo "Error: Failure at build-packages phase" >&2
+		exit 1
+	fi
+fi
+# CREATE IMG:
+lb build noauto "${@}" 2>&1 | tee build.log
+
+# CREATE PERSISTENCE:
+if [ "$PERSISTENCE" -eq 1 ]; then
+    _check_dependencies 2>&1 | tee -a build.log
+    _persistence 2>&1 | tee -a build.log
+fi
