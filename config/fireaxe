@@ -16,7 +16,7 @@ LIVE_BUILD_VERSION="`dpkg -p live-build | grep Version | awk '{print $2}'`"
 GIT_DESCRIBE="`git describe`"
 
 FIREAXE_RELEASE="1.0"
-FIREAXE_CODENAME="berenjena"
+FIREAXE_CODENAME="jean"
 
 # [auto/build]
 
