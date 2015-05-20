@@ -344,7 +344,7 @@ thehackernews.com 104.28.11.26
 google.com 74.125.157.99
 youtube.com 74.125.65.91
 github.com 207.97.227.239
- 
+
 # Torrent sites
 thepiratebay.se 108.162.193.114
 isohunt.to 198.41.190.233
@@ -355,7 +355,7 @@ facebook.com 69.171.224.11
 twitter.com 199.59.149.230
 tumblr.com 174.121.194.34
 reddit.com 198.41.208.139
- 
+
 # Shopping
 amazon.com 72.21.211.176
 newegg.com 216.52.208.187
@@ -370,6 +370,7 @@ wikipedia.org 208.80.152.201
 instructables.com 74.50.63.27
 archive.org 207.241.224.2
 cs50.tv 54.165.13.102
+hackaday.com 192.0.79.32
 
 ' > config/includes.chroot/etc/hosts
 
