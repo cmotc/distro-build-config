@@ -360,7 +360,7 @@ reddit.com 198.41.208.139
 amazon.com 72.21.211.176
 newegg.com 216.52.208.187
 frys.com 209.31.22.39
- 
+
 # File Sharing
 pastebin.com 190.93.243.15
 
