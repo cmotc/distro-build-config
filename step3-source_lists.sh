@@ -53,12 +53,10 @@ deb-src https://deb.i2p2.no/ unstable main
 
 echo "
 deb https://repo.tox.im/ nightly main
-deb-src https://repo.tox.im/ nightly main
 " > config/archives/toxim.list.chroot
 
 echo "
 deb https://repo.tox.im/ nightly main
-deb-src https://repo.tox.im/ nightly main
 " > config/archives/toxim.list.binary
 
 echo "

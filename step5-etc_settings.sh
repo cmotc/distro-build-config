@@ -332,13 +332,14 @@ mkdir -p config/includes.chroot/etc/skel/.mozilla/firefox
 cp -r live.profile config/includes.chroot/etc/skel/.mozilla/firefox/live.profile
 
 echo '#IP list
-
 # News
 theguardian.com 77.91.251.10
 firstlook.org 4.53.16.143
 bbc.co.uk 212.58.241.131
 aljazeera.com 198.78.201.252
- 
+rt.com 62.213.85.4
+thehackernews.com 104.28.11.26
+
 # Social media
 google.com 74.125.157.99
 youtube.com 74.125.65.91
@@ -347,11 +348,13 @@ github.com 207.97.227.239
 # Torrent sites
 thepiratebay.se 108.162.193.114
 isohunt.to 198.41.190.233
- 
+kickass.to 68.71.58.34
+
 # Social networking
 facebook.com 69.171.224.11
 twitter.com 199.59.149.230
 tumblr.com 174.121.194.34
+reddit.com 198.41.208.139
  
 # Shopping
 amazon.com 72.21.211.176
@@ -363,6 +366,11 @@ pastebin.com 190.93.243.15
 
 # Information and Education
 wikipedia.org 208.80.152.201
+2600.com 166.84.5.162
+instructables.com 74.50.63.27
+archive.org 207.241.224.2
+cs50.tv 54.165.13.102
+
 ' > config/includes.chroot/etc/hosts
 
 mkdir -p config/includes.chroot/etc/ssh/
@@ -422,3 +430,18 @@ Host *
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
 ' > config/includes.chroot/etc/ssh/ssh_config
+
+#macchanger settings
+echo '
+#!/bin/bash
+# Disable the network devices
+ifconfig eth0 down
+ifconfig wlan0 down
+# Spoof the mac addresses
+/usr/bin/macchanger -r eth0
+/usr/bin/macchanger -r wlan0
+# Re-enable the devices
+ifconfig eth0 up
+ifconfig wlan0 up
+' > config/includes.chroot/etc/rc.local
+chmod +x config/includes.chroot/etc/rc.local
