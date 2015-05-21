@@ -1,12 +1,9 @@
-aircrack-ng
 curl
 git
 nmap
 rat
-reaver
 w3af
 w3af-console
-wifite
 transmission-common
 transmission-gtk
 wget
