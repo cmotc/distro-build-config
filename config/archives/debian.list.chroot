@@ -1,12 +1,12 @@
 
-deb http://http.debian.net/debian/ jessie main
-deb-src http://http.debian.net/debian/ jessie main
+#deb http://http.debian.net/debian/ jessie main
+#deb-src http://http.debian.net/debian/ jessie main
 
 deb http://http.debian.net/debian-security/ jessie/updates main
 deb-src http://http.debian.net/debian-security/ jessie/updates main
 
-#deb http://http.debian.net/debian/ jessie-updates main
-#deb-src http://http.debian.net/debian/ jessie-updates main
+deb http://http.debian.net/debian/ jessie-updates main
+deb-src http://http.debian.net/debian/ jessie-updates main
 
 deb http://http.debian.net/debian/ sid main
 deb-src http://http.debian.net/debian/ sid main
