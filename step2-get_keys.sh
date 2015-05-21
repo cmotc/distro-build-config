@@ -23,11 +23,11 @@ echo ":'
 ###Downloading the namecoin repository keys
 '"
 
-wget http://download.opensuse.org/repositories/home:p_conrad:coins/Debian_7.0/Release.key -O config/archives/namecoin.list.key.chroot
+wget http://download.opensuse.org/repositories/home:p_conrad:coins/Debian_8.0/Release.key -O config/archives/namecoin.list.key.chroot
 cp config/archives/namecoin.list.key.chroot config/archives/namecoin.list.key.binary
 
 echo ":'
-###Downloading the namecoin repository keys
+###Downloading the freepto repository keys
 '"
 
 wget https://github.com/boyska/freepto-lb/blob/r-berenjena/config/archives/freepto.list.key.chroot -O config/archives/freepto.list.key.chroot
