@@ -7,7 +7,7 @@ LINUX_FLAVOURS='amd64 486'
 LOCALE='en_US.UTF-8'
 ZONE='Europe/Rome'
 KEYMAP='it'
-MIRROR='https://mirror.cse.unsw.edu.au/debian/'
+MIRROR='http://http.debian.net/debian/'
 HDD_LABEL="FIREAXE"
 
 BUILDING_DATE="`date '+%Y%m%d'`"
