@@ -14,6 +14,7 @@ dpkg-dev
 gcc
 g++
 gedit
+git
 libc6-dev
 libc6-dbg
 libsodium-dev

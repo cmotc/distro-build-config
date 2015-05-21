@@ -27,6 +27,12 @@ wget http://download.opensuse.org/repositories/home:p_conrad:coins/Debian_7.0/Re
 cp config/archives/namecoin.list.key.chroot config/archives/namecoin.list.key.binary
 
 echo ":'
+###Downloading the namecoin repository keys
+'"
+
+wget https://github.com/boyska/freepto-lb/blob/r-berenjena/config/archives/freepto.list.key.chroot -O config/archives/freepto.list.key.chroot
+
+echo ":'
 ###Downloading the Tox.im repository keys
 '"
 
