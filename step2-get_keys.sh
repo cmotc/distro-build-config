@@ -31,6 +31,7 @@ echo ":'
 '"
 
 wget https://github.com/boyska/freepto-lb/blob/r-berenjena/config/archives/freepto.list.key.chroot -O config/archives/freepto.list.key.chroot
+cp config/archives/freepto.list.key.chroot config/archives/freepto.list.key.binary
 
 echo ":'
 ###Downloading the Tox.im repository keys

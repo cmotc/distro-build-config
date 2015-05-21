@@ -41,6 +41,10 @@ deb http://deb.freepto.mx/freeptorepo berenjena main
 ' > config/archives/freepto.list.chroot
 
 echo '
+deb http://deb.freepto.mx/freeptorepo berenjena main
+' > config/archives/freepto.list.binary
+
+echo '
 deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
 deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7.0/ /
 ' > config/archives/namecoin.list.binary
