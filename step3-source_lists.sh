@@ -42,21 +42,21 @@ deb-src http://download.opensuse.org/repositories/home:/p_conrad:/coins/Debian_7
 ' > config/archives/namecoin.list.binary
 
 echo "
-deb https://deb.i2p2.no/ unstable main
-deb-src https://deb.i2p2.no/ unstable main
+deb http://deb.i2p2.no/ unstable main
+deb-src http://deb.i2p2.no/ unstable main
 " > config/archives/i2p2.list.chroot
 
 echo "
-deb https://deb.i2p2.no/ unstable main
-deb-src https://deb.i2p2.no/ unstable main
+deb http://deb.i2p2.no/ unstable main
+deb-src http://deb.i2p2.no/ unstable main
 " > config/archives/i2p2.list.binary
 
 echo "
-deb https://repo.tox.im/ nightly main
+deb http://repo.tox.im/ nightly main
 " > config/archives/toxim.list.chroot
 
 echo "
-deb https://repo.tox.im/ nightly main
+deb http://repo.tox.im/ nightly main
 " > config/archives/toxim.list.binary
 
 echo "
