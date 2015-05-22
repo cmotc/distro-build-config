@@ -1,8 +1,3 @@
-#! /bin/sh
-echo ":'
-##Generating the package lists
-'"
-
 echo "
 
 aptly
