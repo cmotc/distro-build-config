@@ -75,6 +75,7 @@ lb config noauto \
     --system live \
     --hdd-label $HDD_LABEL \
     --apt-source-archives false \
+    --apt-options="APT::Force-LoopBreak;" \
     --debian-installer true \
     --debian-installer-gui false \
     --bootappend-install noprompt \
