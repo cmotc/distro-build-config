@@ -11,13 +11,13 @@
 # if running bash
 if [ -n "" ]; then
     # include .bashrc if it exists
-    if [ -f "/home/dyngar-m/.bashrc" ]; then
-	. "/home/dyngar-m/.bashrc"
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
     fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "/home/dyngar-m/bin" ] ; then
-    export PATH="/home/dyngar-m/bin:/usr/arm-linux-androideabi/bin:/home/dyngar-m/.bin/android-ndk-r10d:/home/dyngar-m/.bin/android-sdk/tools:/home/dyngar-m/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+if [ -d "$HOME/.bin" ] ; then
+    export PATH="/usr/arm-linux-androideabi/bin:$HOME/.bin/android-ndk-r10d:$HOME/.bin/android-sdk/tools:$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 fi
 
