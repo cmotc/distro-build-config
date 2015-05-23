@@ -1,6 +1,0 @@
-
-deb https://mirror.cse.unsw.edu.au/debian/ sid main
-deb-src https://mirror.cse.unsw.edu.au/debian/ sid main
-
-deb https://mirror.cse.unsw.edu.au/debian/ experimental main
-deb-src https://mirror.cse.unsw.edu.au/debian/ experimental main
