@@ -8,7 +8,10 @@ I plan to include uTox for instant messaging, Twisterd for microblogging, and
 and i2p for networking. I don't actually particularly care about anonymity, but
 it's wierd and creepy that I have to rely on a service provider to contact my
 friends and I think you should have a choice how much information you convey and
-peer-to-peer technology seems to make that a bit more realistic.
+peer-to-peer technology seems to make that a bit more realistic. It also
+includes some mesh-netwoking utilities and some security testing tools, 
+eventually they(The security tools) will focus on testing distributed 
+applications and mesh networks.
 
 Some other packages that are likely to be included in the future are the Syndie
 distributed Forum/Blogging engine, the BitMessage e-mail replacement protocol,
