@@ -4,20 +4,20 @@ echo ":'
 '"
 
 echo "
-#deb http://http.debian.net/debian/ jessie main
-#deb-src http://http.debian.net/debian/ jessie main
+#deb https://mirror.cse.unsw.edu.au/debian/ jessie main
+#deb-src https://mirror.cse.unsw.edu.au/debian/ jessie main
 
-deb http://http.debian.net/debian-security/ jessie/updates main
-deb-src http://http.debian.net/debian-security/ jessie/updates main
+deb https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
+deb-src https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
 
-deb http://http.debian.net/debian/ jessie-updates main
-deb-src http://http.debian.net/debian/ jessie-updates main
+deb https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
+deb-src https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
 
-deb http://http.debian.net/debian/ sid main
-deb-src http://http.debian.net/debian/ sid main
+deb https://mirror.cse.unsw.edu.au/debian/ sid main
+deb-src https://mirror.cse.unsw.edu.au/debian/ sid main
 
-deb http://http.debian.net/debian/ experimental main
-deb-src http://http.debian.net/debian/ experimental main
+deb https://mirror.cse.unsw.edu.au/debian/ experimental main
+deb-src https://mirror.cse.unsw.edu.au/debian/ experimental main
 " > config/archives/debian.list.chroot
 cp config/archives/debian.list.chroot config/archives/debian.list.binary
 
