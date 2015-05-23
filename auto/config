@@ -75,7 +75,6 @@ lb config noauto \
     --system live \
     --hdd-label $HDD_LABEL \
     --apt-source-archives false \
-    --apt-options="APT::Force-LoopBreak;" \
     --debian-installer true \
     --debian-installer-gui false \
     --bootappend-install noprompt \
@@ -100,7 +99,7 @@ lb config noauto \
     --verbose \
     --archive-areas "main" \
     --apt-recommends true
-
+#    --apt-options="APT::Force-LoopBreak;" \
 cd config/package-lists
 
 LOCALE_PACKAGES="locale.list.chroot"
