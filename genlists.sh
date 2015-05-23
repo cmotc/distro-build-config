@@ -2,14 +2,16 @@ echo "
 
 aptly
 lighttpd
-openssl" >> config/package-lists/aptly.list.chroot
+openssl
+" > config/package-lists/aptly.list.chroot
 echo "
 
 blueman
 bluetooth
 bluewho
 pulseaudio-module-bluetooth
-pulseaudio-module-bluetooth-dbg" >> config/package-lists/bluetooth.list.chroot
+pulseaudio-module-bluetooth-dbg
+" > config/package-lists/bluetooth.list.chroot
 echo "
 
 anjuta
@@ -36,13 +38,15 @@ libsodium-dbg
 lintian
 make
 python-rope
-valac" >> config/package-lists/code.list.chroot
+valac
+" > config/package-lists/code.list.chroot
 echo "
 
 anoncoind
 bitcoind
 litecoind
-namecoin" >> config/package-lists/coins.list.chroot
+namecoin
+" > config/package-lists/coins.list.chroot
 echo "
 
 apt-transport-https
@@ -71,7 +75,8 @@ icedtea-6-jre-cacao:amd64
 icedtea-6-jre-jamvm:amd64
 icedtea-7-jre-jamvm:amd64
 icedtea-netx:amd64
-icedtea-netx-common" >> config/package-lists/debian.list.chroot
+icedtea-netx-common
+" > config/package-lists/debian.list.chroot
 echo "
 
 conky-std
@@ -138,7 +143,8 @@ gnome-user-guide
 gnome-user-share
 gnome-video-effects
 guake
-tomboy" >> config/package-lists/desktop.list.chroot
+tomboy
+" > config/package-lists/desktop.list.chroot
 echo "
 
 abiword
@@ -155,10 +161,26 @@ gnumeric-doc
 imagemagick
 imagemagick-6.q16
 imagemagick-common
-markdown" >> config/package-lists/documents.list.chroot
+markdown
+" > config/package-lists/documents.list.chroot
 echo "
 
-fdroidserver" >> config/package-lists/fdroid.list.chroot
+hydra
+john
+sqlmap
+sslscan
+sslsniff
+sslstrip
+thc-ipv6
+w3af
+w3af-console
+wireshark
+yersinia
+" > config/package-lists/exploit.list.chroot
+echo "
+
+fdroidserver
+" > config/package-lists/fdroid.list.chroot
 echo "
 
 macchanger
@@ -174,12 +196,13 @@ tortp-gtk
 python-tortp
 freepto-usb-utils
 freepto-certificates
-" >> config/package-lists/freepto.list.chroot
+" > config/package-lists/freepto.list.chroot
 echo "
 
 crawl-common
 crawl-tiles
-crawl-tiles-data" >> config/package-lists/games.list.chroot
+crawl-tiles-data
+" > config/package-lists/games.list.chroot
 echo "
 
 apparmor
@@ -192,13 +215,15 @@ harden-development
 harden-tools
 hardening-includes
 nufw
-rkhunter" >> config/package-lists/harden.list.chroot
+rkhunter
+" > config/package-lists/harden.list.chroot
 echo "
 
 i2p
 i2p-keyring
 i2p-router
-killyourtv-keyring" >> config/package-lists/i2p.list.chroot
+killyourtv-keyring
+" > config/package-lists/i2p.list.chroot
 echo "
 
 epiphany-browser
@@ -231,7 +256,8 @@ xul-ext-noscript
 xul-ext-perspectives
 xul-ext-refcontrol
 xul-ext-requestpolicy
-xul-ext-useragentswitcher" >> config/package-lists/internet.list.chroot
+xul-ext-useragentswitcher
+" > config/package-lists/internet.list.chroot
 echo "
 
 live-boot
@@ -240,24 +266,26 @@ live-build
 live-config
 live-config-doc
 live-config-systemd
-live-manual-html" >> config/package-lists/live.list.chroot
+live-manual-html
+" > config/package-lists/live.list.chroot
 echo "
 
 banshee
 totem
 totem-common
-totem-plugins" >> config/package-lists/media.list.chroot
+totem-plugins" > config/package-lists/media.list.chroot
 echo "
 
+batctl
+batmand
 curl
+horst
 nmap
-rat
-w3af
-w3af-console
 transmission-common
 transmission-gtk
 wget
-youtube-dl" >> config/package-lists/network.list.chroot
+youtube-dl
+" > config/package-lists/network.list.chroot
 echo "
 
 apg
@@ -269,7 +297,7 @@ gnupg2
 macchanger
 mat
 secure-delete
-" >> config/package-lists/paranoid.list.chroot
+" > config/package-lists/paranoid.list.chroot
 echo "
 
 twister-core
@@ -277,7 +305,8 @@ utox
 tox-bootstrapd
 libtoxcore
 libtoxcore-dev
-turpial" >> config/package-lists/social.list.chroot
+turpial
+" > config/package-lists/social.list.chroot
 echo "
 
 deb.torproject.org-keyring
@@ -286,15 +315,18 @@ tor
 tor-arm
 tor-geoipdb
 torsocks
-xul-ext-torbirdy" >> config/package-lists/tor.list.chroot
+xul-ext-torbirdy
+" > config/package-lists/tor.list.chroot
 echo "
 
 lshw
 unetbootin
 unetbootin-translations
-usbutils" >> config/package-lists/utils.list.chroot
+usbutils
+" > config/package-lists/utils.list.chroot
 echo "
 
 aircrack-ng
 reaver
-wifite" >> config/package-lists/wifi.list.chroot
+wifite
+" > config/package-lists/wifi.list.chroot

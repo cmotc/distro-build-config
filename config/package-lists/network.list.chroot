@@ -1,9 +1,12 @@
+
+
+batctl
+batmand
 curl
+horst
 nmap
-rat
-w3af
-w3af-console
 transmission-common
 transmission-gtk
 wget
 youtube-dl
+
