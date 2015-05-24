@@ -2,7 +2,7 @@
 
 blueman
 bluetooth
-bluewho
+#bluewho
 pulseaudio-module-bluetooth
 pulseaudio-module-bluetooth-dbg
 

@@ -5,10 +5,10 @@ apparmor-docs
 apparmor-profiles
 apparmor-utils
 ferm
-harden
-harden-development
-harden-tools
-hardening-includes
+#harden
+#harden-development
+#harden-tools
+#hardening-includes
 nufw
 rkhunter
 

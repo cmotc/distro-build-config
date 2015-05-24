@@ -22,8 +22,8 @@ dpkg-dev
 dpkg-sig
 default-jre
 default-jre-headless
-icedtea-6-jre-cacao:amd64
-icedtea-6-jre-jamvm:amd64
+#icedtea-6-jre-cacao:amd64
+#icedtea-6-jre-jamvm:amd64
 icedtea-7-jre-jamvm:amd64
 icedtea-netx:amd64
 icedtea-netx-common

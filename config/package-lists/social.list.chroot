@@ -3,7 +3,7 @@
 twister-core
 utox
 tox-bootstrapd
-libtoxcore
-libtoxcore-dev
+#libtoxcore
+#libtoxcore-dev
 turpial
 

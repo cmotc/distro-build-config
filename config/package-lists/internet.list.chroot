@@ -16,7 +16,7 @@ lynx
 lynx-cur
 pidgin
 pidgin-data
-pidgin-gnome-keyring
+#pidgin-gnome-keyring
 pidgin-otr
 xul-ext-adblock-plus
 xul-ext-certificatepatrol
