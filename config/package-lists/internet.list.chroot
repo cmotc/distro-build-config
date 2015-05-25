@@ -4,6 +4,8 @@
 
 
 
+
+
 epiphany-browser
 epiphany-browser-data
 enigmail
@@ -35,6 +37,7 @@ xul-ext-perspectives
 xul-ext-refcontrol
 xul-ext-requestpolicy
 xul-ext-useragentswitcher
+
 
 
 

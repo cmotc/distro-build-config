@@ -4,13 +4,18 @@ echo "
 
 
 
+
+
 aptly
 lighttpd
 openssl
 
 
+
 " > config/package-lists/aptly.list.chroot
 echo "
+
+
 
 
 
@@ -23,8 +28,11 @@ pulseaudio-module-bluetooth
 pulseaudio-module-bluetooth-dbg
 
 
+
 " > config/package-lists/bluetooth.list.chroot
 echo "
+
+
 
 
 
@@ -57,8 +65,11 @@ python-rope
 valac
 
 
+
 " > config/package-lists/code.list.chroot
 echo "
+
+
 
 
 
@@ -70,8 +81,11 @@ anoncoind
 namecoin
 
 
+
 " > config/package-lists/coins.list.chroot
 echo "
+
+
 
 
 
@@ -106,8 +120,11 @@ icedtea-netx:amd64
 icedtea-netx-common
 
 
+
 " > config/package-lists/debian.list.chroot
 echo "
+
+
 
 
 
@@ -180,8 +197,11 @@ guake
 tomboy
 
 
+
 " > config/package-lists/desktop.list.chroot
 echo "
+
+
 
 
 
@@ -204,8 +224,11 @@ imagemagick-common
 markdown
 
 
+
 " > config/package-lists/documents.list.chroot
 echo "
+
+
 
 
 
@@ -224,8 +247,11 @@ wireshark
 yersinia
 
 
+
 " > config/package-lists/exploit.list.chroot
 echo "
+
+
 
 
 
@@ -234,8 +260,11 @@ echo "
 fdroidserver
 
 
+
 " > config/package-lists/fdroid.list.chroot
 echo "
+
+
 
 
 
@@ -256,8 +285,11 @@ freepto-usb-utils
 freepto-certificates
 
 
+
 " > config/package-lists/freepto.list.chroot
 echo "
+
+
 
 
 
@@ -268,8 +300,11 @@ crawl-tiles
 crawl-tiles-data
 
 
+
 " > config/package-lists/games.list.chroot
 echo "
+
+
 
 
 
@@ -288,8 +323,11 @@ nufw
 rkhunter
 
 
+
 " > config/package-lists/harden.list.chroot
 echo "
+
+
 
 
 
@@ -301,8 +339,11 @@ i2p-router
 killyourtv-keyring
 
 
+
 " > config/package-lists/i2p.list.chroot
 echo "
+
+
 
 
 
@@ -341,8 +382,11 @@ xul-ext-requestpolicy
 xul-ext-useragentswitcher
 
 
+
 " > config/package-lists/internet.list.chroot
 echo "
+
+
 
 
 
@@ -357,8 +401,11 @@ live-config-systemd
 live-manual-html
 
 
+
 " > config/package-lists/live.list.chroot
 echo "
+
+
 
 
 
@@ -369,8 +416,11 @@ totem
 totem-common
 totem-plugins
 
+
 " > config/package-lists/media.list.chroot
 echo "
+
+
 
 
 
@@ -387,8 +437,11 @@ wget
 youtube-dl
 
 
+
 " > config/package-lists/network.list.chroot
 echo "
+
+
 
 
 
@@ -405,6 +458,7 @@ mat
 secure-delete
 
 
+
 " > config/package-lists/paranoid.list.chroot
 echo "
 
@@ -412,7 +466,9 @@ echo "
 
 
 
-twister-core
+
+
+#twister-core
 utox
 tox-bootstrapd
 #libtoxcore
@@ -420,8 +476,11 @@ tox-bootstrapd
 turpial
 
 
+
 " > config/package-lists/social.list.chroot
 echo "
+
+
 
 
 
@@ -436,8 +495,11 @@ torsocks
 xul-ext-torbirdy
 
 
+
 " > config/package-lists/tor.list.chroot
 echo "
+
+
 
 
 
@@ -449,8 +511,11 @@ lshw
 usbutils
 
 
+
 " > config/package-lists/utils.list.chroot
 echo "
+
+
 
 
 
@@ -459,6 +524,7 @@ echo "
 aircrack-ng
 reaver
 wifite
+
 
 
 " > config/package-lists/wifi.list.chroot
