@@ -1,18 +1,34 @@
 echo "
 
+
+
+
+
 aptly
 lighttpd
 openssl
+
+
 " > config/package-lists/aptly.list.chroot
 echo "
 
+
+
+
+
 blueman
 bluetooth
-bluewho
+#bluewho
 pulseaudio-module-bluetooth
 pulseaudio-module-bluetooth-dbg
+
+
 " > config/package-lists/bluetooth.list.chroot
 echo "
+
+
+
+
 
 anjuta
 anjuta-common
@@ -39,15 +55,27 @@ lintian
 make
 python-rope
 valac
+
+
 " > config/package-lists/code.list.chroot
 echo "
 
+
+
+
+
 anoncoind
-bitcoind
-litecoind
+#bitcoind
+#litecoind
 namecoin
+
+
 " > config/package-lists/coins.list.chroot
 echo "
+
+
+
+
 
 apt-transport-https
 apt-transport-tor
@@ -71,13 +99,19 @@ dpkg-dev
 dpkg-sig
 default-jre
 default-jre-headless
-icedtea-6-jre-cacao:amd64
-icedtea-6-jre-jamvm:amd64
+#icedtea-6-jre-cacao:amd64
+#icedtea-6-jre-jamvm:amd64
 icedtea-7-jre-jamvm:amd64
 icedtea-netx:amd64
 icedtea-netx-common
+
+
 " > config/package-lists/debian.list.chroot
 echo "
+
+
+
+
 
 conky-std
 desktop-base
@@ -144,8 +178,14 @@ gnome-user-share
 gnome-video-effects
 guake
 tomboy
+
+
 " > config/package-lists/desktop.list.chroot
 echo "
+
+
+
+
 
 abiword
 abiword-common
@@ -162,12 +202,18 @@ imagemagick
 imagemagick-6.q16
 imagemagick-common
 markdown
+
+
 " > config/package-lists/documents.list.chroot
 echo "
 
+
+
+
+
 hydra
 john
-sqlmap
+#sqlmap
 sslscan
 sslsniff
 sslstrip
@@ -176,12 +222,24 @@ w3af
 w3af-console
 wireshark
 yersinia
+
+
 " > config/package-lists/exploit.list.chroot
 echo "
 
+
+
+
+
 fdroidserver
+
+
 " > config/package-lists/fdroid.list.chroot
 echo "
+
+
+
+
 
 macchanger
 bleachbit
@@ -189,42 +247,66 @@ florence
 parcimonie
 freepto-passwords-changer
 tomb
-torbrowser-launcher
+#torbrowser-launcher
 tortp
 python-stem
 tortp-gtk
 python-tortp
 freepto-usb-utils
 freepto-certificates
+
+
 " > config/package-lists/freepto.list.chroot
 echo "
+
+
+
+
 
 crawl-common
 crawl-tiles
 crawl-tiles-data
+
+
 " > config/package-lists/games.list.chroot
 echo "
+
+
+
+
 
 apparmor
 apparmor-docs
 apparmor-profiles
 apparmor-utils
 ferm
-harden
-harden-development
-harden-tools
-hardening-includes
+#harden
+#harden-development
+#harden-tools
+#hardening-includes
 nufw
 rkhunter
+
+
 " > config/package-lists/harden.list.chroot
 echo "
+
+
+
+
 
 i2p
 i2p-keyring
 i2p-router
 killyourtv-keyring
+
+
 " > config/package-lists/i2p.list.chroot
 echo "
+
+
+
+
 
 epiphany-browser
 epiphany-browser-data
@@ -242,7 +324,7 @@ lynx
 lynx-cur
 pidgin
 pidgin-data
-pidgin-gnome-keyring
+#pidgin-gnome-keyring
 pidgin-otr
 xul-ext-adblock-plus
 xul-ext-certificatepatrol
@@ -257,8 +339,14 @@ xul-ext-perspectives
 xul-ext-refcontrol
 xul-ext-requestpolicy
 xul-ext-useragentswitcher
+
+
 " > config/package-lists/internet.list.chroot
 echo "
+
+
+
+
 
 live-boot
 live-boot-doc
@@ -267,14 +355,26 @@ live-config
 live-config-doc
 live-config-systemd
 live-manual-html
+
+
 " > config/package-lists/live.list.chroot
 echo "
+
+
+
+
 
 banshee
 totem
 totem-common
-totem-plugins" > config/package-lists/media.list.chroot
+totem-plugins
+
+" > config/package-lists/media.list.chroot
 echo "
+
+
+
+
 
 batctl
 batmand
@@ -285,8 +385,14 @@ transmission-common
 transmission-gtk
 wget
 youtube-dl
+
+
 " > config/package-lists/network.list.chroot
 echo "
+
+
+
+
 
 apg
 bleachbit
@@ -297,17 +403,29 @@ gnupg2
 macchanger
 mat
 secure-delete
+
+
 " > config/package-lists/paranoid.list.chroot
 echo "
+
+
+
+
 
 twister-core
 utox
 tox-bootstrapd
-libtoxcore
-libtoxcore-dev
+#libtoxcore
+#libtoxcore-dev
 turpial
+
+
 " > config/package-lists/social.list.chroot
 echo "
+
+
+
+
 
 deb.torproject.org-keyring
 privoxy
@@ -316,17 +434,31 @@ tor-arm
 tor-geoipdb
 torsocks
 xul-ext-torbirdy
+
+
 " > config/package-lists/tor.list.chroot
 echo "
 
+
+
+
+
 lshw
-unetbootin
-unetbootin-translations
+#unetbootin
+#unetbootin-translations
 usbutils
+
+
 " > config/package-lists/utils.list.chroot
 echo "
+
+
+
+
 
 aircrack-ng
 reaver
 wifite
+
+
 " > config/package-lists/wifi.list.chroot
