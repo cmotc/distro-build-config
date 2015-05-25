@@ -1,0 +1,109 @@
+#! /bin/sh
+echo 'echo "
+' > genlists.sh
+cat config/package-lists/aptly.list.chroot >> genlists.sh
+echo '" > config/package-lists/aptly.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/bluetooth.list.chroot >> genlists.sh
+echo '" > config/package-lists/bluetooth.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/code.list.chroot >> genlists.sh
+echo '" > config/package-lists/code.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/coins.list.chroot >> genlists.sh
+echo '" > config/package-lists/coins.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/debian.list.chroot >> genlists.sh
+echo '" > config/package-lists/debian.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/desktop.list.chroot >> genlists.sh
+echo '" > config/package-lists/desktop.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/documents.list.chroot >> genlists.sh
+echo '" > config/package-lists/documents.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/exploit.list.chroot >> genlists.sh
+echo '" > config/package-lists/exploit.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/fdroid.list.chroot >> genlists.sh
+echo '" > config/package-lists/fdroid.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/freepto.list.chroot >> genlists.sh
+echo '" > config/package-lists/freepto.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/games.list.chroot >> genlists.sh
+echo '" > config/package-lists/games.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/harden.list.chroot >> genlists.sh
+echo '" > config/package-lists/harden.list.chroot' >> genlists.sh
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/i2p.list.chroot >> genlists.sh
+echo '" > config/package-lists/i2p.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/internet.list.chroot >> genlists.sh
+echo '" > config/package-lists/internet.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/live.list.chroot >> genlists.sh
+echo '" > config/package-lists/live.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/media.list.chroot >> genlists.sh
+echo '" > config/package-lists/media.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/network.list.chroot >> genlists.sh
+echo '" > config/package-lists/network.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/paranoid.list.chroot >> genlists.sh
+echo '" > config/package-lists/paranoid.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/social.list.chroot >> genlists.sh
+echo '" > config/package-lists/social.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/tor.list.chroot >> genlists.sh
+echo '" > config/package-lists/tor.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/utils.list.chroot >> genlists.sh
+echo '" > config/package-lists/utils.list.chroot' >> genlists.sh
+
+echo 'echo "
+' >> genlists.sh
+cat config/package-lists/wifi.list.chroot >> genlists.sh
+echo '" > config/package-lists/wifi.list.chroot' >> genlists.sh
