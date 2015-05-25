@@ -1,2 +1,2 @@
 #! /bin/sh
-./run-all.sh && ./step8-final_build.sh
+./run-all.sh && ./regen/step8-final_build.sh

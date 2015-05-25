@@ -62,6 +62,7 @@ EOF
 ## RUN LB CONFIG:
 
 lb config noauto \
+    -a amd64 \
     -b hdd \
     -d jessie \
     --initsystem systemd \
@@ -99,7 +100,6 @@ lb config noauto \
     --archive-areas "main" \
     --apt-recommends true
 #    --apt-options="APT::Force-LoopBreak;" \
-#    -a i386 \
 cd config/package-lists
 
 LOCALE_PACKAGES="locale.list.chroot"
