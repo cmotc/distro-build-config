@@ -32,6 +32,10 @@ $BLUE[i] Starting mesh mode:$ENDC
 	sudo ifconfig bat0 up
         sudo avahi-autoipd bat0
         echo " $GREEN*$ENDC enabled Avahi assignment on bat0"
+        echo "
+$BLUE[i] Mesh Mode Started:$ENDC
+"	
+
     ;;
     stop)
         # Make sure only root can run our script
@@ -50,7 +54,9 @@ $BLUE[i] Stopping mesh mode:$ENDC
 	sudo ifconfig wlan0 down
 	sudo batctl if del bat0
 	sudo iwconfig wlan0 mode managed
-	
+        echo "
+$BLUE[i] Mesh Mode Stopped:$ENDC
+"	
     ;;
     restart)
         $0 stop
