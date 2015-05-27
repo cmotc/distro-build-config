@@ -16,35 +16,22 @@ $RED[!] This script must be run as root$ENDC
 " >&2
           exit 1
         fi
-        
-        # Check torrc config file
-        grep -q -x 'VirtualAddrNetwork 10.192.0.0/10' /etc/tor/torrc
-        if [ $? -ne 0 ]; then
-            echo "
-$RED[!] Please add the following to your /etc/tor/torrc and restart service:$ENDC
-" >&2
-            echo "$BLUE#----------------------------------------------------------------------#$ENDC"
-            echo "$BLUE#----------------------------------------------------------------------#$ENDC
-"
-            exit 1
-        fi
-
         echo "
 $BLUE[i] Starting mesh mode:$ENDC
 "
-        
-        if [ ! -e /var/run/tor/tor.pid ]; then
-            echo " $RED*$ENDC Tor is not running! Quitting...
-" >&2
-            exit 1
-        fi
-        
-
-        echo 'nameserver 127.0.0.1' > /etc/resolv.conf
-        echo " $GREEN*$ENDC Modified resolv.conf"
-
-        echo "$BLUE[i] Are you using batman-adv?$ENDC
-"
+	sudo batctl if
+#        if [ ! -e /var/run/tor/tor.pid ]; then
+#            echo " $RED*$ENDC BATMAN-adv is not running! Quitting...
+#" >&2
+#            exit 1
+#        fi
+	sudo ifconfig wlan0 mtu 1532
+	sudo iwconfig wlan0 mode ad-hoc essid batmesh ap 02:12:34:56:78:9A channel 1
+        sudo batctl if add wlan0
+	sudo ifconfig wlan0 up
+	sudo ifconfig bat0 up
+        sudo avahi-autoipd bat0
+        echo " $GREEN*$ENDC enabled Avahi assignment on bat0"
     ;;
     stop)
         # Make sure only root can run our script
@@ -54,22 +41,16 @@ $RED[!] This script must be run as root$ENDC
 " >&2
           exit 1
         fi
-        
         echo "
 $BLUE[i] Stopping mesh mode:$ENDC
 "
-
-        echo 'nameserver 208.67.222.222' >  /etc/resolv.conf
-        echo 'nameserver 208.67.220.220' >> /etc/resolv.conf
-        echo " $GREEN*$ENDC Modified resolv.conf to use OpenDNS"
-        
-        iptables -F
-        iptables -t nat -F
-        echo " $GREEN*$ENDC Deleted all iptables rules
-"
-	sudo service ferm restart
-        echo " $GREEN*$ENDC Restarted system firewall
-"
+	sudo batctl if
+	sudo avahi-autoipd bat0 --kill
+	sudo ifconfig bat0 down
+	sudo ifconfig wlan0 down
+	sudo batctl if del bat0
+	sudo iwconfig wlan0 mode managed
+	
     ;;
     restart)
         $0 stop
