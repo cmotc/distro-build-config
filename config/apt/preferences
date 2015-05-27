@@ -46,3 +46,6 @@ Package: epdfview
 Pin: version *
 Pin-Priority: -1
 
+Package: libreoffice-*
+Pin: version *
+Pin-Priority: -1
