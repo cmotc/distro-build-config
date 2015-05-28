@@ -5,8 +5,8 @@
 USERNAME='paranoid'
 LINUX_FLAVOURS='amd64 486'
 LOCALE='en_US.UTF-8'
-ZONE='Europe/Rome'
-KEYMAP='it'
+ZONE='Canada/Eastern'
+KEYMAP='us'
 MIRROR='https://mirror.cse.unsw.edu.au/debian/'
 #MIRROR='http://http.debian.net/debian/'
 HDD_LABEL="FIREAXE"

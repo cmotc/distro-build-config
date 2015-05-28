@@ -99,7 +99,7 @@ lb config noauto \
     --verbose \
     --archive-areas "main" \
     --apt-recommends true
-#    --apt-options="APT::Force-LoopBreak;" \
+
 cd config/package-lists
 
 LOCALE_PACKAGES="locale.list.chroot"
