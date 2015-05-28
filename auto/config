@@ -63,7 +63,7 @@ EOF
 
 lb config noauto \
     -a amd64 \
-    -b hdd \
+    -b iso-hybrid \
     -d jessie \
     --initsystem systemd \
     --linux-flavours "$LINUX_FLAVOURS" \
