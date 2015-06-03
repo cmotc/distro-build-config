@@ -2,7 +2,7 @@ firmware-linux-free
 laptop-mode-tools
 gksu
 linux-image-amd64
-#linux-image-486
+
 sudo
 syslinux-common
 syslinux-efi
