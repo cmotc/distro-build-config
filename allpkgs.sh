@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #################
-# This script will populate a "aptly" repository with packages built from freepto
+# This script will populate a "aptly" repository with packages built from fireaxe
 # 
 #################
 
 tmp_repo=$1
 if [ -z "$tmp_repo" ]; then
-	tmp_repo="freepto_$(date '+%y%m%d%H%M')_$(git rev-parse HEAD | head -c 8)"
+	tmp_repo="fireaxe_$(date '+%y%m%d%H%M')_$(git rev-parse HEAD | head -c 8)"
 fi
 aptly repo create "$tmp_repo"
 putinrepo() {
@@ -19,13 +19,13 @@ reposummary() {
 }
 
 # LOAD CONFIGURATION:
-if [ -r config/freepto ]; then
-  echo "Reading freepto configuration file...." >&2
-  . config/freepto
+if [ -r config/fireaxe ]; then
+  echo "Reading fireaxe configuration file...." >&2
+  . config/fireaxe
 fi
-if [ -r config/freepto.local ]; then
-  echo "Reading freepto local configuration file...." >&2
-  . config/freepto.local
+if [ -r config/fireaxe.local ]; then
+  echo "Reading fireaxe local configuration file...." >&2
+  . config/fireaxe.local
 fi
 
 _build_packages() {
