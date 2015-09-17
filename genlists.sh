@@ -6,8 +6,6 @@ echo "
 
 
 
-
-
 aptly
 lighttpd
 openssl
@@ -146,7 +144,8 @@ echo "
 
 
 
-
+awesome
+awesome-wm
 conky-std
 desktop-base
 desktop-file-utils
@@ -563,7 +562,7 @@ firmware-linux-free
 laptop-mode-tools
 gksu
 linux-image-amd64
-linux-image-486
+
 sudo
 syslinux-common
 syslinux-efi
