@@ -6,12 +6,15 @@
 
 
 
+
+
 #twister-core
 utox
-tox-bootstrapd
+#tox-bootstrapd
 #libtoxcore
 #libtoxcore-dev
 turpial
+
 
 
 

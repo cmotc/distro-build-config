@@ -145,7 +145,7 @@ echo "
 
 
 awesome
-awesome-wm
+awesome-extra
 conky-std
 desktop-base
 desktop-file-utils
@@ -525,7 +525,7 @@ echo "
 
 #twister-core
 utox
-tox-bootstrapd
+#tox-bootstrapd
 #libtoxcore
 #libtoxcore-dev
 turpial
