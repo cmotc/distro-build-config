@@ -31,10 +31,10 @@ getLocale()
 {
     echo "Getting locales..."
     LOCALES=$(getLocales|sort)
-    tempfile=/tmp/freepto-locale
+    tempfile=/tmp/fireaxe-locale
 
     rm $tempfile
-    dialog --title "Select locale" --radiolist "Select the Freepto locale:" 0 0 0 $LOCALES 2> $tempfile
+    dialog --title "Select locale" --radiolist "Select the fireaxe locale:" 0 0 0 $LOCALES 2> $tempfile
     LOCALE=$(cat $tempfile)
     echo "$LOCALE"
 }
@@ -42,7 +42,7 @@ getLocale()
 getZone()
 {
     ZONES=$(getZones|sort)
-    dialog --title "Select zone" --radiolist "Select the Freepto zone:" 0 0 0 $ZONES
+    dialog --title "Select zone" --radiolist "Select the fireaxe zone:" 0 0 0 $ZONES
 
 }
 
