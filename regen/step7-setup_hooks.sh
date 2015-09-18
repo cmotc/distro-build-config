@@ -92,7 +92,7 @@ echo "#!/bin/sh
 # Instead, it is started with this hook script.
 
 # Import i2p_is_enabled().
-. /usr/local/lib/tails-shell-library/i2p.sh
+. /usr/local/lib/i2p-shell-library/i2p.sh
 
 # Don't even try to run this script if I2P is not enabled.
 i2p_is_enabled || exit 0
@@ -101,7 +101,7 @@ i2p_is_enabled || exit 0
 [ \$1 = \"lo\" ] && exit 0
 
 if [ \$2 = \"up\" ]; then
-    /usr/local/sbin/tails-i2p start &
+    /usr/local/sbin/i2p-i2p start &
 fi
 " > config/includes.chroot/etc/NetworkManager/dispatcher.d/30-i2p.sh
 chmod a+x config/includes.chroot/etc/NetworkManager/dispatcher.d/30-i2p.sh
