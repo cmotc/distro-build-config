@@ -526,7 +526,7 @@ echo "
 
 
 
-#twister-core
+twister-core
 utox
 #tox-bootstrapd
 #libtoxcore
@@ -572,7 +572,6 @@ syslinux-efi
 user-setup
 " > config/package-lists/system.list.chroot
 echo "
-
 
 
 

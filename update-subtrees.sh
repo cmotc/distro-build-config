@@ -1,12 +1,9 @@
 #! /bin/sh
 rm -rf pkgs/*
 
-git clone https://github.com/cmotc/freepto-certificates.git pkgs/certificates
-git clone https://github.com/cmotc/freepto-passwords-changer.git pkgs/freepto-passwords-changer
-git clone https://github.com/cmotc/freepto-usb-utils.git pkgs/freepto-usb-utils
-git clone https://github.com/cmotc/synclient-tools.git pkgs/synclient-tools
-git clone https://github.com/cmotc/Tomb.git pkgs/tomb
-git clone https://github.com/cmotc/stem-tortp.git pkgs/tortp_stem
+git clone git@github.com:cmotc/synclient-tools.git pkgs/synclient-tools
+git clone git@github.com:cmotc/Tomb.git pkgs/tomb
+git clone git@github.com:cmotc/stem-tortp.git pkgs/tortp_stem
 
 rm -rf pkgs/*/.git
 

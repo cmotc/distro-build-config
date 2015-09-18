@@ -582,7 +582,7 @@ echo "
 
 
 
-#twister-core
+twister-core
 utox
 #tox-bootstrapd
 #libtoxcore
