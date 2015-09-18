@@ -1,9 +1,10 @@
 #! /bin/sh
 rm -rf pkgs/*
 
-git clone git@github.com:cmotc/synclient-tools.git pkgs/synclient-tools
+git clone git@github.com:cmotc/fireaxe-graphics.git pkgs/fireaxe-graphics
+#git clone git@github.com:cmotc/synclient-tools.git pkgs/synclient-tools
 git clone git@github.com:cmotc/Tomb.git pkgs/tomb
-git clone git@github.com:cmotc/stem-tortp.git pkgs/tortp_stem
+git clone git@github.com:cmotc/stem-tortp.git pkgs/stem_tortp
 
 rm -rf pkgs/*/.git
 

@@ -1,0 +1,11 @@
+freepto-graphics (1:1.0.0) unstable; urgency=low
+
+  * Completely new graphics for berenjena
+
+ -- boyska <piuttosto@logorroici.org>  Thu, 30 Oct 2014 16:05:31 +0100
+
+freepto-graphics (1:0.1.2) unstable; urgency=low
+
+  * Initial release.
+
+ -- boyska <piuttosto@logorroici.org>  Sun, 28 Sep 2014 17:03:17 +0200
