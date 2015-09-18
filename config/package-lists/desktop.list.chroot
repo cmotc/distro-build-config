@@ -73,6 +73,9 @@ gnome-user-guide
 gnome-user-share
 gnome-video-effects
 guake
+lightdm
+lightdm-vala
+lightdm-gtk-greeter
 tomboy
 
 
