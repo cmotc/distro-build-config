@@ -5,7 +5,7 @@ echo ":'
 mkdir -p config/includes.chroot/etc/skel/
 echo 'background yes
 use_xft yes
-xftfont HandelGotD:size=9
+xftfont Liberation Mono:size=8
 xftalpha 0.5
 update_interval 5.0
 total_run_times 0
@@ -19,10 +19,8 @@ own_window_argb_value 0
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-minimum_size 600
-maximum_width 600
-minimum_height 734
-maximum_height 734
+maximum_width 664
+maximum_height 664
 draw_shades no
 draw_outline no
 draw_borders no
@@ -30,9 +28,9 @@ draw_graph_borders yes
 default_color grey
 default_shade_color red
 default_outline_color green
-alignment bottom_right
+alignment top_right
 gap_x 12
-gap_y 48
+gap_y 12
 no_buffers yes
 uppercase no
 cpu_avg_samples 4
@@ -50,17 +48,18 @@ CPU1 ${cpu cpu1}% ${color purple}${cpubar cpu1}
 ${color grey}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 swap $alignc $swap / $swapmax $alignr $swapperc%
-${swapbar}
-${color white}*   Top Processes: by CPU		$alignr Top Processes: by Memory   *${color slate grey}
-${top name 1}${top pid 1}${top cpu 1}	${top name 2}${top pid 2}${top cpu 2}	${top name 3}${top pid 3}${top cpu 3} $alignr	${top name 1}${top pid 1}${top mem 1}	${top name 2}${top pid 2}${top mem 2}	${top name 3}${top pid 3}${top mem 3} 
-${top name 4}${top pid 4}${top cpu 4}	${top name 5}${top pid 5}${top cpu 5}	${top name 6}${top pid 6}${top cpu 6} $alignr	${top name 4}${top pid 4}${top mem 4}	${top name 5}${top pid 5}${top mem 5}	${top name 6}${top pid 6}${top mem 6}
-${top name 7}${top pid 7}${top cpu 7}	${top name 8}${top pid 8}${top cpu 8}	${top name 9}${top pid 9}${top cpu 9} $alignr	${top name 7}${top pid 7}${top mem 7}	${top name 8}${top pid 8}${top mem 8}	${top name 9}${top pid 9}${top mem 9} ${color grey}
-${color white} $alignc HDD
+${swapbar}${font LiberationMono:size=7}
+${color white}*   Top Processes: by CPU		$alignr Top Processes: by Memory   *${color slate grey}	$alignc
+${top name 1}${top pid 1}${top cpu 1}	${top name 2}${top pid 2}${top cpu 2}	${top name 3}${top pid 3}${top cpu 3}	${top name 1}${top pid 1}${top mem 1}	${top name 2}${top pid 2}${top mem 2}	${top name 3}${top pid 3}${top mem 3} 
+${top name 4}${top pid 4}${top cpu 4}	${top name 5}${top pid 5}${top cpu 5}	${top name 6}${top pid 6}${top cpu 6}	${top name 4}${top pid 4}${top mem 4}	${top name 5}${top pid 5}${top mem 5}	${top name 6}${top pid 6}${top mem 6}
+${top name 7}${top pid 7}${top cpu 7}	${top name 8}${top pid 8}${top cpu 8}	${top name 9}${top pid 9}${top cpu 9}	${top name 7}${top pid 7}${top mem 7}	${top name 8}${top pid 8}${top mem 8}	${top name 9}${top pid 9}${top mem 9}	$alignr	${font LiberationMono:size=8}
+${color green} $alignc HDD
 ${color yellow}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_free_perc /}%
 ${color dark green}${fs_bar /}
 ${color yellow}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
 ${color dark green}${fs_bar /home} 
 ${color green}---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+${font LiberationMono:size=7}
 ${color magenta}Hostname $alignr $nodename ${color blue}
 eth0: $alignr ${color blue} ${addrs eth0}
 ${color blue}Inbound: $alignr ${downspeed eth0} kb/s
@@ -1110,11 +1109,6 @@ echo '[http]
 	proxy = http://127.0.0.1:8118
 [https]
 	proxy = https://127.0.0.1:8118
-[merge]
-	renamelimit = 15891
-[user]
-	name = cmotc
-	email = cmotc@openmailbox.org
 ' > config/includes.chroot/etc/skel/.gitconfig
 
 mkdir -p config/includes.chroot/usr/share/applications
