@@ -7,7 +7,6 @@ Europe/Tirane Europe/Tirane off
 Asia/Yerevan Asia/Yerevan off 
 Africa/Luanda Africa/Luanda off 
 Antarctica/McMurdo Antarctica/McMurdo off 
-Antarctica/South_Pole Antarctica/South_Pole off 
 Antarctica/Rothera Antarctica/Rothera off 
 Antarctica/Palmer Antarctica/Palmer off 
 Antarctica/Mawson Antarctica/Mawson off 
@@ -16,6 +15,7 @@ Antarctica/Casey Antarctica/Casey off
 Antarctica/Vostok Antarctica/Vostok off 
 Antarctica/DumontDUrville Antarctica/DumontDUrville off 
 Antarctica/Syowa Antarctica/Syowa off 
+Antarctica/Troll Antarctica/Troll off 
 America/Argentina/Buenos_Aires America/Argentina/Buenos_Aires off 
 America/Argentina/Cordoba America/Argentina/Cordoba off 
 America/Argentina/Salta America/Argentina/Salta off 
@@ -87,7 +87,6 @@ America/Glace_Bay America/Glace_Bay off
 America/Moncton America/Moncton off 
 America/Goose_Bay America/Goose_Bay off 
 America/Blanc-Sablon America/Blanc-Sablon off 
-America/Montreal America/Montreal off 
 America/Toronto America/Toronto off 
 America/Nipigon America/Nipigon off 
 America/Thunder_Bay America/Thunder_Bay off 
@@ -121,10 +120,7 @@ America/Santiago America/Santiago off
 Pacific/Easter Pacific/Easter off 
 Africa/Douala Africa/Douala off 
 Asia/Shanghai Asia/Shanghai off 
-Asia/Harbin Asia/Harbin off 
-Asia/Chongqing Asia/Chongqing off 
 Asia/Urumqi Asia/Urumqi off 
-Asia/Kashgar Asia/Kashgar off 
 America/Bogota America/Bogota off 
 America/Costa_Rica America/Costa_Rica off 
 America/Havana America/Havana off 
@@ -288,6 +284,7 @@ Pacific/Tahiti Pacific/Tahiti off
 Pacific/Marquesas Pacific/Marquesas off 
 Pacific/Gambier Pacific/Gambier off 
 Pacific/Port_Moresby Pacific/Port_Moresby off 
+Pacific/Bougainville Pacific/Bougainville off 
 Asia/Manila Asia/Manila off 
 Asia/Karachi Asia/Karachi off 
 Europe/Warsaw Europe/Warsaw off 
@@ -307,6 +304,7 @@ Europe/Bucharest Europe/Bucharest off
 Europe/Belgrade Europe/Belgrade off 
 Europe/Kaliningrad Europe/Kaliningrad off 
 Europe/Moscow Europe/Moscow off 
+Europe/Simferopol Europe/Simferopol off 
 Europe/Volgograd Europe/Volgograd off 
 Europe/Samara Europe/Samara off 
 Asia/Yekaterinburg Asia/Yekaterinburg off 
@@ -315,12 +313,14 @@ Asia/Novosibirsk Asia/Novosibirsk off
 Asia/Novokuznetsk Asia/Novokuznetsk off 
 Asia/Krasnoyarsk Asia/Krasnoyarsk off 
 Asia/Irkutsk Asia/Irkutsk off 
+Asia/Chita Asia/Chita off 
 Asia/Yakutsk Asia/Yakutsk off 
 Asia/Khandyga Asia/Khandyga off 
 Asia/Vladivostok Asia/Vladivostok off 
 Asia/Sakhalin Asia/Sakhalin off 
 Asia/Ust-Nera Asia/Ust-Nera off 
 Asia/Magadan Asia/Magadan off 
+Asia/Srednekolymsk Asia/Srednekolymsk off 
 Asia/Kamchatka Asia/Kamchatka off 
 Asia/Anadyr Asia/Anadyr off 
 Africa/Kigali Africa/Kigali off 
@@ -364,7 +364,6 @@ Africa/Dar_es_Salaam Africa/Dar_es_Salaam off
 Europe/Kiev Europe/Kiev off 
 Europe/Uzhgorod Europe/Uzhgorod off 
 Europe/Zaporozhye Europe/Zaporozhye off 
-Europe/Simferopol Europe/Simferopol off 
 Africa/Kampala Africa/Kampala off 
 Pacific/Johnston Pacific/Johnston off 
 Pacific/Midway Pacific/Midway off 
@@ -388,16 +387,15 @@ America/North_Dakota/New_Salem America/North_Dakota/New_Salem off
 America/North_Dakota/Beulah America/North_Dakota/Beulah off 
 America/Denver America/Denver off 
 America/Boise America/Boise off 
-America/Shiprock America/Shiprock off 
 America/Phoenix America/Phoenix off 
 America/Los_Angeles America/Los_Angeles off 
+America/Metlakatla America/Metlakatla off 
 America/Anchorage America/Anchorage off 
 America/Juneau America/Juneau off 
 America/Sitka America/Sitka off 
 America/Yakutat America/Yakutat off 
 America/Nome America/Nome off 
 America/Adak America/Adak off 
-America/Metlakatla America/Metlakatla off 
 Pacific/Honolulu Pacific/Honolulu off 
 America/Montevideo America/Montevideo off 
 Asia/Samarkand Asia/Samarkand off 
