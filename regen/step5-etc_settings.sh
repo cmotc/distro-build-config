@@ -371,6 +371,7 @@ instructables.com 74.50.63.27
 archive.org 207.241.224.2
 cs50.tv 54.165.13.102
 hackaday.com 192.0.79.32
+librivox.org 208.70.31.70
 
 # Linux Distributions
 debian.org 130.89.148.14
