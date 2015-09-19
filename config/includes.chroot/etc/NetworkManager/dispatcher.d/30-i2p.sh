@@ -13,6 +13,6 @@ i2p_is_enabled || exit 0
 [ $1 = "lo" ] && exit 0
 
 if [ $2 = "up" ]; then
-    /usr/local/sbin/tails-i2p start &
+    /usr/local/sbin/i2p-i2p start &
 fi
 
