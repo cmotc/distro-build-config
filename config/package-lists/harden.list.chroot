@@ -14,11 +14,9 @@ apparmor-profiles
 apparmor-utils
 ferm
 #harden
-#harden-doc
 #harden-development
 #harden-tools
-hardening-includes
-#hardening-wrappers
+#hardening-includes
 nufw
 rkhunter
 

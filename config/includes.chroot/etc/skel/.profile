@@ -21,3 +21,9 @@ if [ -d "/home/dyngar-m/bin" ] ; then
     export PATH="/home/dyngar-m/bin:/usr/local/bin:/usr/bin:/bin:/usr/games"
 fi
 
+if [ -f /usr/local/bin/conkyswitcher ]; then
+    . /usr/bin/conkyswitcher
+fi
+
+clear scr
+history -c
