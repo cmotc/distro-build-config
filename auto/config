@@ -75,7 +75,7 @@ lb config noauto \
     --system live \
     --hdd-label $HDD_LABEL \
     --apt-source-archives false \
-    --debian-installer false \
+    --debian-installer true \
     --debian-installer-gui false \
     --bootappend-install noprompt \
     --mirror-bootstrap $MIRROR \
