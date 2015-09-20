@@ -50,12 +50,7 @@ gnome-panel-data
 gnome-power-manager
 gnome-screensaver
 gnome-screenshot
-gnome-session
-gnome-session-bin
-gnome-session-common
-gnome-session-fallback
-gnome-session-flashback
-gnome-settings-daemon
+gnome-session-awesome
 gnome-shell
 gnome-shell-common
 gnome-shell-extension-autohidetopbar
