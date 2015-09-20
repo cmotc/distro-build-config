@@ -9,6 +9,7 @@
 
 awesome
 awesome-extra
+debian-awesome-gnome
 conky-std
 desktop-base
 desktop-file-utils
@@ -50,7 +51,6 @@ gnome-panel-data
 gnome-power-manager
 gnome-screensaver
 gnome-screenshot
-gnome-session-awesome
 gnome-shell
 gnome-shell-common
 gnome-shell-extension-autohidetopbar
