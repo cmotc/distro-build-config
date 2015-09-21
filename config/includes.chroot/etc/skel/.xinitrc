@@ -1,3 +1,9 @@
 #!/bin/sh
-conky &
-. $HOME/.Xsession
+APPCHK=$(ps aux | grep conky | grep -v "grep conky" | wc -l)
+if [ "$APPCHK" = '0' ];then
+    killall xcompmgr
+    xcompmgr &
+    conky &
+else
+    echo "conky was already running"
+fi

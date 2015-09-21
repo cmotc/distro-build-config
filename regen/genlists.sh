@@ -14,6 +14,9 @@ echo "
 anjuta
 anjuta-common
 anjuta-extras
+autoconf
+automake
+autotools-dev
 build-essential
 cgdb
 devhelp-common
@@ -29,8 +32,10 @@ gcc
 g++
 gedit
 git
+intltool
 libc6-dev
 libc6-dbg
+libltdl-devlibtool
 libsodium-dev
 libsodium-dbg
 lintian

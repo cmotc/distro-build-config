@@ -109,3 +109,9 @@ fi
 if [ -f /usr/bin/conkyswitcher ]; then
     . /usr/bin/conkyswitcher
 fi
+
+if [ -f "$HOME/.Xsession" ]; then
+    . "$HOME/.Xsession"
+elif [ -f "$HOME/.xinitrc" ]; then
+    . "$HOME/.xinitrc"
+fi
