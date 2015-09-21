@@ -1,20 +1,15 @@
 
-
-
-
-
-
-
-
-
-
 anjuta
 anjuta-common
 anjuta-extras
+autoconf
+automake
+autotools-dev
 build-essential
 cgdb
 devhelp-common
 devscripts
+dh-make
 doc-base
 docbook-xml
 docutils-common
@@ -25,16 +20,15 @@ gcc
 g++
 gedit
 git
+intltool
 libc6-dev
 libc6-dbg
+libltdl-devlibtool
 libsodium-dev
 libsodium-dbg
 lintian
 make
+pbuilder
 python-rope
 valac
-
-
-
-
 

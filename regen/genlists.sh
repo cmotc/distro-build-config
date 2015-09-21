@@ -80,13 +80,11 @@ conky-std
 desktop-base
 desktop-file-utils
 mousepad
-guake
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
 tilda
-tomboy
-xfce4-settings-manager
+xfe
 " > config/package-lists/desktop.list.chroot
 echo "
 abiword

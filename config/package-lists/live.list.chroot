@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 live-boot
 live-boot-doc
 live-build
@@ -15,8 +6,4 @@ live-config
 live-config-doc
 live-config-systemd
 live-manual-html
-
-
-
-
 

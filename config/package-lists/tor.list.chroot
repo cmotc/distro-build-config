@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 deb.torproject.org-keyring
 privoxy
 tor
@@ -15,8 +6,4 @@ tor-arm
 tor-geoipdb
 torsocks
 xul-ext-torbirdy
-
-
-
-
 
