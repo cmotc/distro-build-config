@@ -105,3 +105,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if [ -f /usr/bin/conkyswitcher ]; then
+    . /usr/bin/conkyswitcher
+fi
