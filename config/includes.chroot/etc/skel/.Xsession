@@ -1,7 +1,17 @@
 #!/bin/sh
-APPCHK=$(ps aux | grep conky | grep -v "grep conky" | wc -l)
-if [ "$APPCHK" = '0' ];then
-    killall xcompmgr
-    xcompmgr &
+
+#Stored call sequence for restarting awesome smoothly 
+#with the correct rc.lua, etc
+aweome_start(){
+    sudo killall awesome
+    awesome-wm
+}
+
+#Check if awesome exists, and start it
+
+#Check if conky exists, and start it.
+if [ $(check_conky) = '0' ];then
+    compton &
     conky &
 fi
+

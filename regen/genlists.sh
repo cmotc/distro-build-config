@@ -91,10 +91,13 @@ abiword
 abiword-common
 abiword-plugin-grammar
 abiword-plugin-mathview
+compton
 dia
 dia-common
 dia-libs
 dia-shapes
+geany
+geany-plugins
 gnumeric
 gnumeric-common
 gnumeric-doc
@@ -102,6 +105,7 @@ imagemagick
 imagemagick-6.q16
 imagemagick-common
 markdown
+xfe
 " > config/package-lists/documents.list.chroot
 echo "
 hydra

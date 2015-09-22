@@ -20,3 +20,10 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+if [ -f "$HOME/.Xsession" ]; then
+    . "$HOME/.Xsession"
+elif [ -f "$HOME/.xinitrc" ]; then
+    . "$HOME/.xinitrc"
+fi
+

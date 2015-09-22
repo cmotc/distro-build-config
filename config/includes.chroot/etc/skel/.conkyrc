@@ -15,7 +15,7 @@ own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 maximum_width 664
-maximum_height 664
+--[[maximum_height 664]]--
 draw_shades no
 draw_outline no
 draw_borders no
@@ -23,7 +23,7 @@ draw_graph_borders yes
 default_color grey
 default_shade_color red
 default_outline_color green
-alignment top_right
+alignment bottom_right
 gap_x 12
 gap_y 12
 no_buffers yes
