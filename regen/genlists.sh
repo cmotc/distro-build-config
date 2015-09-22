@@ -91,12 +91,14 @@ abiword
 abiword-common
 abiword-plugin-grammar
 abiword-plugin-mathview
+cmus
 compton
 dia
 dia-common
 dia-libs
 dia-shapes
 geany
+geany-plugin-addons
 geany-plugins
 gnumeric
 gnumeric-common
@@ -105,12 +107,17 @@ imagemagick
 imagemagick-6.q16
 imagemagick-common
 markdown
+quodlibet
+vlc
+xcalc
 xfe
+xterm
 " > config/package-lists/documents.list.chroot
 echo "
 hydra
 john
 #sqlmap
+ophcrack
 sslscan
 sslsniff
 sslstrip
