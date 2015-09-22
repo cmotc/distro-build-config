@@ -2,6 +2,7 @@
 awesome
 awesome-extra
 awesome-lightdm-session
+compton
 conky-std
 desktop-base
 desktop-file-utils
@@ -10,5 +11,7 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 tilda
+xcalc
 xfe
+xterm
 

@@ -28,9 +28,11 @@ docutils-common
 docutils-doc
 doxygen
 dpkg-dev
+geany
+geany-plugin-addons
+geany-plugins
 gcc
 g++
-gedit
 git
 intltool
 libc6-dev
@@ -76,6 +78,7 @@ echo "
 awesome
 awesome-extra
 awesome-lightdm-session
+compton
 conky-std
 desktop-base
 desktop-file-utils
@@ -83,23 +86,21 @@ mousepad
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
+svirfneblin-panel
 tilda
+xcalc
 xfe
+xterm
 " > config/package-lists/desktop.list.chroot
 echo "
 abiword
 abiword-common
 abiword-plugin-grammar
 abiword-plugin-mathview
-cmus
-compton
 dia
 dia-common
 dia-libs
 dia-shapes
-geany
-geany-plugin-addons
-geany-plugins
 gnumeric
 gnumeric-common
 gnumeric-doc
@@ -107,11 +108,6 @@ imagemagick
 imagemagick-6.q16
 imagemagick-common
 markdown
-quodlibet
-vlc
-xcalc
-xfe
-xterm
 " > config/package-lists/documents.list.chroot
 echo "
 hydra
@@ -149,6 +145,7 @@ echo "
 crawl-common
 crawl-tiles
 crawl-tiles-data
+freeciv-client-sdl
 " > config/package-lists/games.list.chroot
 echo "
 apparmor
@@ -212,10 +209,9 @@ live-config-systemd
 live-manual-html
 " > config/package-lists/live.list.chroot
 echo "
-banshee
-totem
-totem-common
-totem-plugins
+cmus
+quodlibet
+vlc
 " > config/package-lists/media.list.chroot
 echo "
 batctl
@@ -223,6 +219,7 @@ batmand
 curl
 horst
 nmap
+ntop
 transmission-common
 transmission-gtk
 wget
@@ -270,6 +267,7 @@ echo "
 lshw
 #unetbootin
 #unetbootin-translations
+htop
 usbutils
 " > config/package-lists/utils.list.chroot
 echo "

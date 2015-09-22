@@ -16,9 +16,11 @@ docutils-common
 docutils-doc
 doxygen
 dpkg-dev
+geany
+geany-plugin-addons
+geany-plugins
 gcc
 g++
-gedit
 git
 intltool
 libc6-dev
