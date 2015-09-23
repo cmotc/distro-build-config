@@ -280,7 +280,8 @@ mat
 secure-delete
 " > config/package-lists/paranoid.list.chroot
 echo "
-twister-core
+irssi
+#twister-core
 utox
 #tox-bootstrapd
 #libtoxcore
