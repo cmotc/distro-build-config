@@ -4,6 +4,7 @@ batmand
 curl
 horst
 nmap
+ntop
 transmission-common
 transmission-gtk
 wget

@@ -14,11 +14,14 @@ echo "
 anjuta
 anjuta-common
 anjuta-extras
+asciidoc
 autoconf
 automake
 autotools-dev
 build-essential
+cmake
 cgdb
+debhelper
 devhelp-common
 devscripts
 dh-make
@@ -34,17 +37,56 @@ geany-plugins
 gcc
 g++
 git
+gperf
 intltool
 libc6-dev
 libc6-dbg
+libcairo2-dev
+libdbus-1-dev
+libev-dev
+libimlib2-dev
 libltdl-devlibtool
+liblua5.1-dev
+liblua5.2-dev
+libpango1.0-dev
+libstartup-notification0-dev
 libsodium-dev
 libsodium-dbg
+libtox-dev
+libtoxav-dbg
+libtoxav-dev
+libtoxav0
+libtoxcore-dbg
+libtoxcore-dev
+libtoxcore0
+libtoxdns-dbg
+libtoxdns-dev
+libtoxdns0
+libtoxencryptsave-dbg
+libtoxencryptsave-dev
+libtoxencryptsave0 
+libx11-xcb-dev
+libxcb1-dev
+libxcb-image0-dev
+libxcb-icccm4-dev
+libxcb-keysyms1-dev
+libxcb-randr0-dev
+libxcb-shape0-dev
+libxcb-util0-dev
+libxcb-xinerama0-dev
+libxcb-xtest0-dev
+libxcursor-dev
+libxdg-basedir-dev 
 lintian
+lua5.1 
+lua5.2
+luadoc
+lua-ldoc
 make
 pbuilder
 python-rope
 valac
+xmlto
 " > config/package-lists/code.list.chroot
 echo "
 anoncoind
@@ -210,6 +252,7 @@ live-manual-html
 " > config/package-lists/live.list.chroot
 echo "
 cmus
+imagemagick
 quodlibet
 vlc
 " > config/package-lists/media.list.chroot
