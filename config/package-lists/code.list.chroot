@@ -19,11 +19,13 @@ docutils-common
 docutils-doc
 doxygen
 dpkg-dev
-geany
-geany-plugin-addons
-geany-plugins
 gcc
 g++
+gedit
+gedit-common
+gedit-dev
+gedit-plugins
+gedit-source-code-browser-plugin
 git
 gperf
 intltool

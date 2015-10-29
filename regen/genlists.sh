@@ -31,11 +31,13 @@ docutils-common
 docutils-doc
 doxygen
 dpkg-dev
-geany
-geany-plugin-addons
-geany-plugins
 gcc
 g++
+gedit
+gedit-common
+gedit-dev
+gedit-plugins
+gedit-source-code-browser-plugin
 git
 gperf
 intltool
@@ -97,6 +99,7 @@ namecoin
 echo "
 apt-transport-https
 apt-transport-tor
+apt-p2p
 dconf-cli
 dconf-editor
 dconf-gsettings-backend:amd64

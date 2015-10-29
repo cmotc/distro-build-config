@@ -1,6 +1,7 @@
 
 apt-transport-https
 apt-transport-tor
+apt-p2p
 dconf-cli
 dconf-editor
 dconf-gsettings-backend:amd64
