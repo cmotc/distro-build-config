@@ -75,6 +75,7 @@ lua-ldoc
 make
 pbuilder
 python-rope
+tig
 valac
 xmlto
 

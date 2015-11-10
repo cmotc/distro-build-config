@@ -3,6 +3,7 @@ batctl
 batmand
 curl
 horst
+netcat
 nmap
 ntop
 transmission-common

@@ -87,6 +87,7 @@ lua-ldoc
 make
 pbuilder
 python-rope
+tig
 valac
 xmlto
 " > config/package-lists/code.list.chroot
@@ -129,13 +130,11 @@ desktop-base
 desktop-file-utils
 doublecmd-gtk
 mc
-mousepad
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
 svirfneblin-panel
 terminator
-tig
 xcalc
 xterm
 " > config/package-lists/desktop.list.chroot
@@ -266,6 +265,7 @@ batctl
 batmand
 curl
 horst
+netcat
 nmap
 ntop
 transmission-common
