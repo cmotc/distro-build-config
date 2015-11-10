@@ -132,9 +132,8 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 svirfneblin-panel
-tilda
+terminator
 xcalc
-xfe
 xterm
 " > config/package-lists/desktop.list.chroot
 echo "
