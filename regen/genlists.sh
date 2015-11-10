@@ -127,12 +127,15 @@ compton
 conky-std
 desktop-base
 desktop-file-utils
+doublecmd-gtk
+mc
 mousepad
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
 svirfneblin-panel
 terminator
+tig
 xcalc
 xterm
 " > config/package-lists/desktop.list.chroot
