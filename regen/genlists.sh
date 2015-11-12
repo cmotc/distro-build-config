@@ -50,6 +50,12 @@ libimlib2-dev
 libltdl-devlibtool
 liblua5.1-dev
 liblua5.2-dev
+libgcrypt11-dev
+libgcrypt20-dev
+libgpg-error-dev 
+libotr5
+libotr5-bin
+libotr5-dev
 libpango1.0-dev
 libstartup-notification0-dev
 libsodium-dev
@@ -86,6 +92,8 @@ luadoc
 lua-ldoc
 make
 pbuilder
+pidgin-dev
+purple-dev
 python-rope
 tig
 valac
@@ -227,9 +235,8 @@ liferea
 liferea-data
 lynx
 lynx-cur
-pidgin
-pidgin-data
-#pidgin-gnome-keyring
+mutt
+finch
 pidgin-otr
 xul-ext-adblock-plus
 xul-ext-certificatepatrol

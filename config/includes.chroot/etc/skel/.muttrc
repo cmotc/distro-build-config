@@ -1,5 +1,6 @@
+#Load the Solarized Dark Color Scheme
+. $HOME/.config/mutt/colors/mutt-colors-solarized-dark-256.muttrc
 # Automatically log in to this mailbox at startup
-set spoolfile="imaps://cmotc@openmailbox.org:g4Nd@lf@openmailbox.org/"
 set record="=Sent"
 set postponed="=Drafts"
 set trash="=Trash"
