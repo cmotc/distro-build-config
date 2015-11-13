@@ -1,0 +1,64 @@
+#! /bin/sh
+
+#!/bin/sh
+
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+
+# Initialize our own variables:
+output_file=""
+verbose=0
+
+show_help(){
+    echo "####             mutt-setup             ####"
+    echo "# generate a config file for use with mutt #"
+    echo "#    optionally not encrypted with GPG     #"
+    echo "#####                                  #####"
+    echo "                                            "
+    echo " -options:                                  "
+    echo "     -h / -? Print this help/version info   "
+    echo "     -u username(before the @sign)          "
+    echo "     -p password(to your email server)      "
+    echo "     -s email server address                "
+    echo "     -f use full form email as login name   "
+    echo "     -b stupid mode, no crypto              "
+#    echo "     -n use a specific key                  "
+#    echo "     -n generate a new key                  "
+    echo "                                            "
+    echo "############################################"
+}
+
+while getopts "h?upsfbn:" opt; do
+    case "$opt" in
+    h|\?)
+        show_help
+        exit 0
+        ;;
+    u)  user=$OPTARG
+        ;;
+    p)  password=$OPTARG
+        ;;
+    s)  server=$OPTARG
+        ;;
+    f)  usefull=1
+        ;;
+    b)  bad=1
+        ;;
+#    n)  newkey=1
+#        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+[ "$1" = "--" ] && shift
+
+#If the user is a fucking idiot who doesn't want to use encryption
+if ["$bad"=1]; then
+    #Source in plain functions
+    . .muttplain
+else    #If the user is remotely responsible
+    #Source in the encryption functions
+    . .muttcrypt
+fi
+
