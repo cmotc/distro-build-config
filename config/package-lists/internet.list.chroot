@@ -13,9 +13,8 @@ liferea
 liferea-data
 lynx
 lynx-cur
-pidgin
-pidgin-data
-#pidgin-gnome-keyring
+mutt
+finch
 pidgin-otr
 xul-ext-adblock-plus
 xul-ext-certificatepatrol

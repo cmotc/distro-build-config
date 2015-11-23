@@ -137,6 +137,7 @@ conky-std
 desktop-base
 desktop-file-utils
 doublecmd-gtk
+network-manager
 mc
 lightdm
 lightdm-vala
@@ -275,8 +276,10 @@ horst
 netcat
 nmap
 ntop
+rtorrent
+transmission-cli
 transmission-common
-transmission-gtk
+transmission-daemon
 wget
 youtube-dl
 " > config/package-lists/network.list.chroot

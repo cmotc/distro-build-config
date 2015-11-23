@@ -1,4 +1,7 @@
 
+alias git="torsocks git"
+alias ssh="torsocks ssh"
+
 conky_start(){
     #Only start conky if the compositor is functioning
     sleep 3
@@ -29,7 +32,13 @@ git_add_and_commit(){
     git add . && git commit -am "$@"
 }
 
+git_add_and_commit_and_push(){
+    git add . && git commit -am "$@" && git push
+}
+
 alias commit=git_add_and_commit
+
+alias cpush=git_add_and_commit_and_push
 
 git_push_with_proxy(){
     torsocks git push "$@"
@@ -48,8 +57,6 @@ git_clone_with_proxy(){
 }
 
 alias clone=git_clone_with_proxy
-
-alias git="torsocks git"
 
 start_tor_arm(){
     sudo -u debian-tor arm
@@ -81,3 +88,29 @@ torify_terminal(){
 
 alias torminal=torify_terminal
 
+proxy_lynx(){
+    torsocks lynx
+}
+
+alias lynx=proxy_lynx
+
+test_awesome(){
+    mv $HOME/.config/awesome/rc.lua $HOME/.config/awesome/rc.lua.bak
+    update-menus 
+    cp /etc/xdg/awesome/debian/menu.lua $HOME/.config/awesome/debian/menu.lua
+    cp $HOME/Projects/Distro_OS_projects/packages/svirfneblin-panel/etc/xdg/svirfneblin/rc.lua $HOME/.config/awesome/rc.lua
+}
+
+alias awere=test_awesome
+
+alias rm=srm
+
+run_once(){
+    pgrep $@ > /dev/null || ($@ &)
+}
+
+alias bleachbit="bleachbit  -co --preset"
+
+alias mutt="torsocks mutt > /dev/null"
+
+alias proj="cd Projects/Distro_OS_Projects/packages"

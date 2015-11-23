@@ -6,8 +6,9 @@ horst
 netcat
 nmap
 ntop
+transmission-cli
 transmission-common
-transmission-gtk
+transmission-daemon
 wget
 youtube-dl
 
