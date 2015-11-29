@@ -30,7 +30,7 @@ use_shadow = OFF
 use_colors = ON
 
 # Screen color
-screen_color = (CYAN,BLACK,ON)
+screen_color = (BLACK,BLACK,ON)
 
 # Shadow color
 shadow_color = (BLACK,BLACK,ON)
@@ -123,10 +123,10 @@ itemhelp_color = (WHITE,BLACK,OFF)
 form_active_text_color = button_active_color
 
 # Form text color
-form_text_color = (WHITE,CYAN,ON)
+form_text_color = (WHITE,BLACK,ON)
 
 # Readonly form item color
-form_item_readonly_color = (CYAN,WHITE,ON)
+form_item_readonly_color = (BLACK,WHITE,ON)
 
 # Dialog box gauge color
 gauge_color = title_color
