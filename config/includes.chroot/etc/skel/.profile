@@ -21,9 +21,12 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -f "$HOME/.Xsession" ]; then
-    . "$HOME/.Xsession"
-elif [ -f "$HOME/.xinitrc" ]; then
+# autostart stuff
+if [ -f "$HOME/.xinitrc" ]; then
     . "$HOME/.xinitrc"
 fi
 
+# Set and load user settings for svirfneblin environment
+if [ -f "$HOME/.userrc" ]; then
+    . "$HOME/.userrc"
+fi

@@ -136,6 +136,7 @@ compton
 conky-std
 desktop-base
 desktop-file-utils
+dialog
 doublecmd-gtk
 network-manager
 mc
@@ -146,12 +147,14 @@ svirfneblin-panel
 terminator
 xcalc
 xterm
+xdialog
 " > config/package-lists/desktop.list.chroot
 echo "
 abiword
 abiword-common
 abiword-plugin-grammar
 abiword-plugin-mathview
+caca-utils
 dia
 dia-common
 dia-libs

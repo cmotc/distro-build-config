@@ -7,8 +7,6 @@ aweome_start(){
     awesome-wm
 }
 
-#Check if awesome exists, and start it
-
 #Check if conky exists, and start it.
 if [ $(check_conky) = '0' ];then
     compton &

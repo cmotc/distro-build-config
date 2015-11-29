@@ -1,0 +1,2 @@
+#! /bin/sh
+USE_GUI_DIALOGS="no"

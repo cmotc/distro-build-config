@@ -113,4 +113,4 @@ alias bleachbit="bleachbit  -co --preset"
 
 alias mutt="torsocks mutt > /dev/null"
 
-alias proj="cd Projects/Distro_OS_Projects/packages"
+
