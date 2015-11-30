@@ -10,3 +10,8 @@ ifconfig wlan0 down
 ifconfig eth0 up
 ifconfig wlan0 up
 
+. /usr/bin/hidblock
+. /usr/bin/fireblock
+
+fireblock_watch_xscreensaver
+hidblock_watch_xscreensaver
