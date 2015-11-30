@@ -145,6 +145,7 @@ lightdm-vala
 lightdm-gtk-greeter
 svirfneblin-panel
 terminator
+x11-apps
 xcalc
 xterm
 xdialog

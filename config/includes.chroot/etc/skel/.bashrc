@@ -110,3 +110,4 @@ if [ -f /usr/bin/conkyswitcher ]; then
     . /usr/bin/conkyswitcher
 fi
 
+[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
