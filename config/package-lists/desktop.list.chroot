@@ -6,6 +6,7 @@ compton
 conky-std
 desktop-base
 desktop-file-utils
+dialog
 doublecmd-gtk
 network-manager
 mc
@@ -16,4 +17,5 @@ svirfneblin-panel
 terminator
 xcalc
 xterm
+xdialog
 

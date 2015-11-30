@@ -3,6 +3,7 @@ abiword
 abiword-common
 abiword-plugin-grammar
 abiword-plugin-mathview
+caca-utils
 dia
 dia-common
 dia-libs

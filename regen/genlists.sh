@@ -215,6 +215,8 @@ ferm
 #harden-development
 #harden-tools
 #hardening-includes
+fireblock
+hidblock
 nufw
 rkhunter
 " > config/package-lists/harden.list.chroot
