@@ -114,3 +114,5 @@ alias bleachbit="bleachbit  -co --preset"
 alias mutt="torsocks mutt &> /dev/null"
 
 alias dialog="dialog --colors"
+
+alias tor-arm="sudo -u debian-tor arm"
