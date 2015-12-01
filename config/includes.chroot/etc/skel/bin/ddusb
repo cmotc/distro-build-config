@@ -1,0 +1,74 @@
+#!/bin/sh
+
+CURDIR=$(pwd)
+
+IMAGE_FILE=""
+OUTPUT_DEVICE=""
+PRINTHELP="yes"
+HELP="DD Image File with Progressbar Utility
+I just wanted something somewhere between unetbootin and dd with no progressbar.
+It does it's best to make things self explanatory. Run it with no options and
+it will present you with dialogs which will instruct you to select an input
+file and an output device. To run non-interactively(or semi-interactively), 
+specify one or more of the options below:
+	
+	-if or --input 	path to input file
+        -of or --output	path to output device
+        -h or --help	print this message
+"
+
+while [ "$#" -gt 0 ]; do
+	arg="$1"
+	case $arg in
+		-if|--input)
+			IMAGE_FILE="$CURDIR$2"
+			PRINTHELP="no"
+			shift
+		;;
+		-of|--output)
+			OUTPUT_DEVICE="$CURDIR$2"
+			PRINTHELP="no"
+			shift
+		;;
+		-h|--help)
+			echo $HELP
+			exit 0
+			shift
+		;;
+	esac
+	shift
+done
+
+if [ -f "/usr/bin/whiptail" ]; then
+    alias dialog=whiptail
+elif [ -f "/usr/bin/dialog" ]; then
+    alias dialog="dialog --color"
+elif [ -f "/usr/bin/xdialog" ]; then
+    if [ "$USE_GUI_DIALOGS" == "yes" ]; then
+        alias dialog=xdialog
+    fi
+elif [ -f "/usr/bin/zenity" ]; then 
+    if [ "$USE_GUI_DIALOGS" == "yes" ]; then
+        alias dialog=zenity
+    fi
+fi
+
+if [ "$PRINTHELP" == "yes" ]; then
+	dialog --title "Image File Utility" --msgbox "$HELP" 8 78
+fi
+if [ "$IMAGE_FILE" == "" ]; then
+	IMAGE_FILE=$(dialog --title "Image File Utility" --inputbox "Enter input file (/path/to/image/iso)" 8 78 3>&1 1>&2 2>&3 3>&-)
+fi
+if [ "$OUTPUT_DEVICE" == "" ]; then
+	OUTPUT_DEVICE=$(dialog --title "Image File Utility" --inputbox "Enter output device(usually /dev/sdb)" 8 78 3>&1 1>&2 2>&3 3>&-)
+fi
+
+if [ -f "$IMAGE_FILE" ]; then
+	if [ -f "$OUTPUT_DEVICE" ]; then
+		(pv -n "$IMAGE_FILE" | dd of="$OUTPUT_DEVICE" bs=1m conv=notrunc,noerror) 2>&1 | dialog --title "Image File Utility" --gauge "Copying $IMAGE_FILE to USB Stick in $OUTPUT_DEVICE" 8 78 0
+	else
+		echo "Error, image file($IMAGE_FILE) not found."
+	fi
+else
+	echo "Error, output device($OUTPUT_DEVICE) not found."
+fi
