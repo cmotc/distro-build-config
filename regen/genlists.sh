@@ -245,36 +245,35 @@ i2p-router
 killyourtv-keyring
 " > config/package-lists/i2p.list.chroot
 echo "
-epiphany-browser
-epiphany-browser-data
 enigmail
 filezilla
 filezilla-common
-foxyproxy
+#foxyproxy
+finch
 hexchat
-icedove
-icedove-dispmua
-iceweasel
-liferea
-liferea-data
+#icedove
+#icedove-dispmua
+#iceweasel
+#liferea
+#liferea-data
 lynx
 lynx-cur
 mutt
-finch
-pidgin-otr
-xul-ext-adblock-plus
-xul-ext-certificatepatrol
-xul-ext-cookie-monster
-xul-ext-dispmua
-xul-ext-firebug
-xul-ext-foxyproxy-standard
-xul-ext-gnome-keyring
-xul-ext-https-everywhere
-xul-ext-noscript
-xul-ext-perspectives
-xul-ext-refcontrol
-xul-ext-requestpolicy
-xul-ext-useragentswitcher
+ncftp
+#pidgin-otr
+#xul-ext-adblock-plus
+#xul-ext-certificatepatrol
+#xul-ext-cookie-monster
+#xul-ext-dispmua
+#xul-ext-firebug
+#xul-ext-foxyproxy-standard
+#xul-ext-gnome-keyring
+#xul-ext-https-everywhere
+#xul-ext-noscript
+#xul-ext-perspectives
+#xul-ext-refcontrol
+#xul-ext-requestpolicy
+#xul-ext-useragentswitcher
 " > config/package-lists/internet.list.chroot
 echo "
 live-boot
@@ -333,7 +332,7 @@ tor
 tor-arm
 tor-geoipdb
 torsocks
-xul-ext-torbirdy
+#xul-ext-torbirdy
 " > config/package-lists/tor.list.chroot
 echo "
 firmware-linux-free

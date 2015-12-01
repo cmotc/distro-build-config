@@ -68,14 +68,16 @@ run_once(){
 }
 
 alias bleachbit="bleachbit  -co --preset"
-alias mutt="torsocks mutt &> /dev/null"
 alias dialog="dialog --colors"
 alias tor-arm="sudo -u debian-tor arm"
 alias rm=srm -z
+alias torminal=torify_terminal
+
 alias lynx=proxy_lynx
+alias mutt="torsocks mutt &> /dev/null"
+alias finch="torsocks finch &> /dev/null"
 alias wget=wget_with_proxy
 alias youtube-dl=youtube_dl_with_proxy
-alias torminal=torify_terminal
 
 alias hg="torsocks hg"
 alias ssh="torsocks ssh"
