@@ -41,15 +41,18 @@ gedit-source-code-browser-plugin
 git
 gperf
 intltool
+libasound2-dev
 libc6-dev
 libc6-dbg
 libcairo2-dev
+libcurl4-openssl-dev
 libdbus-1-dev
 libev-dev
 libimlib2-dev
 libltdl-devlibtool
 liblua5.1-dev
 liblua5.2-dev
+libnotify-dev
 libgcrypt11-dev
 libgcrypt20-dev
 libgpg-error-dev 
@@ -85,12 +88,25 @@ libxcb-xinerama0-dev
 libxcb-xtest0-dev
 libxcursor-dev
 libxdg-basedir-dev 
+libxt-dev 
+libiw-dev 
+libidl-dev 
+mesa-common-dev 
+autoconf2.13 
+yasm libgtk2.0-dev 
+libdbus-1-dev 
+libdbus-glib-1-dev 
+python-dev 
+libgstreamer0.10-dev 
+libgstreamer-plugins-base0.10-dev 
+libpulse-dev
 lintian
 lua5.1 
 lua5.2
 luadoc
 lua-ldoc
 make
+mercurial
 pbuilder
 pidgin-dev
 purple-dev
@@ -98,6 +114,7 @@ python-rope
 tig
 valac
 xmlto
+zip
 " > config/package-lists/code.list.chroot
 echo "
 anoncoind
