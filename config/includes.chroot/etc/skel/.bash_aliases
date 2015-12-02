@@ -55,8 +55,12 @@ wget_with_proxy(){
     torsocks wget "$@"
 }
 
+curl_with_proxy(){
+    torsocks curl "$@"
+}
+
 torify_terminal(){
-    . torsocks on
+    . torsocks on &> /dev/urandom
 }
 
 proxy_lynx(){
@@ -77,6 +81,7 @@ alias lynx=proxy_lynx
 alias mutt="torsocks mutt &> /dev/null"
 alias finch="torsocks finch &> /dev/null"
 alias wget=wget_with_proxy
+alias curl="curl_with_proxy"
 alias youtube-dl=youtube_dl_with_proxy
 
 alias hg="torsocks hg"
