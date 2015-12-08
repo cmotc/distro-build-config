@@ -1,51 +1,37 @@
 Package: brasero
 Pin: version *
 Pin-Priority: -1
-
 Package: k3b
 Pin: version *
 Pin-Priority: -1
-
 Package: exfalso
 Pin: version *
 Pin-Priority: -1
-
 Package: uzbl
 Pin: version *
 Pin-Priority: -1
-
 Package: xterm
 Pin: version *
 Pin-Priority: -1
-
 Package: uxterm
 Pin: version *
 Pin-Priority: -1
-
 Package: vala-terminal
 Pin: version *
 Pin-Priority: -1
-
 Package: libreoffice-base
 Pin: version *
 Pin-Priority: -1
-
 Package: exim4-daemon-light
 Pin: version *
 Pin-Priority: -1
-
 Package: exim4-daemon-heavy
 Pin: version *
 Pin-Priority: -1
-
 Package: minissdpd
 Pin: version *
 Pin-Priority: -1
-
 Package: epdfview
 Pin: version *
 Pin-Priority: -1
 
-Package: libreoffice-*
-Pin: version *
-Pin-Priority: -1
