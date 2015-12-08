@@ -4,9 +4,8 @@ lighttpd
 openssl
 " > config/package-lists/aptly.list.chroot
 echo "
-blueman
 bluetooth
-#bluewho
+bluewho
 pulseaudio-module-bluetooth
 pulseaudio-module-bluetooth-dbg
 " > config/package-lists/bluetooth.list.chroot
