@@ -7,9 +7,6 @@ netcat
 nmap
 ntop
 rtorrent
-transmission-cli
-transmission-common
-transmission-daemon
 wget
 youtube-dl
 

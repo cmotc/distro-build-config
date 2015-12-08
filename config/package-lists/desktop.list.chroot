@@ -4,8 +4,6 @@ awesome-extra
 awesome-lightdm-session
 compton
 conky-std
-desktop-base
-desktop-file-utils
 dialog
 doublecmd-gtk
 network-manager
@@ -15,9 +13,11 @@ lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
 svirfneblin-panel
+svirfneblin-*
 terminator
 x11-apps
 xcalc
+wcalc
 xterm
 xdialog
 

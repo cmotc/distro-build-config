@@ -148,8 +148,6 @@ awesome-extra
 awesome-lightdm-session
 compton
 conky-std
-desktop-base
-desktop-file-utils
 dialog
 doublecmd-gtk
 network-manager
@@ -159,9 +157,11 @@ lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
 svirfneblin-panel
+svirfneblin-*
 terminator
 x11-apps
 xcalc
+wcalc
 xterm
 xdialog
 " > config/package-lists/desktop.list.chroot
@@ -186,35 +186,18 @@ markdown
 echo "
 hydra
 john
-#sqlmap
+sqlmap
 ophcrack
 sslscan
 sslsniff
 sslstrip
 thc-ipv6
-w3af
-w3af-console
 wireshark
 yersinia
 " > config/package-lists/exploit.list.chroot
 echo "
 fdroidserver
 " > config/package-lists/fdroid.list.chroot
-echo "
-macchanger
-bleachbit
-florence
-parcimonie
-freepto-passwords-changer
-tomb
-#torbrowser-launcher
-tortp
-python-stem
-tortp-gtk
-python-tortp
-freepto-usb-utils
-freepto-certificates
-" > config/package-lists/freepto.list.chroot
 echo "
 crawl-common
 crawl-tiles
@@ -275,9 +258,6 @@ netcat
 nmap
 ntop
 rtorrent
-transmission-cli
-transmission-common
-transmission-daemon
 wget
 youtube-dl
 " > config/package-lists/network.list.chroot
@@ -290,11 +270,13 @@ gnupg-agent
 gnupg2
 macchanger
 mat
+parcimonie
 secure-delete
 " > config/package-lists/paranoid.list.chroot
 echo "
 irssi
 toxic
+#twister
 #tox-bootstrapd
 " > config/package-lists/social.list.chroot
 echo "
@@ -316,8 +298,6 @@ user-setup
 " > config/package-lists/system.list.chroot
 echo "
 lshw
-#unetbootin
-#unetbootin-translations
 htop
 usbutils
 " > config/package-lists/utils.list.chroot
