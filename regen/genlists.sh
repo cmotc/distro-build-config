@@ -64,18 +64,14 @@ libstartup-notification0-dev
 libsodium-dev
 libsodium-dbg
 libtox-dev
-libtoxav-dbg
-libtoxav-dev
-libtoxav0
-libtoxcore-dbg
-libtoxcore-dev
 libtoxcore0
-libtoxdns-dbg
-libtoxdns-dev
-libtoxdns0
-libtoxencryptsave-dbg
+libtoxcore-dev
+libtoxav0
+libtoxav-dev
+libtoxencryptsave0
 libtoxencryptsave-dev
-libtoxencryptsave0 
+libtoxdns0
+libtoxdns-dev
 libx11-xcb-dev
 libxcb1-dev
 libxcb-image0-dev
@@ -113,6 +109,7 @@ purple-dev
 python-rope
 tig
 valac
+valgrind
 xmlto
 zip
 " > config/package-lists/code.list.chroot
@@ -160,6 +157,7 @@ mc
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
+pcmanfm
 svirfneblin-panel
 terminator
 x11-apps
@@ -245,35 +243,13 @@ i2p-router
 killyourtv-keyring
 " > config/package-lists/i2p.list.chroot
 echo "
-enigmail
-filezilla
-filezilla-common
-#foxyproxy
+alpine
 finch
 hexchat
-#icedove
-#icedove-dispmua
-#iceweasel
-#liferea
-#liferea-data
 lynx
 lynx-cur
 mutt
 ncftp
-#pidgin-otr
-#xul-ext-adblock-plus
-#xul-ext-certificatepatrol
-#xul-ext-cookie-monster
-#xul-ext-dispmua
-#xul-ext-firebug
-#xul-ext-foxyproxy-standard
-#xul-ext-gnome-keyring
-#xul-ext-https-everywhere
-#xul-ext-noscript
-#xul-ext-perspectives
-#xul-ext-refcontrol
-#xul-ext-requestpolicy
-#xul-ext-useragentswitcher
 " > config/package-lists/internet.list.chroot
 echo "
 live-boot
@@ -318,12 +294,8 @@ secure-delete
 " > config/package-lists/paranoid.list.chroot
 echo "
 irssi
-#twister-core
-utox
+toxic
 #tox-bootstrapd
-#libtoxcore
-#libtoxcore-dev
-turpial
 " > config/package-lists/social.list.chroot
 echo "
 deb.torproject.org-keyring
@@ -332,12 +304,10 @@ tor
 tor-arm
 tor-geoipdb
 torsocks
-#xul-ext-torbirdy
 " > config/package-lists/tor.list.chroot
 echo "
 firmware-linux-free
 laptop-mode-tools
-gksu
 linux-image-amd64
 sudo
 syslinux-common

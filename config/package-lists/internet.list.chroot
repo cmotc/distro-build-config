@@ -1,32 +1,9 @@
 
-epiphany-browser
-epiphany-browser-data
-enigmail
-filezilla
-filezilla-common
-foxyproxy
+alpine
+finch
 hexchat
-icedove
-icedove-dispmua
-iceweasel
-liferea
-liferea-data
 lynx
 lynx-cur
 mutt
-finch
-pidgin-otr
-xul-ext-adblock-plus
-xul-ext-certificatepatrol
-xul-ext-cookie-monster
-xul-ext-dispmua
-xul-ext-firebug
-xul-ext-foxyproxy-standard
-xul-ext-gnome-keyring
-xul-ext-https-everywhere
-xul-ext-noscript
-xul-ext-perspectives
-xul-ext-refcontrol
-xul-ext-requestpolicy
-xul-ext-useragentswitcher
+ncftp
 
