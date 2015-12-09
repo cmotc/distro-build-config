@@ -1,16 +1,15 @@
 #!/bin/bash
 # Disable the network devices
-ifconfig eth0 down
-ifconfig wlan0 down
+/sbin/ifconfig eth0 down
+/sbin/ifconfig wlan0 down
 # Spoof the mac addresses
 /usr/bin/macchanger -r eth0
 /usr/bin/macchanger -r wlan0
-# Re-enable the devices
-ifconfig eth0 up
-ifconfig wlan0 up
+# Re-enable the Ethernet device only, the wifi stays down.
+/sbin/ifconfig eth0 up
+#ifconfig wlan0 up
 
-. /usr/bin/hidblock
-. /usr/bin/fireblock
+/bin/bash -c '. /usr/bin/fireblock && fireblock_watch_xscreensaver &'
+/bin/bash -c '. /usr/bin/hidblock && hidblock_watch_xscreensaver &'
 
-bash -c fireblock_watch_xscreensaver &
-bash -c hidblock_watch_xscreensaver & 
+exit 0

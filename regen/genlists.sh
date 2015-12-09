@@ -148,7 +148,6 @@ awesome-lightdm-session
 compton
 conky-std
 dialog
-doublecmd-gtk
 network-manager
 mc
 lightdm
@@ -181,6 +180,7 @@ imagemagick
 imagemagick-6.q16
 imagemagick-common
 markdown
+pinta
 " > config/package-lists/documents.list.chroot
 echo "
 hydra
@@ -202,6 +202,7 @@ crawl-common
 crawl-tiles
 crawl-tiles-data
 freeciv-client-sdl
+wesnoth
 " > config/package-lists/games.list.chroot
 echo "
 apparmor
@@ -280,6 +281,7 @@ toxic
 " > config/package-lists/social.list.chroot
 echo "
 deb.torproject.org-keyring
+mumble
 privoxy
 tor
 tor-arm
