@@ -54,3 +54,7 @@ directories if any part of that fails. The goal is to be Gnome3-like where it's
 nice but avoid all the dumb stuff about Gnome3 that bothered you and have the
 customizability of tiling. Also I can't imagine a civilized society that 
 survives long if javascript is integrated into it's desktop environment.
+
+Svirfneblin isn't a Gnome3 clone anymore. It's an AwesomeWM configuration which
+makes one or two things available that are inspired by Gnome3 and approximates
+a desktop environment to achieve the goals of this custom distro.
