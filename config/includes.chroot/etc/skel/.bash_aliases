@@ -63,6 +63,10 @@ torify_terminal(){
     bash -c ". torsocks on && terminator -l default -p $HOME/.torminalrc -u -T Torminal" &> /dev/urandom
 }
 
+toron(){
+    . torsocks on
+}
+
 proxy_lynx(){
     torsocks lynx
 }
