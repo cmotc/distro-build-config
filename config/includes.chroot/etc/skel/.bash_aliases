@@ -105,6 +105,7 @@ alias dialog="dialog --colors"
 alias tor-arm="sudo -u debian-tor arm"
 alias rm="srm -z"
 alias torminal=torify_terminal
+alias torminator=torminal
 
 alias lynx=proxy_lynx
 alias mutt="torsocks mutt &> /dev/null"
