@@ -60,7 +60,7 @@ curl_with_proxy(){
 }
 
 torify_terminal(){
-    . torsocks on &> /dev/urandom
+    bash -c ". torsocks on && terminator -l default -p $HOME/.torminalrc -u -T Torminal" &> /dev/urandom
 }
 
 proxy_lynx(){
@@ -71,10 +71,39 @@ run_once(){
     pgrep $@ > /dev/null || ($@ &)
 }
 
+unset_display(){
+	unset "$1"
+	UNSET_TEST=$(eval "echo \$$1")
+	echo "testing unset $1 $UNSET_TEST"
+}
+
+torcheck(){
+	curl torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT." && USING_TOR=true
+	if [ $USING_TOR ]; then
+		echo "Your IP is identified to be a Tor-EXIT."
+	else
+		echo "Your IP is NOT identified to be a Tor-EXIT."
+	fi
+}
+
+unalias_torsocks(){
+	unalias git
+	unalias ssh
+	unalias hg
+	unalias wget
+	unalias finch
+	unalias curl
+	unalias mutt
+	unalias youtube-dl
+	unalias lynx
+}
+
+alias tunset=unset_display
+
 alias bleachbit="bleachbit  -co --preset"
 alias dialog="dialog --colors"
 alias tor-arm="sudo -u debian-tor arm"
-alias rm=srm -z
+alias rm="srm -z"
 alias torminal=torify_terminal
 
 alias lynx=proxy_lynx
@@ -86,15 +115,15 @@ alias youtube-dl=youtube_dl_with_proxy
 
 alias hg="torsocks hg"
 alias ssh="torsocks ssh"
-
-alias chckcnky=check_conky
-alias cnkystrt=conky_start
-alias cnkystp=conky_stop
-alias cnkyrstrt=conky_restart
-
 alias git="torsocks git"
+
 alias commit=git_add_and_commit
 alias clone=git_clone_with_proxy
 alias cpush=git_add_and_commit_and_push
 alias push=git_push_with_proxy
 alias pull=git_pull_with_proxy
+
+alias chckcnky=check_conky
+alias cnkystrt=conky_start
+alias cnkystp=conky_stop
+alias cnkyrstrt=conky_restart
