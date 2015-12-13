@@ -99,6 +99,7 @@ avoiding protocol or metadata leaks. Please use caution."
         echo "Your IP is NOT identified to be a Tor-EXIT."
     fi
     alias wget=wget_with_proxy
+    unset USING_TOR
 }
 
 unalias_torsocks(){
