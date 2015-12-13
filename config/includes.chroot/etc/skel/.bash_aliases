@@ -90,6 +90,7 @@ torcheck(){
 	fi
 	if [ $USING_TOR ]; then
 		echo "Your IP is identified to be a Tor-EXIT."
+		echo "=====           NOTICE            ====="
 		echo "This function merely verified that an unaliased copy of wget
 would use tor, as with the command . torsocks on. This does not mean that your
 connection is end-to-end encrypted, or that it's using https, or that you are
