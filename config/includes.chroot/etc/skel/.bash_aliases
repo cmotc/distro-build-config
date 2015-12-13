@@ -82,12 +82,22 @@ unset_display(){
 }
 
 torcheck(){
-	curl torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT." && USING_TOR=true
+	using_tor=false
+	unalias wget
+	TOR_CHECK_RESULT=$(wget -qO- https://torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT.") 
+	if [ ! "$TOR_CHECK_RESULT" == "" ]; then
+		USING_TOR=true
+	fi
 	if [ $USING_TOR ]; then
 		echo "Your IP is identified to be a Tor-EXIT."
+		echo "This function merely verified that an unaliased copy of wget
+would use tor, as with the command . torsocks on. This does not mean that your
+connection is end-to-end encrypted, or that it's using https, or that you are
+avoiding protocol or metadata leaks. Please use caution."
 	else
 		echo "Your IP is NOT identified to be a Tor-EXIT."
 	fi
+	alias wget=wget_with_proxy
 }
 
 unalias_torsocks(){
