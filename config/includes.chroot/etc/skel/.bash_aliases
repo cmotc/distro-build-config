@@ -52,7 +52,7 @@ youtube_dl_with_proxy(){
 }
 
 wget_with_proxy(){
-    torsocks wget "$@"
+    torsocks wget --https-only "$@"
 }
 
 curl_with_proxy(){
@@ -60,7 +60,7 @@ curl_with_proxy(){
 }
 
 torify_terminal(){
-    bash -c ". torsocks on && terminator -l default -p $HOME/.torminalrc -u -T Torminal" &> /dev/urandom
+    bash -c ". torsocks on && terminator $@ -l default -p $HOME/.torminalrc -u -T Torminal" &> /dev/urandom
 }
 
 toron(){
@@ -76,41 +76,41 @@ run_once(){
 }
 
 unset_display(){
-	unset "$1"
-	UNSET_TEST=$(eval "echo \$$1")
-	echo "testing unset $1 $UNSET_TEST"
+    unset "$1"
+    UNSET_TEST=$(eval "echo \$$1")
+    echo "testing unset $1 $UNSET_TEST"
 }
 
 torcheck(){
-	using_tor=false
-	unalias wget
-	TOR_CHECK_RESULT=$(wget -qO- https://torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT.") 
-	if [ ! "$TOR_CHECK_RESULT" == "" ]; then
-		USING_TOR=true
-	fi
-	if [ $USING_TOR ]; then
-		echo "Your IP is identified to be a Tor-EXIT."
-		echo "=====           NOTICE            ====="
-		echo "This function merely verified that an unaliased copy of wget
+    using_tor=false
+    unalias wget
+    TOR_CHECK_RESULT=$(wget --https-only -qO- https://torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT.") 
+    if [ ! "$TOR_CHECK_RESULT" == "" ]; then
+        USING_TOR=true
+    fi
+    if [ $USING_TOR ]; then
+        echo "Your IP is identified to be a Tor-EXIT."
+        echo "=====           NOTICE            ====="
+        echo "This function merely verified that an unaliased copy of wget
 would use tor, as with the command . torsocks on. This does not mean that your
 connection is end-to-end encrypted, or that it's using https, or that you are
 avoiding protocol or metadata leaks. Please use caution."
-	else
-		echo "Your IP is NOT identified to be a Tor-EXIT."
-	fi
-	alias wget=wget_with_proxy
+    else
+        echo "Your IP is NOT identified to be a Tor-EXIT."
+    fi
+    alias wget=wget_with_proxy
 }
 
 unalias_torsocks(){
-	unalias git
-	unalias ssh
-	unalias hg
-	unalias wget
-	unalias finch
-	unalias curl
-	unalias mutt
-	unalias youtube-dl
-	unalias lynx
+    unalias git
+    unalias ssh
+    unalias hg
+    unalias wget
+    unalias finch
+    unalias curl
+    unalias mutt
+    unalias youtube-dl
+    unalias lynx
 }
 
 alias tunset=unset_display
