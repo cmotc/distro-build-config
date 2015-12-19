@@ -1,1 +1,5 @@
-/home/dyngar-m/Projects/live-build/distro/fireaxe-lb/config/includes.chroot/etc/skel/.bin/batmesh/batmesh.sh
+#!/bin/sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH="$DIR/batmesh/batmesh.sh"
+"$PATH" "$@"
+exit

@@ -1,1 +1,5 @@
-/home/dyngar-m/Projects/live-build/distro/fireaxe-lb/config/includes.chroot/etc/skel/.bin/bb-anon/bb-anon.sh
+#!/bin/sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH="$DIR/bb-anon/bb-anon.sh"
+"$PATH" "$@"
+exit
