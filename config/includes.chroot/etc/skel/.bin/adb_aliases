@@ -1,0 +1,23 @@
+#! /bin/sh
+
+on(){
+    OLD_PATH_CONFIG="$HOME/.config/.path_prev_cache"
+    SDK_DIR="/usr/local/android-sdk/platform-tools"
+    echo "$PATH" > "$OLD_PATH_CONFIG"
+    PATH="/usr/local/android-sdk/platform-tools:$PATH"
+    alias adb="/usr/local/android-sdk/platform-tools/adb"
+    alias dmtracedump="/usr/local/android-sdk/platform-tools/dmtracedump"
+    alias fastboot="/usr/local/android-sdk/platform-tools/fastboot"
+    alias hprof-conv="/usr/local/android-sdk/platform-tools/hprof-conv"
+    alias sqlite3="/usr/local/android-sdk/platform-tools/sqlite3"
+}
+
+off(){
+    OLD_PATH_CONFIG="$HOME/.config/.path_prev_cache"
+    unalias adb
+    unalias dmtracedump
+    unalias fastboot
+    unalias hprof-conv
+    unalias sqlite3
+    PATH=$(cat "$OLD_PATH_CONFIG")
+}

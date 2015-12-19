@@ -83,6 +83,7 @@ libxcb-xinerama0-dev
 libxcb-xtest0-dev
 libxcursor-dev
 libxdg-basedir-dev 
+libxdo-dev
 libxt-dev 
 libiw-dev 
 libidl-dev 
