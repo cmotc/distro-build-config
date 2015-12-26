@@ -60,7 +60,7 @@ curl_with_proxy(){
 }
 
 torify_terminal(){
-    bash -c ". torsocks on && terminator $@ -l default -p $HOME/.torminalrc -u -T Torminal" &> /dev/urandom
+    bash -c ". torsocks on && terminator $@ -l default -p $HOME/.torminalrc -u -T Torminal" # &> /dev/urandom
 }
 
 toron(){
@@ -83,22 +83,22 @@ unset_display(){
 
 torcheck(){
     using_tor=false
-    unalias wget
-    TOR_CHECK_RESULT=$(wget --https-only -qO- https://torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT.") 
+    unalias curl
+    TOR_CHECK_RESULT=$(curl https://torcheck.xenobite.eu | grep "Your IP is identified to be a Tor-EXIT.") 
     if [ ! "$TOR_CHECK_RESULT" == "" ]; then
         USING_TOR=true
     fi
     if [ $USING_TOR ]; then
         echo "Your IP is identified to be a Tor-EXIT."
         echo "=====           NOTICE            ====="
-        echo "This function merely verified that an unaliased copy of wget
+        echo "This function merely verified that an unaliased copy of curl
 would use tor, as with the command . torsocks on. This does not mean that your
 connection is end-to-end encrypted, or that it's using https, or that you are
 avoiding protocol or metadata leaks. Please use caution."
     else
         echo "Your IP is NOT identified to be a Tor-EXIT."
     fi
-    alias wget=wget_with_proxy
+    alias curl=curl_with_proxy
     unset USING_TOR
 }
 
@@ -144,3 +144,8 @@ alias chckcnky=check_conky
 alias cnkystrt=conky_start
 alias cnkystp=conky_stop
 alias cnkyrstrt=conky_restart
+
+alias aproj="cd $HOME/Projects/Distro_OS_Projects/AOSP/packages"
+alias dproj="cd $HOME/Projects/Distro_OS_Projects/packages"
+alias wproj="cd $HOME/Projects/Blogs_and_Infosites"
+alias lproj="cd $HOME/Projects/Distro_OS_Projects/live"
