@@ -72,6 +72,7 @@ libxcb-xinerama0-dev
 libxcb-xtest0-dev
 libxcursor-dev
 libxdg-basedir-dev 
+libxdo-dev
 libxt-dev 
 libiw-dev 
 libidl-dev 
@@ -91,6 +92,8 @@ luadoc
 lua-ldoc
 make
 mercurial
+nodejs
+nodejs-legacy
 pbuilder
 pidgin-dev
 purple-dev

@@ -103,6 +103,8 @@ luadoc
 lua-ldoc
 make
 mercurial
+nodejs
+nodejs-legacy
 pbuilder
 pidgin-dev
 purple-dev

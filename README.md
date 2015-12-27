@@ -1,6 +1,9 @@
 # distro-live-config
 Backup of my laptop OS configuration as a live-build tree  
 
+**Current Project:** Making a Debian package which installs and configures
+gittorrent system-wide and configures the init system for gittorrentd.
+
 I sometimes arbitrarily and without regard for the remaining problems really
 like anything and everything that aids in the decentralization of the internet
 and especially the functions usually carried out on social networks. To that end
