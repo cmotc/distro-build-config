@@ -67,6 +67,10 @@ toron(){
     . torsocks on
 }
 
+toroff(){
+    . torsocks off
+}
+
 proxy_lynx(){
     torsocks lynx
 }
@@ -114,6 +118,10 @@ unalias_torsocks(){
     unalias lynx
 }
 
+gittorrent_clone(){
+    \git \clone "$@"
+}
+
 alias tunset=unset_display
 
 alias bleachbit="bleachbit  -co --preset"
@@ -139,6 +147,7 @@ alias clone=git_clone_with_proxy
 alias cpush=git_add_and_commit_and_push
 alias push=git_push_with_proxy
 alias pull=git_pull_with_proxy
+alias gitpeer="gittorrent_clone"
 
 alias chckcnky=check_conky
 alias cnkystrt=conky_start
