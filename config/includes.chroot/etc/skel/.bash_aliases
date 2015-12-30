@@ -158,3 +158,15 @@ alias aproj="cd $HOME/Projects/Distro_OS_Projects/AOSP/packages"
 alias dproj="cd $HOME/Projects/Distro_OS_Projects/packages"
 alias wproj="cd $HOME/Projects/Blogs_and_Infosites"
 alias lproj="cd $HOME/Projects/Distro_OS_Projects/live"
+
+alias aprojs="cd $HOME/Projects/Distro_OS_Projects/AOSP/packages && pcmanfm ./"
+alias dprojs="cd $HOME/Projects/Distro_OS_Projects/packages && pcmanfm ./"
+alias wprojs="cd $HOME/Projects/Blogs_and_Infosites && pcmanfm ./"
+alias lprojs="cd $HOME/Projects/Distro_OS_Projects/live && pcmanfm ./"
+
+alias aprojr="cd $HOME/Projects/Distro_OS_Projects/AOSP/packages && gedit ./README.md"
+alias dprojr="cd $HOME/Projects/Distro_OS_Projects/packages && gedit ./README.md"
+alias wprojr="cd $HOME/Projects/Blogs_and_Infosites && gedit ./README.md"
+alias lprojr="cd $HOME/Projects/Distro_OS_Projects/live && gedit ./README.md"
+
+alias proot="gedit $HOME/Projects/README.md"
