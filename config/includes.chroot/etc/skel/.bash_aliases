@@ -146,6 +146,8 @@ alias wget=wget_with_proxy
 alias curl="curl_with_proxy"
 alias youtube-dl=youtube_dl_with_proxy
 alias ratox=start_ratox
+alias mumble="torsocks mumble $@ &> /dev/null"
+alias irssi="torsocks irssi $@ &> /dev/null"
 alias sms=send_text
 
 alias hg="torsocks hg"

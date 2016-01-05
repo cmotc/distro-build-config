@@ -280,6 +280,7 @@ secure-delete
 " > config/package-lists/paranoid.list.chroot
 echo "
 irssi
+mumble
 toxic
 #twister
 #tox-bootstrapd
