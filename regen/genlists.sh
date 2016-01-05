@@ -257,10 +257,12 @@ batctl
 batmand
 curl
 horst
+iftop
+iptraf-ng
 netcat
 nmap
-ntop
 rtorrent
+sntop
 wget
 youtube-dl
 " > config/package-lists/network.list.chroot

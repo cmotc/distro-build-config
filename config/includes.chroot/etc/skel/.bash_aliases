@@ -24,7 +24,7 @@ git_add_and_commit(){
 }
 
 git_add_and_commit_and_push(){
-    git add . && git commit -am "$@" && git push
+    git add . && git commit -am "$@" && torsocks git push
 }
 
 git_push_with_proxy(){
@@ -122,6 +122,14 @@ gittorrent_clone(){
     \git \clone "$@"
 }
 
+start_ratox(){
+    cd $HOME/.config/ratox && ratox "$@ ./.ratox.tox"
+}
+
+send_text(){
+    \curl http://textbelt.com/text -d "number=$1" -d "message=$2"
+}
+
 alias tunset=unset_display
 
 alias bleachbit="bleachbit  -co --preset"
@@ -137,6 +145,8 @@ alias finch="torsocks finch &> /dev/null"
 alias wget=wget_with_proxy
 alias curl="curl_with_proxy"
 alias youtube-dl=youtube_dl_with_proxy
+alias ratox=start_ratox
+alias sms=send_text
 
 alias hg="torsocks hg"
 alias ssh="torsocks ssh"
@@ -170,3 +180,5 @@ alias wprojr="cd $HOME/Projects/Blogs_and_Infosites && gedit ./README.md"
 alias lprojr="cd $HOME/Projects/Distro_OS_Projects/live && gedit ./README.md"
 
 alias proot="gedit $HOME/Projects/README.md"
+
+alias find="find $@ 2> /dev/null"
