@@ -17,3 +17,6 @@ source $HOME/.config/mutt/muttssl
 
 # Enable GPG
 #source $HOME/.config/mutt/muttgpg
+
+set sort = threads
+set sort_aux = last-date-received

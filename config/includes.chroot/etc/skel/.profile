@@ -48,3 +48,8 @@ fi
 if [ -f "$HOME/.userrc" ]; then
     . "$HOME/.userrc"
 fi
+
+# Set and load per-user host aliases
+if [ -f "$HOME/.hosts" ]; then
+    export HOSTALIASES="$HOME/.hosts"
+fi

@@ -213,10 +213,6 @@ apparmor-docs
 apparmor-profiles
 apparmor-utils
 ferm
-#harden
-#harden-development
-#harden-tools
-#hardening-includes
 fireblock
 hidblock
 nufw
@@ -229,12 +225,9 @@ i2p-router
 killyourtv-keyring
 " > config/package-lists/i2p.list.chroot
 echo "
-alpine
-finch
-hexchat
+letsencrypt
 lynx
 lynx-cur
-mutt
 ncftp
 " > config/package-lists/internet.list.chroot
 echo "
@@ -275,19 +268,21 @@ gnupg-agent
 gnupg2
 macchanger
 mat
-parcimonie
+#parcimonie
 secure-delete
 " > config/package-lists/paranoid.list.chroot
 echo "
+alpine
 irssi
 mumble
+mutt
+profanity
 toxic
 #twister
 #tox-bootstrapd
 " > config/package-lists/social.list.chroot
 echo "
 deb.torproject.org-keyring
-mumble
 privoxy
 tor
 tor-arm

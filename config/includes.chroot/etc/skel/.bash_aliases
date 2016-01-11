@@ -140,8 +140,9 @@ alias torminal=torify_terminal
 alias torminator=torminal
 
 alias lynx=proxy_lynx
-alias mutt="torsocks mutt &> /dev/null"
-alias finch="torsocks finch &> /dev/null"
+alias mutt="torsocks mutt"
+alias finch="torsocks profanity"
+alias profanity="torsocks profanity"
 alias wget=wget_with_proxy
 alias curl="curl_with_proxy"
 alias youtube-dl=youtube_dl_with_proxy

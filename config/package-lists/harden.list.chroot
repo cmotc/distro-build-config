@@ -4,10 +4,6 @@ apparmor-docs
 apparmor-profiles
 apparmor-utils
 ferm
-#harden
-#harden-development
-#harden-tools
-#hardening-includes
 fireblock
 hidblock
 nufw
