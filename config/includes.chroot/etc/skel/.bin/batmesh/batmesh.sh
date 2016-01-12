@@ -19,18 +19,15 @@ $RED[!] This script must be run as root$ENDC
         echo "
 $BLUE[i] Starting mesh mode:$ENDC
 "
+	sudo service networkmanager stop
 	sudo batctl if
-#        if [ ! -e /var/run/tor/tor.pid ]; then
-#            echo " $RED*$ENDC BATMAN-adv is not running! Quitting...
-#" >&2
-#            exit 1
-#        fi
-	sudo ifconfig wlan0 mtu 1532
+	sudo ip link set up dev eth0
+	sudo ip link set mtu 1532 dev wlan0
 	sudo iwconfig wlan0 mode ad-hoc essid batmesh ap 02:12:34:56:78:9A channel 1
         sudo batctl if add wlan0
 	sudo ifconfig wlan0 up
 	sudo ifconfig bat0 up
-        sudo avahi-autoipd bat0
+	sudo avahi-autoipd bat0
         echo " $GREEN*$ENDC enabled Avahi assignment on bat0"
         echo "
 $BLUE[i] Mesh Mode Started:$ENDC
@@ -54,6 +51,7 @@ $BLUE[i] Stopping mesh mode:$ENDC
 	sudo ifconfig wlan0 down
 	sudo batctl if del bat0
 	sudo iwconfig wlan0 mode managed
+#	sudo service networkmanager start
         echo "
 $BLUE[i] Mesh Mode Stopped:$ENDC
 "	

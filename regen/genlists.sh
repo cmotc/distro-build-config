@@ -246,8 +246,8 @@ quodlibet
 vlc
 " > config/package-lists/media.list.chroot
 echo "
+alfred
 batctl
-batmand
 curl
 horst
 iftop
