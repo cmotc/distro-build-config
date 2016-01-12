@@ -20,12 +20,15 @@ fi
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
+
 if [ -d "$HOME/.bin/bin" ] ; then
     PATH="$HOME/.bin/bin:$PATH"
 fi
+
 if [ -d "/usr/local/android-ndk" ] ; then
     PATH="/usr/local/android-ndk:$PATH"
 fi
+
 if [ -d "/usr/local/android-sdk" ] ; then
     PATH="/usr/local/android-sdk:$PATH"
     PATH="/usr/local/android-sdk/tools:$PATH"
