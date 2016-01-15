@@ -1,14 +1,16 @@
+#! /bin/sh
+DIRECTORY=$(cd `dirname $0` && pwd)
 echo "
 aptly
 lighttpd
 openssl
-" > config/package-lists/aptly.list.chroot
+" > "$DIRECTORY/../config/package-lists/aptly.list.chroot"
 echo "
 bluetooth
 bluewho
 pulseaudio-module-bluetooth
 pulseaudio-module-bluetooth-dbg
-" > config/package-lists/bluetooth.list.chroot
+" > "$DIRECTORY/../config/package-lists/bluetooth.list.chroot"
 echo "
 anjuta
 anjuta-common
@@ -38,8 +40,11 @@ gedit-dev
 gedit-plugins
 gedit-source-code-browser-plugin
 git
+globus-simple-ca
 gperf
+ikiwiki
 intltool
+jekyll
 libasound2-dev
 libc6-dev
 libc6-dbg
@@ -114,13 +119,13 @@ valac
 valgrind
 xmlto
 zip
-" > config/package-lists/code.list.chroot
+" > "$DIRECTORY/../config/package-lists/code.list.chroot"
 echo "
 anoncoind
 #bitcoind
 #litecoind
 namecoin
-" > config/package-lists/coins.list.chroot
+" > "$DIRECTORY/../config/package-lists/coins.list.chroot"
 echo "
 apt-transport-https
 apt-transport-tor
@@ -143,7 +148,7 @@ doc-debian
 dpkg
 dpkg-dev
 dpkg-sig
-" > config/package-lists/debian.list.chroot
+" > "$DIRECTORY/../config/package-lists/debian.list.chroot"
 echo "
 awesome
 awesome-extra
@@ -165,7 +170,7 @@ xcalc
 wcalc
 xterm
 xdialog
-" > config/package-lists/desktop.list.chroot
+" > "$DIRECTORY/../config/package-lists/desktop.list.chroot"
 echo "
 abiword
 abiword-common
@@ -184,7 +189,7 @@ imagemagick-6.q16
 imagemagick-common
 markdown
 pinta
-" > config/package-lists/documents.list.chroot
+" > "$DIRECTORY/../config/package-lists/documents.list.chroot"
 echo "
 hydra
 john
@@ -196,17 +201,17 @@ sslstrip
 thc-ipv6
 wireshark
 yersinia
-" > config/package-lists/exploit.list.chroot
+" > "$DIRECTORY/../config/package-lists/exploit.list.chroot"
 echo "
 fdroidserver
-" > config/package-lists/fdroid.list.chroot
+" > "$DIRECTORY/../config/package-lists/fdroid.list.chroot"
 echo "
 crawl-common
 crawl-tiles
 crawl-tiles-data
 freeciv-client-sdl
 wesnoth
-" > config/package-lists/games.list.chroot
+" > "$DIRECTORY/../config/package-lists/games.list.chroot"
 echo "
 apparmor
 apparmor-docs
@@ -217,19 +222,21 @@ fireblock
 hidblock
 nufw
 rkhunter
-" > config/package-lists/harden.list.chroot
+" > "$DIRECTORY/../config/package-lists/harden.list.chroot"
 echo "
 i2p
 i2p-keyring
 i2p-router
 killyourtv-keyring
-" > config/package-lists/i2p.list.chroot
+" > "$DIRECTORY/../config/package-lists/i2p.list.chroot"
 echo "
 letsencrypt
 lynx
 lynx-cur
 ncftp
-" > config/package-lists/internet.list.chroot
+uzbl
+xombrero
+" > "$DIRECTORY/../config/package-lists/internet.list.chroot"
 echo "
 live-boot
 live-boot-doc
@@ -238,13 +245,13 @@ live-config
 live-config-doc
 live-config-systemd
 live-manual-html
-" > config/package-lists/live.list.chroot
+" > "$DIRECTORY/../config/package-lists/live.list.chroot"
 echo "
 cmus
 imagemagick
 quodlibet
 vlc
-" > config/package-lists/media.list.chroot
+" > "$DIRECTORY/../config/package-lists/media.list.chroot"
 echo "
 alfred
 batctl
@@ -252,13 +259,14 @@ curl
 horst
 iftop
 iptraf-ng
+joker
 netcat
 nmap
 rtorrent
 sntop
 wget
 youtube-dl
-" > config/package-lists/network.list.chroot
+" > "$DIRECTORY/../config/package-lists/network.list.chroot"
 echo "
 apg
 bleachbit
@@ -270,7 +278,7 @@ macchanger
 mat
 #parcimonie
 secure-delete
-" > config/package-lists/paranoid.list.chroot
+" > "$DIRECTORY/../config/package-lists/paranoid.list.chroot"
 echo "
 alpine
 irssi
@@ -280,7 +288,7 @@ profanity
 toxic
 #twister
 #tox-bootstrapd
-" > config/package-lists/social.list.chroot
+" > "$DIRECTORY/../config/package-lists/social.list.chroot"
 echo "
 deb.torproject.org-keyring
 privoxy
@@ -288,7 +296,7 @@ tor
 tor-arm
 tor-geoipdb
 torsocks
-" > config/package-lists/tor.list.chroot
+" > "$DIRECTORY/../config/package-lists/tor.list.chroot"
 echo "
 firmware-linux-free
 laptop-mode-tools
@@ -297,14 +305,14 @@ sudo
 syslinux-common
 syslinux-efi
 user-setup
-" > config/package-lists/system.list.chroot
+" > "$DIRECTORY/../config/package-lists/system.list.chroot"
 echo "
 lshw
 htop
 usbutils
-" > config/package-lists/utils.list.chroot
+" > "$DIRECTORY/../config/package-lists/utils.list.chroot"
 echo "
 aircrack-ng
 reaver
 wifite
-" > config/package-lists/wifi.list.chroot
+" > "$DIRECTORY/../config/package-lists/wifi.list.chroot"

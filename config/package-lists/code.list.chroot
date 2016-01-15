@@ -27,8 +27,11 @@ gedit-dev
 gedit-plugins
 gedit-source-code-browser-plugin
 git
+globus-simple-ca
 gperf
+ikiwiki
 intltool
+jekyll
 libasound2-dev
 libc6-dev
 libc6-dbg
