@@ -129,10 +129,18 @@ start_ratox(){
 send_text(){
     \curl http://textbelt.com/text -d "number=$1" -d "message=$2"
 }
+start_xombrero(){
+    if [ -f "$HOME/.xombrero/cookies.txt" ]; then
+        echo "Clearing cookies befor starting"
+        \rm -v "$HOME/.xombrero/cookies.txt"
+    fi
+    /bin/sh -c xombrero "$@"
+}
 
 alias tunset=unset_display
 
 alias bleachbit="bleachbit  -co --preset"
+alias su_bleachbit="sudo bleachbit -co --preset"
 alias dialog="dialog --colors"
 alias tor-arm="sudo -u debian-tor arm"
 alias rm="srm -z"
@@ -150,6 +158,7 @@ alias ratox=start_ratox
 alias mumble="torsocks mumble $@ &> /dev/null"
 alias irssi="torsocks irssi $@ &> /dev/null"
 alias sms=send_text
+alias xombrero="start_xombrero"
 
 alias hg="torsocks hg"
 alias ssh="torsocks ssh"

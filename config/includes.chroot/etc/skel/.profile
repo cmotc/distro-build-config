@@ -18,20 +18,17 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
+    export PATH="$HOME/.bin:$PATH"
 fi
-
 if [ -d "$HOME/.bin/bin" ] ; then
-    PATH="$HOME/.bin/bin:$PATH"
+    export PATH="$HOME/.bin/bin:$PATH"
 fi
-
 if [ -d "/usr/local/android-ndk" ] ; then
-    PATH="/usr/local/android-ndk:$PATH"
+    export PATH="/usr/local/android-ndk:$PATH"
 fi
-
 if [ -d "/usr/local/android-sdk" ] ; then
-    PATH="/usr/local/android-sdk:$PATH"
-    PATH="/usr/local/android-sdk/tools:$PATH"
+    export PATH="/usr/local/android-sdk:$PATH"
+    export PATH="/usr/local/android-sdk/tools:$PATH"
 #    Normally, default plaform tools will be provided by their stable
 #    Debian packages rather than the verson in the standalone SDK. If you
 #    want to use the SDK versions uncomment the following line or source
@@ -47,9 +44,8 @@ elif [ -f "$HOME/.xinitrc" ]; then
     . "$HOME/.xinitrc"
 fi
 
-# Set and load user settings for svirfneblin environment
-if [ -f "$HOME/.userrc" ]; then
-    . "$HOME/.userrc"
+if [ -d "$HOME/Projects/Go" ]; then
+    export GOPATH="$HOME/Projects/Go"
 fi
 
 # Set and load per-user host aliases
