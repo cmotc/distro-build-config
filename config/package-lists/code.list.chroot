@@ -33,10 +33,16 @@ ikiwiki
 intltool
 jekyll
 libasound2-dev
+libboost-dev
+libboost-filesystem-dev
+libboost-program-options-dev
+libboost-system-dev
+libboost-thread-dev
 libc6-dev
 libc6-dbg
 libcairo2-dev
 libcurl4-openssl-dev
+libdb-dev
 libdbus-1-dev
 libev-dev
 libimlib2-dev
@@ -54,6 +60,7 @@ libpango1.0-dev
 libstartup-notification0-dev
 libsodium-dev
 libsodium-dbg
+libstdc++-4.8-dev
 libtox-dev
 libtoxcore0
 libtoxcore-dev
