@@ -3,8 +3,20 @@
 if [ -f /usr/bin/srm ]; then
 	alias rm=/usr/bin/srm
 fi
-
-mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old"
+if [ -f "$1" ]; then
+	export $(cat "$1" | grep "work_dir")
+	mv -v "$work_dir/cert.pem" "$work_dir/cert.pem.old"
+else
+	export $(cat "$HOME/.xombrero.conf" | grep "work_dir")
+	if [ -z "$work_dir" ]; then
+		work_dir="$HOME/.xombrero/"
+	fi
+	if [ -d "$work_dir" ]; then
+		mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old"
+	else
+		mkdir $work_dir
+	fi
+fi
 
 SYSTEM_CERTS=$(find /etc/ssl/certs -name *.pem 2> /dev/null)
 for pem in $SYSTEM_CERTS; do
@@ -15,13 +27,13 @@ for pem in $SYSTEM_CERTS; do
 			cat "$pem"
 			echo "Review Certificate and press Enter to continue"
 			if [ $ANSWER = "yes" ]; then
-				cat "$pem" >> "$HOME/.xombrero/cert.pem"		
+				cat "$pem" >> "$work_dir/cert.pem"		
 			fi
 		else
-			cat "$pem" >> "$HOME/.xombrero/cert.pem"
+			cat "$pem" >> "$work_dir/cert.pem"
 		fi
 	else
-		cat "$pem" >> "$HOME/.xombrero/cert.pem"
+		cat "$pem" >> "$work_dir/cert.pem"
 	fi
 done
 
@@ -34,90 +46,73 @@ if [ "$1" != "q" ]; then
 		cat "$TOR_CERT_CAT"
 		echo "Review Certificate and press Enter to continue"
 		if [ $ANSWER = "yes" ]; then
-			cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"		
+			cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
 		fi
 	else
-		cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"		
+		cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
 	fi
 else
-	cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"
+	cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"
 fi
-
-custom_file(){
-	if [ -f "$1" ]; then
-		CHECK_CONFIG=$(cat "$1" | grep "ssl_ca_file")
-		if [ -z "$CHECK_CONFIG" ]; then
-			export $CHECK_CONFIG
-			WORK_DIR=$(cat "$1" | grep "work_dir")
-			export $WORK_DIR
-			if [ -f "$ssl_ca_file" ]; then
-				echo "Existing TLS Certificates found."
-			else
-				echo "ssl_ca_file	 = $HOME/.xombrero/cert.pem" >> "$1.conf"
-			fi
-			if [ -f "$ssl_ca_file" ]; then
-				echo "Existing TLS Certificates found."
-			else
-				echo "ssl_ca_file	 = $WORK_DIR/cert.pem" >> "$1.conf"
-			fi
-		fi
-	fi
-}
 
 cache(){
 	if [ "$1" = "v" ] || [ "$1" = "q" ]; then
 		echo -n " "
 	elif [ "$1" = "c" ]; then
 		DATE=$(date +%Y%m%d)
-		mv -v "$HOME/.xombrero/cert.pem.old" "$HOME/.xombrero/cert_cache/cert$DATE.pem"
-		for d in $2; done
-			if [ -d "$d/" ]; then
-				mv -v "$d/cert.pem.old" "$d/cert_cache/cert$DATE.pem"
-			fi
-		done
+		if [ -f "$2" ]; then
+			export $(cat "$1" | grep "work_dir")
+			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem"
+		elif [ -d "$work_dir" ]; then
+			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem"
+		fi
 	else
 		echo -n " "
 	fi
 }
 
-clear_cache(){
-	if [ "$1" = "cc" ]; then
-		for d in $2; done
-			if [ -d "$d/cert_cache" ]; then
-				rm -v "$d/cert_cache/*"
+custom_file(){
+	if [ -f "$1" ]; then
+		export $(cat "$1" | grep "ssl_ca_file")
+		if [ -z "$ssl_ca_file" ]; then
+			export $(cat "$1" | grep "work_dir")
+			if [ -f "$ssl_ca_file" ]; then
+				echo "Existing TLS Certificates found."
+			else
+				if [ -d "$work_dir" ]; then
+					echo "ssl_ca_file	 = $work_dir/cert.pem" >> "$1.conf"
+				fi
 			fi
-		done
-		if [ -d "$HOME/xombrero/cert_cache" ]; then
-			rm -v "$HOME/xombrero/cert_cache/*"
+			cache "$2" "$1"
+			clear_cache "$2" "$1"
 		fi
 	fi
 }
 
-custom_file "$HOME/.xombrero.conf"
-custom_file "$HOME/.insecure.conf"
-custom_file "$1"
-custom_file "$2"
-custom_file "$3"
+clear_cache(){
+	if [ "$1" = "cc" ]; then
+		if [ -f "$2" ]; then
+			export $(cat "$1" | grep "work_dir")
+		fi
+		if [ -d "$work_dir/cert_cache" ]; then
+			rm -v "$work_dir/cert_cache/*"
+		fi
+	fi
+}
 
-clear_cache "$1" "$2 
-$3 
-$4 
-$5 "
-clear_cache "$2" "$1 
-$3 
-$4 
-$5 "
-clear_cache "$3" "$1 
-$2 
-$4 
-$5 "
-clear_cache "$4" "$1 
-$2 
-$3 
-$5 "
+FILE_LIST="$HOME/.xombrero.conf 
+$HOME/.insecure.conf 
+$1 
+$2 "
 
-cache "$1"
-cache "$2"
-cache "$3"
+for f in $FILE_LIST; do
+	if [ -z "$1" ]; then
+		custom_file "$f" "$1"
+	elif [ -z "$2" ]; then
+		custom_file "$f" "$2"
+	elif [ -z "$3" ]; then
+		custom_file "$f" "$3"
+	fi
+done
 
-rm -v "$HOME/.xombrero/cert.pem.old"
+rm -v "$work_dir/cert.pem.old"
