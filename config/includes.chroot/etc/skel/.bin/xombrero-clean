@@ -1,9 +1,0 @@
-#! /bin/sh
-start_xombrero(){
-    if [ -f "$HOME/.xombrero/cookies.txt" ]; then
-        echo "Clearing cookies befor starting"
-        rm -v "$HOME/.xombrero/cookies.txt"
-    fi
-    /bin/sh -c xombrero "$@"
-}
-start_xombrero "$@"

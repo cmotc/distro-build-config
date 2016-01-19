@@ -11,7 +11,7 @@ directory = ~/Downloads/Torrent_Downloads
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = ./session
+session = ./.session
 # Port range to use for listening.
 port_range = 60125-64125
 # Start opening ports at a random position within the port range.

@@ -1,0 +1,24 @@
+#! /bin/sh
+start_xombrero(){
+    SECURE_DELETE=$(find / -name srm 2> /dev/null)
+    if [ -f "$SECURE_DELETE" ]; then
+        alias rm="$SECURE_DELETE"
+    fi
+    if [ -f "$HOME/.xombrero/cookies.txt" ]; then
+        echo "Clearing cookies before starting"
+        rm "$HOME/.xombrero/cookies.txt" 2> /dev/null
+    fi
+    if [ -d "$HOME/.xombrero/sessions" ]; then
+        echo "Clearing old sessions before starting"
+        rm $HOME/.xombrero/sessions/* 2> /dev/null
+    fi
+    if [ -d "$HOME/.xombrero/cache" ]; then
+        echo "Clearing cookies before starting"
+        rm $HOME/.xombrero/cache/* 2> /dev/null
+    fi
+    if [ -d "$HOME/.xombrero/tmp" ]; then
+        echo "Clearing tmp before starting"
+        rm $HOME/.xombrero/tmp/* 2> /dev/null
+    fi
+}
+start_xombrero
