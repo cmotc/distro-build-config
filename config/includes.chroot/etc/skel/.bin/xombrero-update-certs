@@ -48,10 +48,17 @@ custom_file(){
 		CHECK_CONFIG=$(cat "$1" | grep "ssl_ca_file")
 		if [ -z "$CHECK_CONFIG" ]; then
 			export $CHECK_CONFIG
+			WORK_DIR=$(cat "$1" | grep "work_dir")
+			export $WORK_DIR
 			if [ -f "$ssl_ca_file" ]; then
 				echo "Existing TLS Certificates found."
 			else
 				echo "ssl_ca_file	 = $HOME/.xombrero/cert.pem" >> "$1.conf"
+			fi
+			if [ -f "$ssl_ca_file" ]; then
+				echo "Existing TLS Certificates found."
+			else
+				echo "ssl_ca_file	 = $WORK_DIR/cert.pem" >> "$1.conf"
 			fi
 		fi
 	fi
@@ -62,7 +69,12 @@ cache(){
 		echo -n " "
 	elif [ "$1" = "c" ]; then
 		DATE=$(date +%Y%m%d)
-		mv -v "$HOME/.xombrero/cert.pem.old" "$HOME/.xombrero/cert$DATE.pem"
+		mv -v "$HOME/.xombrero/cert.pem.old" "$HOME/.xombrero/cert_cache/cert$DATE.pem"
+		for d in $2; done
+			if [ -d "$d/" ]; then
+				mv -v "$d/cert.pem.old" "$d/cert_cache/cert$DATE.pem"
+			fi
+		done
 	else
 		echo -n " "
 	fi
