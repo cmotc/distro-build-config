@@ -1,0 +1,111 @@
+#! /bin/sh
+
+if [ -f /usr/bin/srm ]; then
+	alias rm=/usr/bin/srm
+fi
+
+mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old"
+
+SYSTEM_CERTS=$(find /etc/ssl/certs -name *.pem 2> /dev/null)
+for pem in $SYSTEM_CERTS; do
+	if [ "$1" != "q" ]; then
+		echo "libssl provided a certificate, $pem."
+		echo "Should I add this to your certificates?"
+		if [ "$1" = "v" ]; then
+			cat "$pem"
+			echo "Review Certificate and press Enter to continue"
+			if [ $ANSWER = "yes" ]; then
+				cat "$pem" >> "$HOME/.xombrero/cert.pem"		
+			fi
+		else
+			cat "$pem" >> "$HOME/.xombrero/cert.pem"
+		fi
+	else
+		cat "$pem" >> "$HOME/.xombrero/cert.pem"
+	fi
+done
+
+TOR_CERT=$(find / -name torproject.pem 2> /dev/null)
+TOR_CERT_CAT=$(echo "$TOR_CERT" | grep -v "$HOME/Projects")
+if [ "$1" != "q" ]; then
+	echo "Possible Tor Project Certificate found in $TOR_CERT_CAT."
+	echo "Should I add this to your certificates?"
+	if [ "$1" = "v" ]; then
+		cat "$TOR_CERT_CAT"
+		echo "Review Certificate and press Enter to continue"
+		if [ $ANSWER = "yes" ]; then
+			cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"		
+		fi
+	else
+		cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"		
+	fi
+else
+	cat "$TOR_CERT_CAT" >> "$HOME/.xombrero/cert.pem"
+fi
+
+custom_file(){
+	if [ -f "$1" ]; then
+		CHECK_CONFIG=$(cat "$1" | grep "ssl_ca_file")
+		if [ -z "$CHECK_CONFIG" ]; then
+			export $CHECK_CONFIG
+			if [ -f "$ssl_ca_file" ]; then
+				echo "Existing TLS Certificates found."
+			else
+				echo "ssl_ca_file	 = $HOME/.xombrero/cert.pem" >> "$1.conf"
+			fi
+		fi
+	fi
+}
+
+cache(){
+	if [ "$1" = "v" ] || [ "$1" = "q" ]; then
+		echo -n " "
+	elif [ "$1" = "c" ]; then
+		DATE=$(date +%Y%m%d)
+		mv -v "$HOME/.xombrero/cert.pem.old" "$HOME/.xombrero/cert$DATE.pem"
+	else
+		echo -n " "
+	fi
+}
+
+clear_cache(){
+	if [ "$1" = "cc" ]; then
+		for d in $2; done
+			if [ -d "$d/cert_cache" ]; then
+				rm -v "$d/cert_cache/*"
+			fi
+		done
+		if [ -d "$HOME/xombrero/cert_cache" ]; then
+			rm -v "$HOME/xombrero/cert_cache/*"
+		fi
+	fi
+}
+
+custom_file "$HOME/.xombrero.conf"
+custom_file "$HOME/.insecure.conf"
+custom_file "$1"
+custom_file "$2"
+custom_file "$3"
+
+clear_cache "$1" "$2 
+$3 
+$4 
+$5 "
+clear_cache "$2" "$1 
+$3 
+$4 
+$5 "
+clear_cache "$3" "$1 
+$2 
+$4 
+$5 "
+clear_cache "$4" "$1 
+$2 
+$3 
+$5 "
+
+cache "$1"
+cache "$2"
+cache "$3"
+
+rm -v "$HOME/.xombrero/cert.pem.old"
