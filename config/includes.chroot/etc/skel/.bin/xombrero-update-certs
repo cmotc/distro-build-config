@@ -6,52 +6,57 @@ fi
 
 if [ -f "$1" ]; then
 	TEMP=$(cat "$1" | grep "work_dir")
-	export $(echo "$TEMP" | tr -d " ")
+	TEMP=$(echo "$TEMP" | tr -d " ")
+	export $(echo "$TEMP" | tr -d "\t")
 	TEMP=$(cat "$1" | grep "ssl_ca_file")
-	export $(echo $TEMP | tr -d " " )
+	TEMP=$(echo "$TEMP" | tr -d " ")
+	export $(echo "$TEMP" | tr -d "\t")
 	if [ -z "$ssl_ca_file" ]; then
+		TEMP=$(echo $TEMP | tr -d " " )
+		export $(echo $TEMP | tr -d "\t" )
 		mv -v "$ssl_ca_file" "$ssl_ca_file.old" 2> /dev/null		
 	else
-		mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
+		mv -v "$work_dir/cert.pem" "$work_dir/cert.pem.old" 2> /dev/null
 	fi
 else
 	TEMP=$(cat "$HOME/.xombrero.conf" | grep "work_dir")
-	export $(echo "$TEMP" | tr -d " ")
+	TEMP=$(echo "$TEMP" | tr -d " ")
+	export $(echo "$TEMP" | tr -d "\t")
 	if [ -z "$work_dir" ]; then
 		work_dir="$HOME/.xombrero/"
 	fi
 	if [ -d "$work_dir" ]; then
 		TEMP=$(cat "$HOME/.xombrero.conf" | grep "ssl_ca_file")
-		export $(echo $TEMP | tr -d " " )
+		TEMP=$(echo $TEMP | tr -d " " )
+		export $(echo $TEMP | tr -d "\t" )
 		if [ -z "$ssl_ca_file" ]; then
 			mv -v "$ssl_ca_file" "$ssl_ca_file.old" 2> /dev/null		
 		else
-			mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
+			mv -v "$work_dir/cert.pem" "$work_dir/cert.pem.old" 2> /dev/null
 		fi
-	else
-		mkdir $work_dir -p
 	fi
 fi
 
+mkdir $work_dir -p
 
 SYSTEM_CERTS=$(find /etc/ssl/certs -name *.pem 2> /dev/null)
 for pem in $SYSTEM_CERTS; do
 	if [ "$1" != "q" ]; then
 		echo "libssl provided a certificate, $pem."
-		echo "Should I add this to your certificates?"
+		read -p "Should I add this to your certificates(Y/N)?" REPLY
 		if [ "$1" = "v" ]; then
 			cat "$pem"
-			echo "Review Certificate and press Enter to continue"
-			if [ $ANSWER = "yes" ]; then
-				cat "$pem" >> "$work_dir""cert.pem"		
+			echo "Review Certificate and press Enter to continue, or ctrl-c to cancel."
+			if [ $REPLY = "Y" ] || [ $REPLY = "y" ]; then
+				cat "$pem" >> "$work_dir/cert.pem"		
 			fi
 		else
-			if [ $ANSWER = "yes" ]; then
-				cat "$pem" >> "$work_dir""cert.pem"		
+			if [ $REPLY = "Y" ] || [ $REPLY = "y" ]; then
+				cat "$pem" >> "$work_dir/cert.pem"		
 			fi
 		fi
 	else
-		cat "$pem" >> "$work_dir""cert.pem"
+		cat "$pem" >> "$work_dir/cert.pem"
 	fi
 done
 
@@ -64,13 +69,13 @@ if [ "$1" != "q" ]; then
 		cat "$TOR_CERT_CAT"
 		echo "Review Certificate and press Enter to continue"
 		if [ $ANSWER = "yes" ]; then
-			cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"		
+			cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
 		fi
 	else
-		cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"		
+		cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
 	fi
 else
-	cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"
+	cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"
 fi
 
 cache(){
@@ -80,7 +85,8 @@ cache(){
 		DATE=$(date +%Y%m%d)
 		if [ -f "$2" ]; then
 			TEMP=$(cat "$2" | grep "work_dir")
-			export $(echo "$TEMP" | tr -d " " )
+			TEMP=$(echo "$TEMP" | tr -d " " )
+			export $(echo "$TEMP" | tr -d "\t" )
 			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
 		elif [ -d "$work_dir" ]; then
 			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
@@ -93,10 +99,12 @@ cache(){
 custom_file(){
 	if [ -f "$1" ]; then
 		TEMP=$(cat "$1" | grep "ssl_ca_file")
-		export $(echo $TEMP | tr -d " " )
+		TEMP=$(echo $TEMP | tr -d " " )
+		export $(echo $TEMP | tr -d "\t" )
 		if [ -z "$ssl_ca_file" ]; then
 			TEMP=$(cat "$1" | grep "work_dir")
-			export $(echo "$TEMP" | tr -d " " )
+			TEMP=$(echo "$TEMP" | tr -d " " )
+			export $(echo "$TEMP" | tr -d "\t" )
 			if [ -f "$ssl_ca_file" ]; then
 				echo "ssl_ca_file         = $ssl_ca_file" >> "$1.conf"						
 			else
@@ -114,7 +122,8 @@ clear_cache(){
 	if [ "$1" = "cc" ]; then
 		if [ -f "$2" ]; then
 			TEMP=$(cat "$2" | grep "work_dir")
-			export $(echo "$TEMP" | tr -d " " )
+			TEMP=$(echo "$TEMP" | tr -d " " )
+			export $(echo "$TEMP" | tr -d "\t" )
 		fi
 		if [ -d "$work_dir/cert_cache" ]; then
 			rm -v "$work_dir/cert_cache/*" 2> /dev/null
@@ -138,4 +147,4 @@ for f in $FILE_LIST; do
 	fi
 done
 
-rm -v "$work_dir""cert.pem.old" 2> /dev/null
+rm -v "$work_dir/cert.pem.old" 2> /dev/null
