@@ -7,7 +7,13 @@ fi
 if [ -f "$1" ]; then
 	TEMP=$(cat "$1" | grep "work_dir")
 	export $(echo "$TEMP" | tr -d " ")
-	mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
+	TEMP=$(cat "$1" | grep "ssl_ca_file")
+	export $(echo $TEMP | tr -d " " )
+	if [ -z "$ssl_ca_file" ]; then
+		mv -v "$ssl_ca_file" "$ssl_ca_file.old" 2> /dev/null		
+	else
+		mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
+	fi
 else
 	TEMP=$(cat "$HOME/.xombrero.conf" | grep "work_dir")
 	export $(echo "$TEMP" | tr -d " ")
@@ -15,11 +21,18 @@ else
 		work_dir="$HOME/.xombrero/"
 	fi
 	if [ -d "$work_dir" ]; then
-		mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old" 2> /dev/null
+		TEMP=$(cat "$HOME/.xombrero.conf" | grep "ssl_ca_file")
+		export $(echo $TEMP | tr -d " " )
+		if [ -z "$ssl_ca_file" ]; then
+			mv -v "$ssl_ca_file" "$ssl_ca_file.old" 2> /dev/null		
+		else
+			mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
+		fi
 	else
 		mkdir $work_dir -p
 	fi
 fi
+
 
 SYSTEM_CERTS=$(find /etc/ssl/certs -name *.pem 2> /dev/null)
 for pem in $SYSTEM_CERTS; do
@@ -85,7 +98,7 @@ custom_file(){
 			TEMP=$(cat "$1" | grep "work_dir")
 			export $(echo "$TEMP" | tr -d " " )
 			if [ -f "$ssl_ca_file" ]; then
-				echo "Existing TLS Certificates found."
+				echo "ssl_ca_file         = $ssl_ca_file" >> "$1.conf"						
 			else
 				if [ -d "$work_dir" ]; then
 					echo "ssl_ca_file	 = $work_dir/cert.pem" >> "$1.conf"
