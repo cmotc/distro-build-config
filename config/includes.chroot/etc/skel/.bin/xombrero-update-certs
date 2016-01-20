@@ -4,10 +4,13 @@ if [ -f /usr/bin/srm ]; then
 	alias rm=/usr/bin/srm
 fi
 
-if [ -f "$1" ]; then
+export HOME_DIR="$HOME"
+
+filearg(){
 	TEMP=$(cat "$1" | grep "work_dir")
 	TEMP=$(echo "$TEMP" | tr -d " ")
-	export $(echo "$TEMP" | tr -d "\t")
+	TEMP=$(echo "$TEMP" | tr -d "\t")
+	export $(echo "$TEMP" | tr -d "~/" )
 	TEMP=$(cat "$1" | grep "ssl_ca_file")
 	TEMP=$(echo "$TEMP" | tr -d " ")
 	export $(echo "$TEMP" | tr -d "\t")
@@ -18,17 +21,29 @@ if [ -f "$1" ]; then
 	else
 		mv -v "$work_dir/cert.pem" "$work_dir/cert.pem.old" 2> /dev/null
 	fi
+}
+
+if [ -f "$1" ]; then
+	filearg "$1"
+elif [ -f "$2" ]; then
+	filearg "$2"
+elif [ -f "$3" ]; then
+	filearg "$3"
+elif [ -f "$4" ]; then
+	filearg "$4"
 else
 	TEMP=$(cat "$HOME/.xombrero.conf" | grep "work_dir")
 	TEMP=$(echo "$TEMP" | tr -d " ")
-	export $(echo "$TEMP" | tr -d "\t")
+	TEMP=$(echo "$TEMP" | tr -d "\t" )
+	export $(echo "$TEMP" | tr -d "~/" )
 	if [ -z "$work_dir" ]; then
 		work_dir="$HOME/.xombrero/"
 	fi
 	if [ -d "$work_dir" ]; then
 		TEMP=$(cat "$HOME/.xombrero.conf" | grep "ssl_ca_file")
 		TEMP=$(echo $TEMP | tr -d " " )
-		export $(echo $TEMP | tr -d "\t" )
+		TEMP=$(echo "$TEMP" | tr -d "\t" )
+		export $(echo "$TEMP" | tr -d "~/" )
 		if [ -z "$ssl_ca_file" ]; then
 			mv -v "$ssl_ca_file" "$ssl_ca_file.old" 2> /dev/null		
 		else
@@ -46,17 +61,14 @@ for pem in $SYSTEM_CERTS; do
 		read -p "Should I add this to your certificates(Y/N)?" REPLY
 		if [ "$1" = "v" ]; then
 			cat "$pem"
-			echo "Review Certificate and press Enter to continue, or ctrl-c to cancel."
-			if [ $REPLY = "Y" ] || [ $REPLY = "y" ]; then
-				cat "$pem" >> "$work_dir/cert.pem"		
-			fi
-		else
-			if [ $REPLY = "Y" ] || [ $REPLY = "y" ]; then
-				cat "$pem" >> "$work_dir/cert.pem"		
-			fi
+			read -p "Review Certificate and press Enter to continue, or ctrl-c to cancel." dump
+		fi
+		if [ "$REPLY" = "Y" ]; then
+			cat "$pem" | tee -a "$work_dir/cert.pem"		
 		fi
 	else
-		cat "$pem" >> "$work_dir/cert.pem"
+		cat "$pem" | tee -a "$work_dir/cert.pem"
+		echo "$work_dir/cert.pem"
 	fi
 done
 
@@ -64,18 +76,16 @@ TOR_CERT=$(find / -name torproject.pem 2> /dev/null)
 TOR_CERT_CAT=$(echo "$TOR_CERT" | grep -v "$HOME/Projects")
 if [ "$1" != "q" ]; then
 	echo "Possible Tor Project Certificate found in $TOR_CERT_CAT."
-	echo "Should I add this to your certificates?"
-	if [ "$1" = "v" ]; then
+	read -p "Should I add this to your certificates(Y/N)?" REPLY
+	if [ "$2" = "v" ]; then
 		cat "$TOR_CERT_CAT"
-		echo "Review Certificate and press Enter to continue"
-		if [ $ANSWER = "yes" ]; then
-			cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
-		fi
-	else
-		cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
+		read -p "Review Certificate and press Enter to continue, or press ctrl-c to cancel" dump
+	fi
+	if [ $REPLY = "Y" ]; then
+		cat "$TOR_CERT_CAT" | tee -a "$work_dir/cert.pem"		
 	fi
 else
-	cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"
+	cat "$TOR_CERT_CAT" | tee -a "$work_dir/cert.pem"
 fi
 
 cache(){
@@ -86,7 +96,8 @@ cache(){
 		if [ -f "$2" ]; then
 			TEMP=$(cat "$2" | grep "work_dir")
 			TEMP=$(echo "$TEMP" | tr -d " " )
-			export $(echo "$TEMP" | tr -d "\t" )
+			TEMP=$(echo "$TEMP" | tr -d "\t" )
+			export $(echo "$TEMP" | tr -d "~/" )
 			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
 		elif [ -d "$work_dir" ]; then
 			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
@@ -104,12 +115,13 @@ custom_file(){
 		if [ -z "$ssl_ca_file" ]; then
 			TEMP=$(cat "$1" | grep "work_dir")
 			TEMP=$(echo "$TEMP" | tr -d " " )
-			export $(echo "$TEMP" | tr -d "\t" )
+			TEMP=$(echo "$TEMP" | tr -d "\t" )
+			export $(echo "$TEMP" | tr -d "~/" )
 			if [ -f "$ssl_ca_file" ]; then
-				echo "ssl_ca_file         = $ssl_ca_file" >> "$1.conf"						
+				echo "ssl_ca_file         = $ssl_ca_file" >> "$1"						
 			else
 				if [ -d "$work_dir" ]; then
-					echo "ssl_ca_file	 = $work_dir/cert.pem" >> "$1.conf"
+					echo "ssl_ca_file	 = $work_dir/cert.pem" >> "$1"
 				fi
 			fi
 			cache "$2" "$1"
@@ -123,7 +135,8 @@ clear_cache(){
 		if [ -f "$2" ]; then
 			TEMP=$(cat "$2" | grep "work_dir")
 			TEMP=$(echo "$TEMP" | tr -d " " )
-			export $(echo "$TEMP" | tr -d "\t" )
+			TEMP=$(echo "$TEMP" | tr -d "\t" )
+			export $(echo "$TEMP" | tr -d "~/" )
 		fi
 		if [ -d "$work_dir/cert_cache" ]; then
 			rm -v "$work_dir/cert_cache/*" 2> /dev/null
@@ -147,4 +160,4 @@ for f in $FILE_LIST; do
 	fi
 done
 
-rm -v "$work_dir/cert.pem.old" 2> /dev/null
+#rm -v "$work_dir/cert.pem.old" 2> /dev/null
