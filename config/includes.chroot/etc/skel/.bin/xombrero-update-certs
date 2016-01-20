@@ -3,18 +3,21 @@
 if [ -f /usr/bin/srm ]; then
 	alias rm=/usr/bin/srm
 fi
+
 if [ -f "$1" ]; then
-	export $(cat "$1" | grep "work_dir")
-	mv -v "$work_dir/cert.pem" "$work_dir/cert.pem.old"
+	TEMP=$(cat "$1" | grep "work_dir")
+	export $(echo "$TEMP" | tr -d " ")
+	mv -v "$work_dir""cert.pem" "$work_dir""cert.pem.old" 2> /dev/null
 else
-	export $(cat "$HOME/.xombrero.conf" | grep "work_dir")
+	TEMP=$(cat "$HOME/.xombrero.conf" | grep "work_dir")
+	export $(echo "$TEMP" | tr -d " ")
 	if [ -z "$work_dir" ]; then
 		work_dir="$HOME/.xombrero/"
 	fi
 	if [ -d "$work_dir" ]; then
-		mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old"
+		mv -v "$HOME/.xombrero/cert.pem" "$HOME/.xombrero/cert.pem.old" 2> /dev/null
 	else
-		mkdir $work_dir
+		mkdir $work_dir -p
 	fi
 fi
 
@@ -27,13 +30,15 @@ for pem in $SYSTEM_CERTS; do
 			cat "$pem"
 			echo "Review Certificate and press Enter to continue"
 			if [ $ANSWER = "yes" ]; then
-				cat "$pem" >> "$work_dir/cert.pem"		
+				cat "$pem" >> "$work_dir""cert.pem"		
 			fi
 		else
-			cat "$pem" >> "$work_dir/cert.pem"
+			if [ $ANSWER = "yes" ]; then
+				cat "$pem" >> "$work_dir""cert.pem"		
+			fi
 		fi
 	else
-		cat "$pem" >> "$work_dir/cert.pem"
+		cat "$pem" >> "$work_dir""cert.pem"
 	fi
 done
 
@@ -46,13 +51,13 @@ if [ "$1" != "q" ]; then
 		cat "$TOR_CERT_CAT"
 		echo "Review Certificate and press Enter to continue"
 		if [ $ANSWER = "yes" ]; then
-			cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
+			cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"		
 		fi
 	else
-		cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"		
+		cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"		
 	fi
 else
-	cat "$TOR_CERT_CAT" >> "$work_dir/cert.pem"
+	cat "$TOR_CERT_CAT" >> "$work_dir""cert.pem"
 fi
 
 cache(){
@@ -61,10 +66,11 @@ cache(){
 	elif [ "$1" = "c" ]; then
 		DATE=$(date +%Y%m%d)
 		if [ -f "$2" ]; then
-			export $(cat "$1" | grep "work_dir")
-			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem"
+			TEMP=$(cat "$2" | grep "work_dir")
+			export $(echo "$TEMP" | tr -d " " )
+			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
 		elif [ -d "$work_dir" ]; then
-			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem"
+			mv -v "$work_dir/cert.pem.old" "$work_dir/cert_cache/cert$DATE.pem" 2> /dev/null
 		fi
 	else
 		echo -n " "
@@ -73,9 +79,11 @@ cache(){
 
 custom_file(){
 	if [ -f "$1" ]; then
-		export $(cat "$1" | grep "ssl_ca_file")
+		TEMP=$(cat "$1" | grep "ssl_ca_file")
+		export $(echo $TEMP | tr -d " " )
 		if [ -z "$ssl_ca_file" ]; then
-			export $(cat "$1" | grep "work_dir")
+			TEMP=$(cat "$1" | grep "work_dir")
+			export $(echo "$TEMP" | tr -d " " )
 			if [ -f "$ssl_ca_file" ]; then
 				echo "Existing TLS Certificates found."
 			else
@@ -92,10 +100,11 @@ custom_file(){
 clear_cache(){
 	if [ "$1" = "cc" ]; then
 		if [ -f "$2" ]; then
-			export $(cat "$1" | grep "work_dir")
+			TEMP=$(cat "$2" | grep "work_dir")
+			export $(echo "$TEMP" | tr -d " " )
 		fi
 		if [ -d "$work_dir/cert_cache" ]; then
-			rm -v "$work_dir/cert_cache/*"
+			rm -v "$work_dir/cert_cache/*" 2> /dev/null
 		fi
 	fi
 }
@@ -103,7 +112,8 @@ clear_cache(){
 FILE_LIST="$HOME/.xombrero.conf 
 $HOME/.insecure.conf 
 $1 
-$2 "
+$2 
+$3 "
 
 for f in $FILE_LIST; do
 	if [ -z "$1" ]; then
@@ -115,4 +125,4 @@ for f in $FILE_LIST; do
 	fi
 done
 
-rm -v "$work_dir/cert.pem.old"
+rm -v "$work_dir""cert.pem.old" 2> /dev/null
