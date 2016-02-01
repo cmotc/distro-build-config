@@ -135,7 +135,7 @@ echo "
 anoncoind
 #bitcoind
 #litecoind
-namecoin
+#namecoin
 " > "$DIRECTORY/../config/package-lists/coins.list.chroot"
 echo "
 apt-transport-https
@@ -159,6 +159,7 @@ doc-debian
 dpkg
 dpkg-dev
 dpkg-sig
+openrc
 " > "$DIRECTORY/../config/package-lists/debian.list.chroot"
 echo "
 awesome
@@ -183,18 +184,19 @@ xterm
 xdialog
 " > "$DIRECTORY/../config/package-lists/desktop.list.chroot"
 echo "
-abiword
-abiword-common
-abiword-plugin-grammar
-abiword-plugin-mathview
-caca-utils
-dia
-dia-common
-dia-libs
-dia-shapes
-gnumeric
-gnumeric-common
-gnumeric-doc
+#Uncomment these if you want to use a GTK Based Office Suite.
+#abiword
+#abiword-common
+#abiword-plugin-grammar
+#abiword-plugin-mathview
+#caca-utils
+#dia
+#dia-common
+#dia-libs
+#dia-shapes
+#gnumeric
+#gnumeric-common
+#gnumeric-doc
 imagemagick
 imagemagick-6.q16
 imagemagick-common
@@ -241,7 +243,6 @@ i2p-router
 killyourtv-keyring
 " > "$DIRECTORY/../config/package-lists/i2p.list.chroot"
 echo "
-letsencrypt
 lynx
 lynx-cur
 ncftp
