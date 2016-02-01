@@ -7,18 +7,22 @@ keeping the only useful parts of systemd) and replacing other tightly integrated
 systemd components with their modular equivalents. Right now the build will set
 up SysVInit with SysV-RC, then replace SysV-RC with OpenRC. There remain a
 handful of issues with that process but the system is usable. The next step will
-be to port the Gentoo version of D-Bus and make a eudev package for Debian.
+be to port the Gentoo version of D-Bus and make a eudev package for Debian.  
+
+**Current Project:** Create an installable Allwinner A33 port with only Free
+Software that works on Q8 tablets. The trickiest part is building it with the
+Lima driver for the Mali GPU and the OpenFWWF for the brcmhd wireless chip, and
+frankly the systemd thing is probably going to be a bit of a quagmire. Maybe not
+though, I mean I'm doing the SysV/OpenRC thing now before I get in too deep so
+who knows?
 
 **Current Project:** Browser Bullshit Purge-Not using Iceweasel anymore. Goddamn
 fed up with Mozilla's upstream. Chrome and Chromium aren't options for basically
 the same reasons. Instead, the default browser is going to be xombrero and it's
-going to use multiple profiles that don't share any config files or folders.
-
-**Current Project:** Making a Debian package which installs and configures
-gittorrent system-wide and configures the init system for gittorrentd. Right
-now it's installed with a hook that activates the npm package. I might just
-have a post-install script invoke the npm command to install gittorrent in a
-package. It's a shitty way to do it but I hate Javascript so much.
+going to use multiple profiles that don't share any config files or folders. 
+There is a great xombrero i2p configuration and a pretty good xombrero Tor
+configuration which declares its user agent to be the same as the TBB(See below
+for more details).  
 
 I sometimes arbitrarily and without regard for the remaining problems really
 like anything and everything that aids in the decentralization of the internet
@@ -37,6 +41,15 @@ distributed Forum/Blogging engine, the BitMessage e-mail replacement protocol,
 and a to-be-determined Bitcoin wallet. Gittorrent will also be in here once
 I figure out enough about how to make it work.  
 
+To anyone who stumbles across this and hopes to use it or some of the
+interesting software suggested therein, and I do encourage you to do so, please
+understand that I'm only human and I'm sorry if I've introduced some sort of 
+error. If I did I did so unknowingly and without malice. On a similar note, 
+please also understand that much of this software is still in very active 
+development and is subject to fairly rapid change. Usually, everything works and
+you will hardly notice the updates, so much so that they're barely worth 
+mentioning and these are smart folks, but hey you should know.  
+
 CHECKLIST
 ---------
 This is fun. I get to be really picky about what I want.  
@@ -50,15 +63,11 @@ This is fun. I get to be really picky about what I want.
    * **Find ways to contribute software which can be used elsewhere!** Some of it can be used elsewhere. But who knows. I'm just a prolific hobbyist. I like tinkering with this stuff. Old computers are everywhere, this setup lends itself to them. Like the crunchbang family, but with my setup on it. It'd be pretty easy to make it your setup instead, which is also kind of the idea. I want it to be easy to for somebody to make their own sort of custom ecosystem and maybe share it with other people or something, I don't know really. But it's fun.
    * **Libre Entertainment** Find Free-As-In-Freedom, Public Domain, or otherwise consumer-controlled entertainment and bundle resources for retrieving it in the distribution. Magnet links in files mostly so they can be torrented with rtorrent or streamed from torrent sources with tribler. In the case of video games, package them if possible and patch them where required. Eventually GemRB is something I want here(I know it doesn't have free resources. Somebody should create some. I'm not a pixel artist or my game would be playable already. But hey, maybe someday. Wouldn't be the first time something clicked after a long time.) Status barely started. Only the hosts file arguably.
    * **Privacy Conscious Default Libre Browser** Browsers are complicated and I don't reccommend anyone use my setups unless they really want to, but in seeking a lightweight, reasonably usable Tor Browser configuration I've stumbled across xombrero and configured it for use with Tor(And i2p, which is more exciting and frankly, the one I'm more comfortable with in this relatively unique configuration.). **This will, however, probably make your browser more unique and fingerprintable.** Your user agent will be changed to match the Tor Browser Bundle, but this is almost certainly inadequate to prevent browser fingerprinting attacks on its own, so scripting will be totally disabled in the default configuration. Your configuration will still probably be more unique than the Tor Browser Bundle, and you should be careful when using any kind of secure service. Still, I think it's a pretty nice and interesting config file.
-
-To anyone who stumbles across this and hopes to use it or some of the
-interesting software suggested therein, and I do encourage you to do so, please
-understand that I'm only human and I'm sorry if I've introduced some sort of 
-error. If I did I did so unknowingly and without malice. On a similar note, 
-please also understand that much of this software is still in very active 
-development and is subject to fairly rapid change. Usually, everything works and
-you will hardly notice the updates, so much so that they're barely worth 
-mentioning and these are smart folks, but hey you should know.
+  * **Held for now project** Making a Debian package which installs and configures
+gittorrent system-wide and configures the init system for gittorrentd. Right
+now it's installed with a hook that activates the npm package. I might just
+have a post-install script invoke the npm command to install gittorrent in a
+package. It's a shitty way to do it but I hate Javascript so much.
 
 Svirfneblin
 -----------
@@ -78,3 +87,23 @@ survives long if javascript is integrated into it's desktop environment.
 Svirfneblin isn't a Gnome3 clone anymore. It's an AwesomeWM configuration which
 makes one or two things available that are inspired by Gnome3 and approximates
 a desktop environment to achieve the goals of this custom distro.
+
+Custom Packages
+---------------
+
+
+
+Other Distro's of Interest
+--------------------------
+Besides the obvious, there are other security, activism, and systemd-free, and
+Free Software oriented GNU/Linux distributions. Sometimes, this is just an
+emergent property of them having decent documentation.
+
+  * Freepto
+  * Devuan(Seems at least semi-defunct)
+  * GNewSense
+  * TAILS
+  * Ipredia
+  * Mempo
+  * Arch Linux
+  * Gentoo Linux

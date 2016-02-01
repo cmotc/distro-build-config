@@ -25,4 +25,6 @@ Pin-Priority: -1
 Package: epdfview
 Pin: version *
 Pin-Priority: -1
-
+Package: systemd-*
+Pin: version *
+Pin-Priority: -1
