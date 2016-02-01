@@ -1,8 +1,24 @@
 # distro-live-config
 Backup of my laptop OS configuration as a live-build tree  
 
+**Current Project:** Switch from the default systemd init system in Debian
+Jessie to a more Gentoo-like init system using OpenRC instead of SysV-RC(thus
+keeping the only useful parts of systemd) and replacing other tightly integrated
+systemd components with their modular equivalents. Right now the build will set
+up SysVInit with SysV-RC, then replace SysV-RC with OpenRC. There remain a
+handful of issues with that process but the system is usable. The next step will
+be to port the Gentoo version of D-Bus and make a eudev package for Debian.
+
+**Current Project:** Browser Bullshit Purge-Not using Iceweasel anymore. Goddamn
+fed up with Mozilla's upstream. Chrome and Chromium aren't options for basically
+the same reasons. Instead, the default browser is going to be xombrero and it's
+going to use multiple profiles that don't share any config files or folders.
+
 **Current Project:** Making a Debian package which installs and configures
-gittorrent system-wide and configures the init system for gittorrentd.
+gittorrent system-wide and configures the init system for gittorrentd. Right
+now it's installed with a hook that activates the npm package. I might just
+have a post-install script invoke the npm command to install gittorrent in a
+package. It's a shitty way to do it but I hate Javascript so much.
 
 I sometimes arbitrarily and without regard for the remaining problems really
 like anything and everything that aids in the decentralization of the internet
