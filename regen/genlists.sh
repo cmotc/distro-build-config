@@ -141,6 +141,7 @@ echo "
 apt-transport-https
 apt-transport-tor
 apt-p2p
+dbus
 dconf-cli
 dconf-editor
 dconf-gsettings-backend:amd64

@@ -31,3 +31,6 @@ Pin-Priority: -1
 Package: sysv-rc
 Pin: version *
 Pin-Priority: -1
+Package: dbus
+Pin: release n=squeeze-lts
+Pin-Priority: 1
