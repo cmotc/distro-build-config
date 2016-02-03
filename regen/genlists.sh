@@ -132,12 +132,17 @@ xmlto
 zip
 " > "$DIRECTORY/../config/package-lists/code.list.chroot"
 echo "
-anoncoind
+#anoncoind
 #bitcoind
 #litecoind
 #namecoin
 " > "$DIRECTORY/../config/package-lists/coins.list.chroot"
 echo "
+alsa-base
+alsa-tools
+alsa-utils
+alsa-oss
+alsamixergui
 apt-transport-https
 apt-transport-tor
 apt-p2p
@@ -156,11 +161,16 @@ debian-faq
 debian-keyring
 debianutils
 debootstrap
+debsecan
+debian-security-support
 doc-debian
 dpkg
 dpkg-dev
 dpkg-sig
+gom
+libalsaplayer0
 openrc
+php-fpm
 " > "$DIRECTORY/../config/package-lists/debian.list.chroot"
 echo "
 awesome

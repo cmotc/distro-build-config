@@ -1,16 +1,17 @@
 
-abiword
-abiword-common
-abiword-plugin-grammar
-abiword-plugin-mathview
-caca-utils
-dia
-dia-common
-dia-libs
-dia-shapes
-gnumeric
-gnumeric-common
-gnumeric-doc
+#Uncomment these if you want to use a GTK Based Office Suite.
+#abiword
+#abiword-common
+#abiword-plugin-grammar
+#abiword-plugin-mathview
+#caca-utils
+#dia
+#dia-common
+#dia-libs
+#dia-shapes
+#gnumeric
+#gnumeric-common
+#gnumeric-doc
 imagemagick
 imagemagick-6.q16
 imagemagick-common

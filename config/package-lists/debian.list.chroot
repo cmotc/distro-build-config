@@ -1,7 +1,13 @@
 
+alsa-base
+alsa-tools
+alsa-utils
+alsa-oss
+alsamixergui
 apt-transport-https
 apt-transport-tor
 apt-p2p
+dbus
 dconf-cli
 dconf-editor
 dconf-gsettings-backend:amd64
@@ -16,8 +22,14 @@ debian-faq
 debian-keyring
 debianutils
 debootstrap
+debsecan
+debian-security-support
 doc-debian
 dpkg
 dpkg-dev
 dpkg-sig
+gom
+libalsaplayer0
+openrc
+php-fpm
 
