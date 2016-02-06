@@ -7,14 +7,14 @@ openssl
 " > "$DIRECTORY/../config/package-lists/aptly.list.chroot"
 echo "
 bluetooth
-bluewho
-pulseaudio-module-bluetooth
-pulseaudio-module-bluetooth-dbg
+blueproximity
+btscanner
 " > "$DIRECTORY/../config/package-lists/bluetooth.list.chroot"
 echo "
-anjuta
-anjuta-common
-anjuta-extras
+#Uncomment these lines if you want a fully-fledged IDE.
+#anjuta
+#anjuta-common
+#anjuta-extras
 asciidoc
 autoconf
 automake
