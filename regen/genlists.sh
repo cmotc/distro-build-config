@@ -142,12 +142,6 @@ alsamixergui
 apt-transport-https
 apt-transport-tor
 apt-p2p
-dbus
-dconf-cli
-dconf-editor
-dconf-gsettings-backend:amd64
-dconf-service
-dconf-tools
 dctrl-tools
 debconf
 debconf-i18n
