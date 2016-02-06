@@ -34,11 +34,7 @@ doxygen
 dpkg-dev
 gcc
 g++
-gedit
-gedit-common
-gedit-dev
-gedit-plugins
-gedit-source-code-browser-plugin
+medit
 git
 globus-simple-ca
 gperf
