@@ -176,7 +176,7 @@ Free Software oriented GNU/Linux distributions. Sometimes, this is just an
 emergent property of them having decent documentation.
 
   * Freepto
-  * Devuan(Seems at least semi-defunct)
+  * Devuan
   * GNewSense
   * TAILS
   * Ipredia

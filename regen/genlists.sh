@@ -54,9 +54,9 @@ libc6-dbg
 libcairo2-dev
 libcurl4-openssl-dev
 libdb-dev
-libdbus-1-dev
 libev-dev
 libevent-dev
+libgtk2.0-dev 
 libimlib2-dev
 libltdl-devlibtool
 liblua5.1-dev
@@ -101,9 +101,7 @@ libiw-dev
 libidl-dev 
 mesa-common-dev 
 autoconf2.13 
-yasm libgtk2.0-dev 
-libdbus-1-dev 
-libdbus-glib-1-dev 
+yasm
 python-dev 
 libgstreamer0.10-dev 
 libgstreamer-plugins-base0.10-dev 
