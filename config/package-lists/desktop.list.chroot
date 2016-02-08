@@ -6,13 +6,14 @@ compton
 conky-std
 dialog
 network-manager
+#modem-manager
 mc
 lightdm
 lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
-svirfneblin-panel
-svirfneblin-*
+#svirfneblin-panel
+#svirfneblin-*
 terminator
 x11-apps
 xcalc
