@@ -3,7 +3,7 @@
 # [auto/config]
 
 USERNAME='paranoid'
-LINUX_FLAVOURS='amd64'
+LINUX_FLAVOURS='armhf'
 LOCALE='en_US.UTF-8'
 ZONE='Canada/Eastern'
 KEYMAP='us'
