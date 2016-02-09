@@ -165,7 +165,8 @@ Svirfneblin isn't a Gnome3 clone anymore. It's an AwesomeWM configuration which
 makes one or two things available that are inspired by Gnome3 and approximates
 a desktop environment to achieve the goals of this custom distro.
 
-###eudev, dbus, and OpenRC partially ported from Gentoo
+###vdev, dbus, and OpenRC partially ported from Gentoo and Devuan
+
 
 ###GRSecurity Hardened Linux kernel with x11 Modifications
 
