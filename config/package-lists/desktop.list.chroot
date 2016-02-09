@@ -12,8 +12,8 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
-#svirfneblin-panel
-#svirfneblin-*
+#svirfneblin-panel #Right now these are just included in etc/skel
+#svirfneblin-* #Right now these are just included in etc/skel
 terminator
 x11-apps
 xcalc

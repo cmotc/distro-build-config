@@ -1,0 +1,79 @@
+#! /bin/sh
+network="$1"
+password="$2"
+
+if [ -f "/usr/bin/whiptail" ]; then
+    alias dialog=whiptail
+elif [ -f "/usr/bin/dialog" ]; then
+    alias dialog="dialog --color"
+elif [ -f "/usr/bin/xdialog" ]; then
+    if [ "$USE_GUI_DIALOGS" == "yes" ]; then
+        alias dialog=xdialog
+    fi
+elif [ -f "/usr/bin/zenity" ]; then 
+    if [ "$USE_GUI_DIALOGS" == "yes" ]; then
+        alias dialog=zenity
+    fi
+fi
+
+if [ -f "/usr/bin/srm" ]; then
+    alias rm=srm
+fi
+
+if [ $network == "" ]; then
+   exit
+fi
+if [ -e $HOME/.wifi_passwords ]; then
+    if [ "$password" != "" ]; then
+        if [grep -Fxq "$network" $HOME/.wifi_passwords]; then
+            echo "network=$network;password=$password" >> $HOME/.wifi_passwords
+	else
+            touch "$HOME/.tmp.wifi_password"
+            xterm -e "dialog --passwordbox \"Enter password for $network\" 8 30 2> $HOME/.tmp.wifi_password"
+            echo "network=$network;password=$(<$HOME/.tmp.wifi_password)">>".wifi_password"
+            rm $HOME/.tmp.wifi_password
+        fi
+    fi
+    export $(grep $network $HOME/.wifi_passwords)
+elif [ -e $HOME/.wifi_passwords.gpg ]; then
+    if [ -f $HOME/.wifigpg]; then
+        . $HOME/.wifigpg
+    fi
+# Decrypt password details here
+    gpg --output $HOME/.wifi_passwords --decrypt $HOME/.wifi_passwords.gpg
+    if [ "$password" != "" ]; then
+        if [grep -Fxq "$network" $HOME/.wifi_passwords]; then
+            echo "network=$network;password=$password" >> $HOME/.wifi_passwords
+        else
+            touch "$HOME/.tmp.wifi_password"
+            xterm -e "dialog --passwordbox \"Enter password for $network\" 8 30 2> $HOME/.tmp.wifi_password"
+            echo "network=$network;password=$(<$HOME/.tmp.wifi_password)">>".wifi_password"
+            rm $HOME/.tmp.wifi_password
+        fi
+    fi
+    export $(grep $network $HOME/.wifi_passwords)
+# Re-Encrypt password details here
+    gpg --encrypt --recipient $VERY_PRIVATE_KEY_WIFI $HOME/.wifi_passwords --output $HOME/.wifi_passwords
+    rm -z $HOME/.wifi_passwords
+else
+    touch $HOME/.wifi_passwords
+    if [ $password != "" ]; then
+        if [grep -Fxq "$network" $HOME/.wifi_passwords]; then
+            echo "network=$network;password=$password" >> $HOME/.wifi_passwords
+        else
+            touch "$HOME/.tmp.wifi_password"
+            xterm -e "dialog --passwordbox \"Enter password for $network\" 8 30 2> $HOME/.tmp.wifi_password"
+            echo "network=$network;password=$(<$HOME/.tmp.wifi_password)">>".wifi_password"
+            rm $HOME/.tmp.wifi_password
+        fi
+    fi
+    export $(grep $network $HOME/.wifi_passwords)
+fi
+
+if [ $password == "" ]; then
+    nmcli device wifi connect $network
+else
+    nmcli device wifi connect $network password $password
+fi
+
+exit

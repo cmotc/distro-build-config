@@ -25,10 +25,34 @@ Pin-Priority: -1
 Package: epdfview
 Pin: version *
 Pin-Priority: -1
-Package: systemd-*
+Package: systemd
 Pin: version *
 Pin-Priority: -1
-Package: sysv-rc
+Package: systemd-container
+Pin: version *
+Pin-Priority: -1
+Package: systemd-coredump
+Pin: version *
+Pin-Priority: -1
+Package: systemd-cron
+Pin: version *
+Pin-Priority: -1
+Package: systemd-dbg
+Pin: version *
+Pin-Priority: -1
+Package: systemd-docker
+Pin: version *
+Pin-Priority: -1
+Package: systemd-gui
+Pin: version *
+Pin-Priority: -1
+Package: systemd-journal-remote
+Pin: version *
+Pin-Priority: -1
+Package: systemd-sysv
+Pin: version *
+Pin-Priority: -1
+Package: systemd-ui
 Pin: version *
 Pin-Priority: -1
 Package: dbus

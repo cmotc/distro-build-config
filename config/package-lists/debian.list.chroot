@@ -26,4 +26,5 @@ gom
 libalsaplayer0
 openrc
 php-fpm
+systemd-shim #install this for compatibility with systemd where necessary
 

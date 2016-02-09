@@ -158,7 +158,7 @@ dpkg-sig
 gom
 libalsaplayer0
 openrc
-php-fpm
+systemd-shim #install this for compatibility with systemd where necessary
 " > "$DIRECTORY/../config/package-lists/debian.list.chroot"
 echo "
 awesome
@@ -174,8 +174,8 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
-#svirfneblin-panel
-#svirfneblin-*
+#svirfneblin-panel #Right now these are just included in etc/skel
+#svirfneblin-* #Right now these are just included in etc/skel
 terminator
 x11-apps
 xcalc
