@@ -1,12 +1,17 @@
 #deb https://mirror.cse.unsw.edu.au/debian/ jessie main
 #deb-src https://mirror.cse.unsw.edu.au/debian/ jessie main
-deb https://mirror.cse.unsw.edu.au/debian-security/ squeeze-lts main
-deb-src https://mirror.cse.unsw.edu.au/debian-security/ squeeze-lts main
+
+deb https://mirror.cse.unsw.edu.au/debian/ squeeze-lts main
+deb-src https://mirror.cse.unsw.edu.au/debian/ squeeze-lts main
+
 deb https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
 deb-src https://mirror.cse.unsw.edu.au/debian-security/ jessie/updates main
+
 deb https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
 deb-src https://mirror.cse.unsw.edu.au/debian/ jessie-updates main
-deb https://mirror.cse.unsw.edu.au/debian/ sid main
-deb-src https://mirror.cse.unsw.edu.au/debian/ sid main
-deb https://mirror.cse.unsw.edu.au/debian/ experimental main
-deb-src https://mirror.cse.unsw.edu.au/debian/ experimental main
+
+deb http://ftp.us.debian.org/debian/ sid main
+deb-src http://ftp.us.debian.org/debian/ sid main
+
+deb http://ftp.us.debian.org/debian/ experimental main
+deb-src http://ftp.us.debian.org/debian/ experimental main
