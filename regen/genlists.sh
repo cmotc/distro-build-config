@@ -11,7 +11,7 @@ blueproximity
 btscanner
 " > "$DIRECTORY/../config/package-lists/bluetooth.list.chroot"
 echo "
-#Uncomment these lines if you want a fully-fledged IDE.
+#Uncomment_these_lines_if_you_want_a_fully-fledged_IDE.
 #anjuta
 #anjuta-common
 #anjuta-extras
@@ -158,7 +158,7 @@ dpkg-sig
 gom
 libalsaplayer0
 openrc
-systemd-shim #install this for compatibility with systemd where necessary
+#systemd-shim #install_this_for_compatibility_with_systemd_where_necessary
 " > "$DIRECTORY/../config/package-lists/debian.list.chroot"
 echo "
 awesome
@@ -174,17 +174,17 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
-#svirfneblin-panel #Right now these are just included in etc/skel
-#svirfneblin-* #Right now these are just included in etc/skel
+#svirfneblin-panel #Right_now_these_are_just_included_in_etc/skel
+#svirfneblin-* #Right_now_these_are_just_included_in_etc/skel
 terminator
 x11-apps
-xcalc
+#xcalc
 wcalc
 xterm
-xdialog
+#xdialog
 " > "$DIRECTORY/../config/package-lists/desktop.list.chroot"
 echo "
-#Uncomment these if you want to use a GTK Based Office Suite.
+#Uncomment_these_if_you_want_to_use_a_GTK_Based_Office_Suite.
 #abiword
 #abiword-common
 #abiword-plugin-grammar
@@ -255,7 +255,7 @@ live-boot-doc
 live-build
 live-config
 live-config-doc
-live-config-systemd
+#live-config-systemd
 live-manual-html
 " > "$DIRECTORY/../config/package-lists/live.list.chroot"
 echo "
