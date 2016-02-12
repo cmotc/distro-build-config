@@ -58,7 +58,8 @@ libev-dev
 libevent-dev
 libgtk2.0-dev 
 libimlib2-dev
-libltdl-devlibtool
+libltdl-dev
+libtool
 liblua5.1-dev
 liblua5.2-dev
 libnotify-dev
@@ -74,15 +75,15 @@ libstartup-notification0-dev
 libsodium-dev
 libsodium-dbg
 libstdc++-4.8-dev
-libtox-dev
-libtoxcore0
-libtoxcore-dev
-libtoxav0
-libtoxav-dev
-libtoxencryptsave0
-libtoxencryptsave-dev
-libtoxdns0
-libtoxdns-dev
+#libtox-dev
+#libtoxcore0
+#libtoxcore-dev
+#libtoxav0
+#libtoxav-dev
+#libtoxencryptsave0
+#libtoxencryptsave-dev
+#libtoxdns0
+#libtoxdns-dev
 libx11-xcb-dev
 libxcb1-dev
 libxcb-image0-dev
@@ -116,8 +117,6 @@ mercurial
 nodejs
 nodejs-legacy
 pbuilder
-pidgin-dev
-purple-dev
 python-rope
 tig
 valac
@@ -163,7 +162,7 @@ openrc
 echo "
 awesome
 awesome-extra
-awesome-lightdm-session
+#awesome-lightdm-session
 compton
 conky-std
 dialog
@@ -255,7 +254,7 @@ live-boot-doc
 live-build
 live-config
 live-config-doc
-#live-config-systemd
+live-config-sysvinit
 live-manual-html
 " > "$DIRECTORY/../config/package-lists/live.list.chroot"
 echo "
@@ -271,10 +270,10 @@ curl
 horst
 iftop
 iptraf-ng
-joker
+#joker
 netcat
 nmap
-rtorrent
+#rtorrent
 sntop
 wget
 youtube-dl

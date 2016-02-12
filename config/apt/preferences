@@ -1,3 +1,15 @@
+Package: libboost*-dev
+Pin: release n=sid
+Pin-Priority: 999
+Package: libtorrent*
+Pin: release n=sid
+Pin-Priority: 999
+Package: rtorrent
+Pin: release n=sid
+Pin-Priority: 999
+Package: openrc
+Pin: release n=sid
+Pin-Priority: 999
 Package: *
 Pin: release a=jessie
 Pin-Priority: 900
@@ -16,9 +28,6 @@ Pin-Priority: -1
 Package: exfalso
 Pin: version *
 Pin-Priority: -1
-Package: libboost*-dev
-Pin: release n=sid
-Pin-Priority: 999
 Package: libreoffice-base
 Pin: version *
 Pin-Priority: -1
