@@ -1,6 +1,46 @@
 # distro-live-config
 Backup of my laptop OS configuration as a live-build tree  
 
+**WARNING:** If you install the system in it's current configuration, your user
+name will be exposed on the lightdm-gtk-greeter login screen. This is one less
+thing an attacker with local access who cannot compromise you with a keylogger
+needs to guess. If you choose to install the system to your hard drive and use
+it day-to-day, be sure to encrypt your hard disk and change.
+
+        greeter-hide-users=false
+		
+into:
+
+		greeter-hide-users=true
+		
+On the other hand, if you use the Live configuration then you are at least no
+better or worse off for the configuration, since all the live configurations
+use the same name by design. This may offer greater resistance to certain kinds
+of analysis. I don't think it's a good idea to change the name on the live
+configuration itself, although an argument might be made for the value of a
+cascade of configurations, so maybe, just maybe, and keep in mind all I do is
+read alot so who am I? Nobody that's who, but maybe releasing your custom live
+configuration only *temporarily* narrows your anonymity set(and that's kind of
+an overblown way of saying it, an attacker still still has to find someplace
+where you leak this information from a channel you think is secure and then do
+something with it.)
+
+So right now, 2 things to think about. *Do you want your username displayed on*
+*the greeter screen?* Probably not. Maybe though. They would have to decrypt the
+disk, whatever TPM or coreboot situation you may have worked out, and anything
+else that happens before the greeter might be enough for you. Also, *setting*
+*theusername breaks the amnesic property of the system and gives a*
+*characteristic that can be used to track it across some types of sessions if*
+*the user is already compromised or leaks information from a session.* I've
+attempted to partially mitigate this through the use of multiple Tor circuits
+for different types of apps and using End-to-End encryption wherever available
+when on the clearnet, but this is imperfect and a *MUCH BETTER WAY* if you
+intend to use terminal tools over Tor is to separate your circuits by contextual
+identity (Any particular account getting a different Tor circuit would be an OK
+way to start) and the best way is to restart, boot into the LiveCD, and only use
+one Tor circuit for one thing then restart every time you change tasks. It's a
+spectrum.
+
 **Current Project:** Switch from the default systemd init system in Debian
 Jessie to a more Gentoo-like init system using OpenRC instead of SysV-RC(thus
 keeping the only useful parts of systemd) and replacing other tightly integrated
