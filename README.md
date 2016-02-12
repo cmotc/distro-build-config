@@ -1,5 +1,33 @@
 # distro-live-config
-Backup of my laptop OS configuration as a live-build tree  
+A distro for Developers, Sysadmins, Power users and Hackers interested in
+Privacy, Peer-to-Peer technology, and Sustainability.  
+
+**First, more Obvious WARNING:** I'm just a guy. I do this as a hobby. I'm not
+even employed as a computing professional. I'm pretty poor. I read. Free
+Documentation is also usually free of cost. So I read alot of manuals. Also
+secondhand textbooks from GoodWill. And Netflix, one of the only Non-Free
+services I use without trying very hard to produce an alternative for myself,
+only has so much so I fire up YouTube in a uzbl script which basically lets me
+treat it like a search engine for youtube-dl and watch videos from hacker cons.
+My point is that it's pretty audacious for me to try and put together a distro
+that addresses some set of security concerns. I study alot and that is literally
+it. I get profiled by incompetent department store security personnel and work
+a recycler for not much money. PLEASE don't get yourself killed doing something
+stupid with my configuration. Read it instead, and submit a pull request or
+[email me](cmotc@openmailbox.org) if I screwed up and I'll fix it if it's me, or
+pass it upstream if it's an upstream package. I've borrowed alot of work from
+projects made by people who know better than me, probably, and I don't think
+I've done anything that will break that work. But I could very easily be wrong.
+That's the trouble with having no one to check your work yet. Note to self: Get
+on the Mempo ML.  
+
+In summary, if you're a power user who's prepared to take responsibility for
+his or her own configuration, then you might find this system useful as a basis
+for it. If you want to experiment with privacy technologies and don't have life,
+limb, or freedom threatening privacy concerns, then it may be good enough for
+you too. But if you have serious concerns and cannot otherwise evaluate your
+security concerns, then you should probably use [TAILS](https://tails.boum.org)
+or another more tried-and-true solution.
 
 **WARNING:** If you install the system in it's current configuration, your user
 name will be exposed on the lightdm-gtk-greeter login screen. This is one less
@@ -216,11 +244,11 @@ Besides the obvious, there are other security, activism, and systemd-free, and
 Free Software oriented GNU/Linux distributions. Sometimes, this is just an
 emergent property of them having decent documentation.
 
-  * Freepto
-  * Devuan
-  * GNewSense
-  * TAILS
-  * Ipredia
-  * Mempo
-  * Arch Linux
-  * Gentoo Linux
+  * [Freepto](https://www.freepto.mx/)
+  * [Devuan](https://devuan.org)
+  * [GNewSense](https://gnewsense.org)
+  * [TAILS](https://tails.boum.org)
+  * [Ipredia](https://www.ipredia.org/)
+  * [Mempo](https://wiki.debian.org/Mempo)
+  * [Arch Linux](https://www.archlinux.org)
+  * [Gentoo Linux](https://www.gentoo.org)
