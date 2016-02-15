@@ -9,6 +9,14 @@ SocksPort 127.0.0.1:9152
 SOCKSPolicy accept 127.0.0.1
 SOCKSPolicy reject *
 
+#We're going to use precisely defined individual Tor circuits for most
+#things, but even general requests will go through their own special Tor
+#port to further obfuscate data leaks.
+#VirtualAddrNetworkIPv4 10.192.0.0/10
+#AutomapHostsOnResolve 1
+#TransPort 9040
+#DNSPort 53
+
 RunAsDaemon 1
 
 TruncateLogFile 1
