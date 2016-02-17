@@ -241,7 +241,12 @@ a desktop environment to achieve the goals of this custom distro.
 		OpenRC	upstream		=	http://www.gentoo.org/proj/en/base/openrc/
 				debian sid		=	https://packages.debian.org/stretch/openrc
 				fireaxe-current	=	https://www.github.com/cmotc/OpenRC(Unmodified so far.)
+				
+###proxychains-ng. Because Fuck Cloudflare.
 
+		proxychains-ng	upstream		=	https://github.com/rofl0r/proxychains-ng
+						fireaxe-current =	https://github.com/cmotc/proxychains-ng
+						
 ###GRSecurity Hardened Linux kernel with x11 Modifications inspired by Mempo
 
 		Currently a WIP.
@@ -252,11 +257,26 @@ Besides the obvious, there are other security, activism, and systemd-free, and
 Free Software oriented GNU/Linux distributions. Sometimes, this is just an
 emergent property of them having decent documentation.
 
-  * [Freepto](https://www.freepto.mx/)
-  * [Devuan](https://devuan.org)
-  * [GNewSense](https://gnewsense.org)
-  * [TAILS](https://tails.boum.org)
-  * [Ipredia](https://www.ipredia.org/)
-  * [Mempo](https://wiki.debian.org/Mempo)
-  * [Arch Linux](https://www.archlinux.org)
-  * [Gentoo Linux](https://www.gentoo.org)
+###Privacy Focused
+  * [TAILS](https://tails.boum.org) (Recommended)(Activist)(Live)
+  * [Freepto](https://www.freepto.mx) (Activist)(Versatile)(Live)
+  * [Ipredia](https://www.ipredia.org) (Recommended)(Activist)
+  * [Mempo](https://wiki.debian.org/Mempo) (Research)(Versatile)(Power-User)
+  
+###Resisting or likely to resist systemd and contributing replacements
+  * [Devuan](https://devuan.org) (Recommended)(Activist)(Research)(Versatile)
+  * [GNewSense](https://gnewsense.org) (Recommended)(Activist)(Stable)(Versatile)
+  * [Gentoo Linux](https://www.gentoo.org) (Recomended)(Versatile)(Power-User)
+
+###Security Focused
+  * [OpenBSD](https://openbsd.org) (Recomended)(Versatile)(Power-User)
+  * [Alpine Linux](http://alpinelinux.org) (Recomended)(Versatile)(Power-User)
+
+###Network Observation Focused
+  * [Kali Linux](https://kali.org) (Versatile)(Power-User)
+  * [ParrotOS](https://parrotsec.org) (Recomended)(Versatile)(Power-User)
+  * [Pentoo Linux](https://www.pentoo.ch) (Recomended)(Versatile)(Power-User)
+
+###Has excellent documentation
+  * [Arch Linux](https://www.archlinux.org) (Versatile)(Power-User)
+  
