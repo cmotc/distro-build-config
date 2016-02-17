@@ -24,19 +24,19 @@ git_add_and_commit(){
 }
 
 git_add_and_commit_and_push(){
-    git add . && git commit -am "$@" && torify git push
+    git add . && git commit -am "$@" && torsocks git push
 }
 
 git_push_with_proxy(){
-    torify git push "$@"
+    torsocks git push "$@"
 }
 
 git_pull_with_proxy(){
-    torify git pull "$@"
+    torsocks git pull "$@"
 }
 
 git_clone_with_proxy(){
-    torify git clone "$@"
+    torsocks git clone "$@"
 }
 
 start_tor_arm(){
@@ -48,18 +48,20 @@ check_conky(){
 }
 
 youtube_dl_with_proxy(){
-    torify youtube-dl "$@"
+    torsocks youtube-dl "$@"
 }
 
 wget_with_proxy(){
-    torify wget --https-only "$@"
+	TORSOCKS_CONF_FILE="/etc/tor/torsocks.get.conf"
+    torsocks wget --https-only "$@"
 }
 
 curl_with_proxy(){
-    torify curl "$@"
+	TORSOCKS_CONF_FILE="/etc/tor/torsocks.get.conf"
+    torsocks curl "$@"
 }
 
-torify_terminal(){
+torsocks_terminal(){
     bash -c ". torsocks on && terminator $@ -l default -p $HOME/.torminalrc -u -T Torminal" # &> /dev/urandom
 }
 
@@ -72,7 +74,7 @@ toroff(){
 }
 
 proxy_lynx(){
-    torify lynx
+    torsocks lynx
 }
 
 run_once(){
@@ -96,7 +98,7 @@ torcheck(){
         echo "Your IP is identified to be a Tor-EXIT."
         echo "=====           NOTICE            ====="
         echo "This function merely verified that an unaliased copy of curl
-would use tor, as with the command . torify on. This does not mean that your
+would use tor, as with the command . torsocks on. This does not mean that your
 connection is end-to-end encrypted, or that it's using https, or that you are
 avoiding protocol or metadata leaks. Please use caution."
     else
@@ -106,7 +108,7 @@ avoiding protocol or metadata leaks. Please use caution."
     unset USING_TOR
 }
 
-unalias_torify(){
+unalias_torsocks(){
     unalias git
     unalias ssh
     unalias hg
@@ -146,7 +148,7 @@ myip(){
 torip(){
 	TOR_IP=$(tor-resolve checkip.dyndns.com)
 	echo "checkip.dyndns.com = $TOR_IP"
-	torify curl $TOR_IP #| sed "s@$TRIM_STR_BEGIN@@" | sed "s@$TRIM_STR_END@@"
+	torsocks curl $TOR_IP #| sed "s@$TRIM_STR_BEGIN@@" | sed "s@$TRIM_STR_END@@"
 }
 cleancache(){
 	rm -rfv "$HOME/.cache" &
@@ -156,6 +158,18 @@ cleancache(){
         rm -rfv "$HOME/.xombreronion/cache" &
 	history -c
 }
+profanity_with_tor(){
+	TORSOCKS_CONF_FILE="/etc/tor/torsocks.profanity.conf"
+	torsocks profanity
+}
+irrsi_with_tor(){
+	TORSOCKS_CONF_FILE="/etc/tor/torsocks.irrsi.conf"
+	torsocks irrsi
+}
+torsocks_altstream(){
+	TORSOCKS_CONF_FILE="$HOME/.torsocks.conf"
+	torsocks "$@"
+}
 
 alias tunset=unset_display
 
@@ -164,25 +178,25 @@ alias su_bleachbit="sudo bleachbit -co --preset"
 alias dialog="dialog --colors"
 alias tor-arm="sudo -u debian-tor arm"
 alias rm="srm -z"
-alias torminal=torify_terminal
+alias torminal=torsocks_terminal
 alias torminator=torminal
 
 alias lynx=proxy_lynx
-alias mutt="torify mutt"
-alias finch="torify profanity"
-alias profanity="torify profanity"
+alias mutt="torsocks mutt"
+alias finch=profanity_with_tor
+alias profanity=profanity_with_tor
 alias wget=wget_with_proxy
 alias curl="curl_with_proxy"
 alias youtube-dl=youtube_dl_with_proxy
 alias ratox=start_ratox
-alias mumble="torify mumble $@ &> /dev/null"
-alias irssi="torify irssi $@ &> /dev/null"
+alias mumble="torsocks mumble $@ &> /dev/null"
+alias irssi=irssi_with_tor
 alias sms=send_text
 alias xombrero="start_xombrero"
 
-alias hg="torify hg"
-alias ssh="torify ssh"
-alias git="torify git"
+alias hg="torsocks hg"
+alias ssh="torsocks ssh"
+alias git="torsocks git"
 
 alias commit=git_add_and_commit
 alias clone=git_clone_with_proxy

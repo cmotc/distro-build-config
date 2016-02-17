@@ -1,9 +1,23 @@
+
+# Torsocks Default
 SocksPort 127.0.0.1:9050
-SocksPort 127.0.0.1:9051
+# Web Browser
 SocksPort 127.0.0.1:9052
-SocksPort 127.0.0.1:9101
+# HTTP Proxy
+SocksPort 127.0.0.1:9053
+# Email Client
+SocksPort 127.0.0.1:9054
+# Instant Messenger
+SocksPort 127.0.0.1:9055
+# IRC Client
+SocksPort 127.0.0.1:9056
+# wget and curl
+SocksPort 127.0.0.1:9057
+# Something Else   
 SocksPort 127.0.0.1:9150
-SocksPort 127.0.0.1:9151
+# Don't use 9151, Used by TBB in default configuration
+######################################################
+# Something Else
 SocksPort 127.0.0.1:9152
 
 SOCKSPolicy accept 127.0.0.1
@@ -26,7 +40,7 @@ TruncateLogFile 1
 #ControlPort 9051
 ## If you enable the controlport, be sure to enable one of these
 ## authentication methods, to prevent attackers from accessing it.
-#HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
+#HashedControlPassword 
 #CookieAuthentication 1
 
 ################ This section is just for relays #####################

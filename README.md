@@ -96,8 +96,9 @@ I sometimes arbitrarily and without regard for the remaining problems really
 like anything and everything that aids in the decentralization of the internet
 and especially the functions usually carried out on social networks. To that end
 I plan to include uTox for instant messaging, Twisterd for microblogging, and
-and i2p for networking. I don't actually particularly care about anonymity, but
-it's wierd and creepy that I have to rely on a service provider to contact my
+and i2p for networking. I think that the ability to have a totally private and
+anonymous dialog should be easily available to everyone, and that it is
+wierd and creepy that I have to rely on a service provider to contact my
 friends and I think you should have a choice how much information you convey and
 peer-to-peer technology seems to make that a bit more realistic. It also
 includes some mesh-netwoking utilities and some security testing tools, 
