@@ -166,6 +166,10 @@ irrsi_with_tor(){
 	TORSOCKS_CONF_FILE="/etc/tor/torsocks.irrsi.conf"
 	torsocks irrsi
 }
+mutt_with_tor(){
+	TORSOCKS_CONF_FILE="/etc/tor/torsocks.mutt.conf"
+	torsocks mutt
+}
 torsocks_altstream(){
 	TORSOCKS_CONF_FILE="$HOME/.torsocks.conf"
 	torsocks "$@"
@@ -182,7 +186,7 @@ alias torminal=torsocks_terminal
 alias torminator=torminal
 
 alias lynx=proxy_lynx
-alias mutt="torsocks mutt"
+alias mutt=mutt_with_tor
 alias finch=profanity_with_tor
 alias profanity=profanity_with_tor
 alias wget=wget_with_proxy
