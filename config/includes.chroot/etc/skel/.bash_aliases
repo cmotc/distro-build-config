@@ -184,6 +184,7 @@ alias tor-arm="sudo -u debian-tor arm"
 alias rm="srm -z"
 alias torminal=torsocks_terminal
 alias torminator=torminal
+alias altornator=torsocks_altstream
 
 alias lynx=proxy_lynx
 alias mutt=mutt_with_tor
