@@ -1,4 +1,4 @@
-# distro-live-config
+# Fireaxe live-config
 A distro for Developers, Sysadmins, Power users and Hackers interested in
 Privacy, Peer-to-Peer technology, and Sustainability.  
 
@@ -251,6 +251,11 @@ a desktop environment to achieve the goals of this custom distro.
 
 		Currently a WIP.
 
+Documentation of Interest
+-------------------------
+
+  * [Free Haven Bibliography](https://www.freehaven.net/anonbib/date.html)
+
 Other Distro's of Interest
 --------------------------
 Besides the obvious, there are other security, activism, and systemd-free, and
@@ -279,4 +284,3 @@ emergent property of them having decent documentation.
 
 ###Has excellent documentation
   * [Arch Linux](https://www.archlinux.org) (Versatile)(Power-User)
-  

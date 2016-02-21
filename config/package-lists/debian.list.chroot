@@ -25,5 +25,5 @@ dpkg-sig
 gom
 libalsaplayer0
 openrc
-systemd-shim #install this for compatibility with systemd where necessary
+#systemd-shim #install_this_for_compatibility_with_systemd_where_necessary
 

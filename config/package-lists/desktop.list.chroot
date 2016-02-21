@@ -1,7 +1,7 @@
 
 awesome
 awesome-extra
-awesome-lightdm-session
+#awesome-lightdm-session
 compton
 conky-std
 dialog
@@ -12,12 +12,12 @@ lightdm
 lightdm-vala
 lightdm-gtk-greeter
 pcmanfm
-#svirfneblin-panel #Right now these are just included in etc/skel
-#svirfneblin-* #Right now these are just included in etc/skel
+#svirfneblin-panel #Right_now_these_are_just_included_in_etc/skel
+#svirfneblin-* #Right_now_these_are_just_included_in_etc/skel
 terminator
 x11-apps
-xcalc
+#xcalc
 wcalc
 xterm
-xdialog
+#xdialog
 

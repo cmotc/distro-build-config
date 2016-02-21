@@ -1,5 +1,5 @@
 
-#Uncomment these lines if you want a fully-fledged IDE.
+#Uncomment_these_lines_if_you_want_a_fully-fledged_IDE.
 #anjuta
 #anjuta-common
 #anjuta-extras
@@ -46,7 +46,8 @@ libev-dev
 libevent-dev
 libgtk2.0-dev 
 libimlib2-dev
-libltdl-devlibtool
+libltdl-dev
+libtool
 liblua5.1-dev
 liblua5.2-dev
 libnotify-dev
@@ -62,15 +63,15 @@ libstartup-notification0-dev
 libsodium-dev
 libsodium-dbg
 libstdc++-4.8-dev
-libtox-dev
-libtoxcore0
-libtoxcore-dev
-libtoxav0
-libtoxav-dev
-libtoxencryptsave0
-libtoxencryptsave-dev
-libtoxdns0
-libtoxdns-dev
+#libtox-dev
+#libtoxcore0
+#libtoxcore-dev
+#libtoxav0
+#libtoxav-dev
+#libtoxencryptsave0
+#libtoxencryptsave-dev
+#libtoxdns0
+#libtoxdns-dev
 libx11-xcb-dev
 libxcb1-dev
 libxcb-image0-dev
@@ -104,8 +105,6 @@ mercurial
 nodejs
 nodejs-legacy
 pbuilder
-pidgin-dev
-purple-dev
 python-rope
 tig
 valac

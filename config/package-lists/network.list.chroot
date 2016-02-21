@@ -5,10 +5,10 @@ curl
 horst
 iftop
 iptraf-ng
-joker
+#joker
 netcat
 nmap
-rtorrent
+#rtorrent
 sntop
 wget
 youtube-dl
