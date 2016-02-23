@@ -242,7 +242,6 @@ i2p-router
 killyourtv-keyring
 " > "$DIRECTORY/../config/package-lists/i2p.list.chroot"
 echo "
-lynx
 lynx-cur
 ncftp
 uzbl
@@ -297,6 +296,7 @@ mumble
 mutt
 profanity
 toxic
+twidge
 #twister
 #tox-bootstrapd
 " > "$DIRECTORY/../config/package-lists/social.list.chroot"

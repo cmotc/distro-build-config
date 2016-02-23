@@ -1,0 +1,7 @@
+#! /bin/sh
+profanity_with_proxy(){
+        TORSOCKS_CONF_FILE="/etc/tor/torsocks.profanity.conf"
+#       echo $TORSOCKS_CONF_FILE
+        torsocks profanity
+}
+profanity_with_proxy

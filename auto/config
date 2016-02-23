@@ -64,7 +64,8 @@ EOF
 lb config noauto \
     -a "$LINUX_FLAVOURS" \
     -b hdd \
-    -apt aptitude
+    -apt aptitude \
+    -apt-secure true \
     -d jessie \
     --initsystem sysvinit \
     --linux-flavours "$LINUX_FLAVOURS" \

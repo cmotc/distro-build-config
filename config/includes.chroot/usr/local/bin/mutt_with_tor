@@ -1,0 +1,8 @@
+#! /bin/sh
+mutt_with_proxy(){
+        TORSOCKS_CONF_FILE="/etc/tor/torsocks.mutt.conf"
+#        echo $TORSOCKS_CONF_FILE
+        torsocks mutt
+}
+mutt_with_proxy
+
