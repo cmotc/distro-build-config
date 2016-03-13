@@ -249,7 +249,9 @@ a desktop environment to achieve the goals of this custom distro.
 						
 ###GRSecurity Hardened Linux kernel with x11 Modifications inspired by Mempo
 
-		Currently a WIP.
+		grsecurity hardened kernel	linux-image-4.4.4-grsec_4.4.4-grsec-1	=	https://github.com/cmotc/fireaxe-kernel-grsec-4.4
+		grsecurity hardened libc	linux-libc-dev_4.4.4-grsec-1			=	https://github.com/cmotc/fireaxe-kernel-grsec-4.4
+
 
 Documentation of Interest
 -------------------------
