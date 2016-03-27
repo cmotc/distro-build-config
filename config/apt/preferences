@@ -73,6 +73,6 @@ Pin-Priority: -1
 Package: systemd-ui
 Pin: version *
 Pin-Priority: -1
-Package: dbus
-Pin: release n=squeeze-lts
-Pin-Priority: 1
+#Package: dbus
+#Pin: release n=squeeze-lts
+#Pin-Priority: 1

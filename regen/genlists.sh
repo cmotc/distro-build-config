@@ -309,9 +309,11 @@ tor-geoipdb
 torsocks
 " > "$DIRECTORY/../config/package-lists/tor.list.chroot"
 echo "
+bumblebee
 firmware-linux-free
 laptop-mode-tools
 linux-image-amd64
+primus
 sudo
 syslinux-common
 syslinux-efi
