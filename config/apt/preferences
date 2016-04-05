@@ -1,24 +1,8 @@
-Package: libboost*-dev
-Pin: release n=sid
-Pin-Priority: 999
-Package: libtorrent*
-Pin: release n=sid
-Pin-Priority: 999
-Package: rtorrent
-Pin: release n=sid
-Pin-Priority: 999
-Package: openrc
-Pin: release n=sid
-Pin-Priority: 999
-Package: *
-Pin: release a=jessie
+Pin: release a=ascii
 Pin-Priority: 900
 Package: *
-Pin: release a=sid
+Pin: release a=ceres
 Pin-Priority: 600
-Package: *
-Pin: release a=experimental
-Pin-Priority: 500
 Package: brasero
 Pin: version *
 Pin-Priority: -1

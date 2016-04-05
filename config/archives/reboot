@@ -1,0 +1,4 @@
+#! /bin/sh
+sudo apt-get update && sudo apt-get install $(cat *.list.* | grep -v '#' | grep -v 'alfred' | grep -v 'network-manager' | grep -v sqlmap | grep -v fireblock | grep -v hidblock | grep -v wesnoth | grep -v android | grep -v alpine| grep -v | lightdm | tr "\n" ' ')
+for file in /etc/rc0.d/K*; do s=`basename $(readlink "$file")` ; /etc/init.d/$s stop; done
+sudo shutdown 60
