@@ -1,8 +1,6 @@
 #! /bin/sh
 DIRECTORY=$(cd `dirname $0` && pwd)
 echo "
-aptly
-lighttpd
 openssl
 " > "$DIRECTORY/../config/package-lists/aptly.list.chroot"
 echo "
@@ -38,9 +36,7 @@ medit
 git
 globus-simple-ca
 gperf
-ikiwiki
 intltool
-jekyll
 libasound2-dev
 libboost-dev
 libboost-chrono-dev
@@ -114,6 +110,7 @@ luadoc
 lua-ldoc
 make
 mercurial
+moreutils
 nodejs
 nodejs-legacy
 pbuilder

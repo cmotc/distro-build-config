@@ -26,9 +26,7 @@ medit
 git
 globus-simple-ca
 gperf
-ikiwiki
 intltool
-jekyll
 libasound2-dev
 libboost-dev
 libboost-chrono-dev
@@ -102,6 +100,7 @@ luadoc
 lua-ldoc
 make
 mercurial
+moreutils
 nodejs
 nodejs-legacy
 pbuilder
