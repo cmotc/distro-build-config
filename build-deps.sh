@@ -2,6 +2,9 @@ sudo apt-get -y build-dep openssl
 sudo apt-get -y build-dep bluetooth
 sudo apt-get -y build-dep blueproximity
 sudo apt-get -y build-dep btscanner
+sudo apt-get -y build-dep hibernate
+sudo apt-get -y build-dep vbetool
+sudo apt-get -y build-dep uswsusp
 sudo apt-get -y build-dep #Uncomment_these_lines_if_you_want_a_fully-fledged_IDE.
 sudo apt-get -y build-dep #anjuta
 sudo apt-get -y build-dep #anjuta-common

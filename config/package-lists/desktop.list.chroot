@@ -5,6 +5,7 @@ awesome-extra
 compton
 conky-std
 dialog
+hibernate
 network-manager
 #modem-manager
 mc
@@ -15,6 +16,8 @@ pcmanfm
 #svirfneblin-panel #Right_now_these_are_just_included_in_etc/skel
 #svirfneblin-* #Right_now_these_are_just_included_in_etc/skel
 terminator
+uswsusp
+vbetool
 x11-apps
 #xcalc
 wcalc
