@@ -20,9 +20,9 @@ LB_BOOTAPPEND_INSTALL="noprompt"
 # (Default: empty)
 LB_BOOTAPPEND_LIVE_FAILSAFE="boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal"
 
-# $LB_BOOTLOADER: set bootloader
-# (Default: syslinux)
-LB_BOOTLOADER="syslinux"
+# $LB_BOOTLOADERS: set bootloaders
+# (Default: syslinux,grub-efi)
+LB_BOOTLOADERS="syslinux,grub-efi"
 
 # $LB_CHECKSUMS: set checksums
 # (Default: sha256)
@@ -47,7 +47,7 @@ LB_DEBIAN_INSTALLER="true"
 
 # $LB_DEBIAN_INSTALLER_DISTRIBUTION: set debian-installer suite
 # (Default: empty)
-LB_DEBIAN_INSTALLER_DISTRIBUTION="jessie"
+LB_DEBIAN_INSTALLER_DISTRIBUTION="ceres"
 
 # $LB_DEBIAN_INSTALLER_PRESEEDFILE: set debian-installer preseed filename/url
 # (Default: )
@@ -69,21 +69,25 @@ LB_HDD_LABEL="FIREAXE"
 # (Default: auto)
 LB_HDD_SIZE="auto"
 
+# $LB_HDD_PARTITION_START: set start of partition for the hdd target for BIOSes that expect a specific boot partition start (e.g. "63s"). If empty, use optimal layout.
+# (Default: )
+LB_HDD_PARTITION_START=""
+
 # $LB_ISO_APPLICATION: set iso author
 # (Default: Debian Live)
 LB_ISO_APPLICATION="Debian Live"
 
 # $LB_ISO_PREPARER: set iso preparer
-# (Default: live-build 4.0.3-1; http://live-systems.org/devel/live-build)
-LB_ISO_PREPARER="live-build 4.0.3-1; http://live-systems.org/devel/live-build"
+# (Default: live-build 1:20170213; http://live-systems.org/devel/live-build)
+LB_ISO_PREPARER="live-build 1:20170213; http://live-systems.org/devel/live-build"
 
 # $LB_ISO_PUBLISHER: set iso publisher
 # (Default: Live Systems project; http://live-systems.org/; debian-live@lists.debian.org)
 LB_ISO_PUBLISHER="Live Systems project; http://live-systems.org/; debian-live@lists.debian.org"
 
 # $LB_ISO_VOLUME: set iso volume (max 32 chars)
-# (Default: Debian jessie 20160327-15:22)
-LB_ISO_VOLUME="Debian jessie 20160327-15:22"
+# (Default: Debian ceres 20170428-06:21)
+LB_ISO_VOLUME="Debian ceres 20170428-06:21"
 
 # $LB_JFFS2_ERASEBLOCK: set jffs2 eraseblock size
 # (Default: unset)
@@ -152,8 +156,3 @@ LB_SWAP_FILE_PATH=""
 # $LB_SWAP_FILE_SIZE: set swap file size
 # (Default: 512)
 LB_SWAP_FILE_SIZE="512"
-
-# $LB_BINARY_USE_ORIGINAL_PACKAGES_LIST: don't reconstruct Packages, use original
-# (Default: false)
-LB_BINARY_USE_ORIGINAL_PACKAGES_LIST="false"
-

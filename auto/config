@@ -3,6 +3,8 @@
 
 ## LOAD CONFIGURATION:
 
+[ ! -d .build ] && sudo lb init -t 3 4
+
 if [ -r config/fireaxe ]
 then
   echo "Reading fireaxe configuration file...." >&2
@@ -35,7 +37,6 @@ cat > config/includes.chroot/etc/fireaxe/build <<EOF
 date=$BUILDING_DATE
 live-build_version=$LIVE_BUILD_VERSION
 git_commit=$GIT_HEAD
-git_tag=$GIT_DESCRIBE
 EOF
 # os-version
 cat > config/includes.chroot/etc/fireaxe/version <<EOF
@@ -66,7 +67,9 @@ lb config noauto \
     -apt aptitude \
     -apt-secure true \
     -a "$LINUX_FLAVOURS" \
-    -d jessie \
+    --debootstrap-options "--exclude=rsyslog" \
+    -d ceres \
+    --parent-distribution ceres \
     --initsystem sysvinit \
     --linux-flavours "$LINUX_FLAVOURS" \
     --security true \

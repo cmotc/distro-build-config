@@ -28,10 +28,6 @@ LB_APT_SECURE="true"
 # (Default: false)
 LB_APT_SOURCE_ARCHIVES="false"
 
-# $LB_BOOTSTRAP: set bootstrap program
-# (Default: debootstrap)
-LB_BOOTSTRAP="debootstrap"
-
 # $LB_CACHE: control cache
 # (Default: true)
 LB_CACHE="true"
@@ -88,10 +84,6 @@ LB_SYSTEM="live"
 # (Default: apt)
 LB_TASKSEL="apt"
 
-# $LB_TEMPLATES: set templates
-# (Default: /home/idk/Projects/Live_CD_Projects/fireaxe/local/live-build/templates)
-LB_TEMPLATES="/home/idk/Projects/Live_CD_Projects/fireaxe/local/live-build/templates"
-
 # live-build options
 
 # $_BREAKPOINTS: enable breakpoints
@@ -121,7 +113,7 @@ _QUIET="false"
 # Internal stuff (FIXME)
 APT_OPTIONS="--yes"
 APTITUDE_OPTIONS="--assume-yes"
-DEBOOTSTRAP_OPTIONS=""
-CDEBOOTSTRAP_OPTIONS=""
+DEBOOTSTRAP_OPTIONS="--exclude=rsyslog"
+DEBOOTSTRAP_SCRIPT=""
 GZIP_OPTIONS="-6  --rsyncable"
 ISOHYBRID_OPTIONS=""
